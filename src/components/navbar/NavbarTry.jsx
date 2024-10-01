@@ -1,15 +1,8 @@
-
-
-
-
-
-
-
 "use client";
 
-import Link from "next/link"; 
-import { usePathname } from "next/navigation"; 
-import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { HiMiniShoppingBag } from "react-icons/hi2";
 
@@ -19,8 +12,15 @@ const NavbarTry = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen); // Menu açılma/kapanma durumunu değiştir
   };
-    const pathName = usePathname()
-    console.log(pathName);
+  const pathName = usePathname();
+  console.log(pathName);
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Sayfa yüklendiğinde görünürlüğü true yaparak animasyonu başlat
+    setIsVisible(true);
+  }, []);
 
   return (
     <div className="sticky top-0 bg-transparent z-50">
@@ -35,23 +35,30 @@ const NavbarTry = () => {
           <div className="flex items-center md:order-2 space-x-3  rtl:space-x-reverse">
             <button
               type="button"
-              className="text-red  hover:text-red-orange active:text-black transition-all  font-medium  text-xl "
+              className={"text-red  hover:text-red-orange active:text-black  font-medium  text-xl transition-all duration-1000 ease-in-out " +
+              (isVisible
+                ? " translate-x-0 opacity-100 "
+                : " translate-x-full opacity-0 ")}
             >
-                <FaUserCircle />
-              
+              <FaUserCircle />
             </button>
             <button
               type="button"
-              className="text-red  hover:text-red-orange active:text-black transition-all  font-medium  text-xl  "
+              className={"text-red  hover:text-red-orange active:text-black  font-medium  text-xl  transition-all duration-1000 ease-in-out " +
+              (isVisible
+                ? " translate-x-0 opacity-100 "
+                : " translate-x-full opacity-0 ")}
             >
-                <HiMiniShoppingBag />
-              
+              <HiMiniShoppingBag />
             </button>
             <button
               onClick={toggleMenu} // Menüyü açıp kapatmak için
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-light-yellow focus:outline-none focus:ring-2 focus:ring-orange  "
+              className={"inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-light-yellow focus:outline-none focus:ring-2 focus:ring-orange  transition-all duration-1000 ease-in-out " +
+              (isVisible
+                ? " translate-x-0 opacity-100 "
+                : " translate-x-full opacity-0 ")}
               aria-controls="navbar-sticky"
               aria-expanded={isOpen ? "true" : "false"}
             >
@@ -81,78 +88,145 @@ const NavbarTry = () => {
             } items-center justify-between w-full md:flex md:w-auto md:order-1`}
             id="navbar-sticky"
           >
-            <ul className="flex flex-wrap justify-center flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50  lg:space-x-1 xl:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent  ">
-            <li>
+            <ul
+              className={
+                "flex flex-wrap justify-center flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50  lg:space-x-1 xl:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent transition-all duration-1000 ease-in-out " +
+                (isVisible
+                  ? " translate-y-0 opacity-100 "
+                  : " -translate-y-full opacity-0 ")
+              }
+            >
+              <li>
                 <Link
                   href="/"
-                  className={"group relative  block py-2 px-3 md:font-[600] text-[18px] text-dark-red md:text-[14px] lg:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " + (pathName === '/' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "") }
+                  className={
+                    "group relative  block py-2 px-3 md:font-[600] text-[18px] text-dark-red md:text-[14px] lg:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " +
+                    (pathName === "/"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
+                  }
                 >
                   <span className=" ">Anasayfa</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/aboutus"
-                  className={"group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/aboutus' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "") }
+                  className={
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " +
+                    (pathName === "/aboutus"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
+                  }
                 >
                   <span>Hakkımızda</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/aboutus' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/aboutus" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/trainings"
                   className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/trainings' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " +
+                    (pathName === "/trainings"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
                   }
                 >
                   <span>Eğitimlerimiz</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/trainings' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/trainings" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/team"
                   className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " + (pathName === '/team' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " +
+                    (pathName === "/team"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
                   }
                 >
                   <span>Ekibimiz</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/team' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/team" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/books"
                   className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " + (pathName === '/books' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " +
+                    (pathName === "/books"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
                   }
                 >
                   <span>Kitaplarımız</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/books' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/books" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/blog"
                   className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " + (pathName === '/blog' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " +
+                    (pathName === "/blog"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
                   }
                 >
                   <span>Blog</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/blog' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/blog" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
                   className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " + (pathName === '/contact' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " +
+                    (pathName === "/contact"
+                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange"
+                      : "")
                   }
                 >
                   <span>İletişim</span>
-                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/contact' ? " w-full " : "")}></span>
+                  <span
+                    className={
+                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " +
+                      (pathName === "/contact" ? " w-full " : "")
+                    }
+                  ></span>
                 </Link>
               </li>
             </ul>
@@ -164,11 +238,6 @@ const NavbarTry = () => {
 };
 
 export default NavbarTry;
-
-
-
-
-
 
 // import { useState } from "react";
 
