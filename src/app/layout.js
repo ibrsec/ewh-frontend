@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={` antialiased bg-gradient-to-r from-[#ede7da]  to-[#edd091]`}
+        className={` antialiased bg-main-bg`}
       > 
 
         {/* HeadInfos component */}

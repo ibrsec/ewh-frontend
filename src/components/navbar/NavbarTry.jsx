@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 "use client";
 
 import Link from "next/link"; 
@@ -17,8 +24,8 @@ const NavbarTry = () => {
 
   return (
     <div className="sticky top-0 bg-transparent z-50">
-      <nav className="bg-transparent roboto-font backdrop-blur-lg ">
-        <div className="max-w-screen-6xl flex flex-wrap items-center justify-between mx-auto px-2">
+      <nav className="bg-transparent manrope-font backdrop-blur-lg ">
+        <div className="max-w-screen-6xl flex flex-wrap md:flex-nowrap items-center justify-between mx-auto px-2">
           <Link
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -74,78 +81,78 @@ const NavbarTry = () => {
             } items-center justify-between w-full md:flex md:w-auto md:order-1`}
             id="navbar-sticky"
           >
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50  md:space-x-1 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
+            <ul className="flex flex-wrap justify-center flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50  lg:space-x-1 xl:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent  ">
             <li>
                 <Link
                   href="/"
-                  className={"group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " + (pathName === '/' ? "bg-orange-mid text-light-yellow" : "") }
+                  className={"group relative  block py-2 px-3 md:font-[600] text-[18px] text-dark-red md:text-[14px] lg:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " + (pathName === '/' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "") }
                 >
                   <span className=" ">Anasayfa</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/' ? " w-full " : "")}></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/aboutus"
-                  className={"group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/aboutus' ? "bg-orange-mid text-light-yellow" : "") }
+                  className={"group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/aboutus' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "") }
                 >
                   <span>Hakkımızda</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/aboutus' ? " w-full " : "")}></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/trainings"
                   className={
-                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/trainings' ? "bg-orange-mid text-light-yellow" : "") 
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/trainings' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
                   }
                 >
                   <span>Eğitimlerimiz</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/trainings' ? " w-full " : "")}></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/team"
                   className={
-                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/team' ? "bg-orange-mid text-light-yellow" : "") 
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " + (pathName === '/team' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
                   }
                 >
                   <span>Ekibimiz</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/team' ? " w-full " : "")}></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/books"
                   className={
-                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange      " + (pathName === '/books' ? "bg-orange-mid text-light-yellow" : "") 
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " + (pathName === '/books' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
                   }
                 >
                   <span>Kitaplarımız</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/books' ? " w-full " : "")}></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/blog"
                   className={
-                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/blog' ? "bg-orange-mid text-light-yellow" : "") 
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " + (pathName === '/blog' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
                   }
                 >
                   <span>Blog</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/blog' ? " w-full " : "")}></span>
                 </Link>
               </li>
               <li>
                 <Link
                   href="/contact"
                   className={
-                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/contact' ? "bg-orange-mid text-light-yellow" : "") 
+                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " + (pathName === '/contact' ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red-orange" : "")
                   }
                 >
                   <span>İletişim</span>
-                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                  <span className={"absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black " + (pathName === '/contact' ? " w-full " : "")}></span>
                 </Link>
               </li>
             </ul>
@@ -157,6 +164,11 @@ const NavbarTry = () => {
 };
 
 export default NavbarTry;
+
+
+
+
+
 
 // import { useState } from "react";
 

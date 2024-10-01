@@ -21,7 +21,7 @@ module.exports = {
         "light-orange": "#D0961A",
         yellow: "#D4C04D",
         "light-yellow": "#D1CDA0",
-        "main-bg": "#edebd5",
+        "main-bg": "#fff",
       },
     },
   },
