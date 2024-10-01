@@ -32,13 +32,13 @@ const Hero = () => {
         <div className="flex items-center gap-1 justify-center flex-col lg:flex-row ">
           <button
             type="button"
-            className="text-dark-red hover:text-light-yellow border border-dark-red hover:bg-dark-red focus:ring-4 focus:outline-none focus:ring-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full lg:w-[200px]"
+            className="text-dark-red hover:text-light-yellow border border-dark-red hover:bg-dark-red focus:ring-4 focus:outline-none focus:ring-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full lg:w-[200px] transition-all"
           >
             Wanna try it out!
           </button>
           <button
             type="button"
-            className="text-dark-red hover:text-light-yellow border border-dark-red hover:bg-dark-red focus:ring-4 focus:outline-none focus:ring-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full lg:w-[200px]"
+            className="text-dark-red hover:text-light-yellow border border-dark-red hover:bg-dark-red focus:ring-4 focus:outline-none focus:ring-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full lg:w-[200px] transition-all"
           >
             How it works
           </button>

@@ -23,8 +23,8 @@ const NavbarTry = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 bg-transparent z-50">
-      <nav className="bg-transparent manrope-font backdrop-blur-lg ">
+    <div className="sticky top-0 bg-transparent z-50 ">
+      <nav className="bg-transparent manrope-font backdrop-blur-lg rounded-b-lg shadow-sm lg:shadow-none">
         <div className="max-w-screen-6xl flex flex-wrap md:flex-nowrap items-center justify-between mx-auto px-2">
           <Link
             href="/"
