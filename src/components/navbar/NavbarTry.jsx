@@ -106,12 +106,34 @@ const NavbarTry = () => {
               </li>
               <li>
                 <Link
+                  href="/team"
+                  className={
+                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/team' ? "bg-orange-mid text-light-yellow" : "") 
+                  }
+                >
+                  <span>Ekibimiz</span>
+                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/books"
                   className={
                     "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange      " + (pathName === '/books' ? "bg-orange-mid text-light-yellow" : "") 
                   }
                 >
-                  <span>Kitaplar</span>
+                  <span>Kitaplarımız</span>
+                  <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className={
+                    "group relative  block py-2 px-3 md:font-[500] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red-orange rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " + (pathName === '/blog' ? "bg-orange-mid text-light-yellow" : "") 
+                  }
+                >
+                  <span>Blog</span>
                   <span className="absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red-orange group-hover:w-full hidden md:inline group-active:bg-black"></span>
                 </Link>
               </li>
