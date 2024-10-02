@@ -255,5 +255,16 @@
 
 
 
+/* text slide animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0%); /* Sağdan başla */
+  }
+  100% {
+    transform: translateX(-100%); /* Soldan çık */
+  }
+}
 
- 
+.sliding-text {
+  animation: slide 30s linear infinite; /* Süreyi burada ayarlayın */
+}

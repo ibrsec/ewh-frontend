@@ -1,5 +1,6 @@
-import Hero from "@/components/hero/Hero";
-import Image from "next/image"; 
+import AboutUsHome from "@/components/aboutusHome/AboutUsHome";
+import Hero from "@/components/hero/Hero"; 
+import SlidingComments from "@/components/slidingComments/SlidingComments";
 
 
 export default function Home() {
@@ -7,9 +8,8 @@ export default function Home() {
     <div className="">
      
      <Hero />
-     <Hero />
-     <Hero />
-     <Hero />
+     <AboutUsHome />
+     <SlidingComments />
     </div>
   );
 }
