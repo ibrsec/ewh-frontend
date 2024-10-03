@@ -29,7 +29,7 @@ const SlidingComments = () => {
 
 
   return (
-    <div id="indicators-carousel" className="relative w-full mt-64 mb-20 px-2">
+    <div id="indicators-carousel" className="relative w-full mt-24 mb-20 px-2">
       {/* Carousel wrapper */} 
         <div className="relative h-56 overflow-hidden rounded-lg md:h-96 ">
           {slides.map((slide, index) => (

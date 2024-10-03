@@ -29,7 +29,7 @@ const SlidingText = () => {
 
   return (
     <section
-      className={`bg-black text-white py-10 px-10 `}
+      className={`bg-black text-white py-14 px-10 my-16`}
     >
       <div className="text-center text-md geist-font   overflow-hidden">
       <div className="sliding-text">

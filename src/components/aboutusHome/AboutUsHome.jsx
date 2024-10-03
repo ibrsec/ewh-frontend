@@ -2,7 +2,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
-import SlidingText from "../slidingText/SlidingText";
 import Link from "next/link";
 
 
@@ -81,10 +80,7 @@ const AboutUsHome = () => {
             </li>
           </ul>
         </motion.section>
-      </div>
-      <div className="absolute -bottom-52 w-screen left-1/2 -translate-x-1/2">
-        <SlidingText />
-      </div>
+      </div> 
     </div>
   );
 };

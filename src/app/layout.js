@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 
         {/* HeadInfos component */}
         <HeadInfos />
-        <div className="sticky top-0  z-50 max-w-6xl mx-auto  min-h-screen ">
+        <div className="sticky top-0  z-50   min-h-screen ">
           {/* <Navbar /> */}
           <NavbarTry />
           {children}

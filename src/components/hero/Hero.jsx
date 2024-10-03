@@ -11,8 +11,8 @@ const Hero = () => {
     setIsVisible(true);
   }, []);
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-stretch  md:justify-between gap-2 pt-8 pb-16 px-2  ">
-      <div className={"  flex-1 flex flex-col  items-stretch gap-10  transition-all duration-1000 ease-in-out " +
+    <div className="flex flex-col md:flex-row items-center md:items-stretch  md:justify-between gap-10 first-line:md:gap-2 pt-8 pb-16 px-2  ">
+      <div className={"  flex-1 flex flex-col  items-stretch gap-10  transition-all duration-1000 ease-in-out  " +
               (isVisible
                 ? " translate-x-0 opacity-100 "
                 : " -translate-x-full opacity-0 ")}>
@@ -29,19 +29,14 @@ const Hero = () => {
             comprehension and fluency over time.
           </p>
         </div>
-        <div className="flex items-center gap-1 justify-center flex-col lg:flex-row ">
+        {/* <div className="flex items-center gap-1 justify-center flex-col lg:flex-row "> */}
+        <div className="">
           <button
             type="button"
-            className="text-dark-red hover:text-light-yellow border border-dark-red hover:bg-dark-red focus:ring-4 focus:outline-none focus:ring-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full lg:w-[200px] transition-all"
+            className="primary-button"
           >
-            Wanna try it out!
-          </button>
-          <button
-            type="button"
-            className="text-dark-red hover:text-light-yellow border border-dark-red hover:bg-dark-red focus:ring-4 focus:outline-none focus:ring-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full lg:w-[200px] transition-all"
-          >
-            How it works
-          </button>
+            Kurs Hakkinda Bilgi Al
+          </button> 
         </div>
       </div>
       <div className={"flex-1 flex gap-1  transition-all duration-1000 ease-in-out " +
