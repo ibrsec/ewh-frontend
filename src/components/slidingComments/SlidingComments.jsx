@@ -1,8 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const SlidingComments = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,23 +27,10 @@ const SlidingComments = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const sectionRef = useRef(null);
-
-  // Bileşenin ekranda görünür olup olmadığını kontrol eden hook
-  const isVisible = useIntersectionObserver(sectionRef, {
-    threshold: 0.1, // %10'u görünür olunca tetikler
-  });
 
   return (
     <div id="indicators-carousel" className="relative w-full mt-64 mb-20 px-2">
-      {/* Carousel wrapper */}
-      <motion.section
-        ref={sectionRef}
-        initial={{ opacity: 0, y: -100 }} // Başlangıçta görünmez
-        animate={isVisible ? { opacity: 1, y: 0 } : {}} // Göründüğünde animasyon başlat
-        transition={{ duration: 1.1 }} // Animasyon süresi
-        className=""
-      >
+      {/* Carousel wrapper */} 
         <div className="relative h-56 overflow-hidden rounded-lg md:h-96 ">
           {slides.map((slide, index) => (
             <div
@@ -62,8 +46,7 @@ const SlidingComments = () => {
               />
             </div>
           ))}
-        </div>
-      </motion.section>
+        </div> 
       {/* Slider indicators */}
       <div className="absolute z-30  flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
         {slides.map((_, index) => (
@@ -86,17 +69,10 @@ const SlidingComments = () => {
         type="button"
         className="absolute top-0 start-0 z-30 flex  items-end sm:items-center justify-center h-full px-4 cursor-pointer group focus:outline-none  "
         onClick={prevSlide}
-      >
-        <motion.section
-          ref={sectionRef}
-          initial={{ opacity: 0, x: -100 }} // Başlangıçta görünmez
-          animate={isVisible ? { opacity: 1, x: 0 } : {}} // Göründüğünde animasyon başlat
-          transition={{ duration: 1.1 }} // Animasyon süresi
-          className=""
-        >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl transition-all bg-orange-mid  group-hover:bg-red-orange   group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+      > 
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl transition-all    group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
             <svg
-              className="w-4 h-4 text-white   rtl:rotate-180"
+              className="w-4 h-4 text-gray-500 group-hover:text-dark-red transition-all    rtl:rotate-180"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -111,24 +87,17 @@ const SlidingComments = () => {
               />
             </svg>
             <span className="sr-only">Previous</span>
-          </span>
-        </motion.section>
+          </span> 
       </button>
       <button
         type="button"
         className="absolute top-0 end-0 z-30 flex items-end sm:items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
-        <motion.section
-          ref={sectionRef}
-          initial={{ opacity: 0, x: 100 }} // Başlangıçta görünmez
-          animate={isVisible ? { opacity: 1, x: 0 } : {}} // Göründüğünde animasyon başlat
-          transition={{ duration: 1.1 }} // Animasyon süresi
-          className=""
-        >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl transition-all bg-orange-mid  group-hover:bg-red-orange group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+         
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl transition-all     group-focus:ring-4 group-focus:ring-white   group-focus:outline-none">
             <svg
-              className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              className="w-4 h-4 text-gray-500 group-hover:text-dark-red transition-all  rtl:rotate-180"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -143,8 +112,7 @@ const SlidingComments = () => {
               />
             </svg>
             <span className="sr-only">Next</span>
-          </span>
-        </motion.section>
+          </span> 
       </button>
     </div>
   );
