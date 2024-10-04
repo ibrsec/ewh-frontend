@@ -41,7 +41,7 @@ const AboutUsHome = () => {
           transition={{ duration: 1.1 }} // Animasyon süresi
           className=""
         >
-          <h3 className="geist-font text-4xl md:text-5xl lg:text-6xl mb-9">
+          <h3 className="geist-font text-4xl md:text-5xl lg:text-6xl mb-9 text-dark-red">
             Hakkımızda
           </h3>
           <ul className="flex flex-col gap-5 text-sm text-[#5E5E5E]">
@@ -74,7 +74,7 @@ const AboutUsHome = () => {
             </li>
             <li className="">
               <p className="">
-                Bizimle <Link href="/contact" className="text-blue-500 hover:underline"> iletişime</Link> geçin, İngilizce öğrenme serüveninizi hemen
+                Bizimle <Link href="/contact" className="text-blue-500 hover:underline">iletişime</Link> geçin, İngilizce öğrenme serüveninizi hemen
                 başlatalım!
               </p>
             </li>

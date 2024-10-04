@@ -1,5 +1,6 @@
 import AboutUsHome from "@/components/aboutusHome/AboutUsHome";
-import SlidingText from "@/components/slidingText/SlidingText";
+import JoinedPeople from "@/components/joinedPeople/JoinedPeople"; 
+import SlidingComments from "@/components/slidingComments/SlidingComments";
 
 const AboutUsPage = () => {
   return (
@@ -8,7 +9,8 @@ const AboutUsPage = () => {
 
       <AboutUsHome />
       </div>
-      <SlidingText />
+      <JoinedPeople />
+      <SlidingComments/>
     </div>
   );
 };

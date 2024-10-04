@@ -1,15 +1,10 @@
- 
 import "./globals.css";
- 
- 
 
 // import "flowbite/dist/flowbite";
 
 import Navbar from "@/components/navbar/Navbar";
 import HeadInfos from "@/components/navbar/HeadInfos";
-import NavbarTry from "@/components/navbar/NavbarTry";
-
- 
+import Footer from "@/components/footer/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -19,17 +14,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={` antialiased bg-main-bg`}
-      > 
-
+      <body className={` antialiased bg-main-bg`}>
         {/* HeadInfos component */}
         <HeadInfos />
         <div className="sticky top-0  z-50   min-h-screen ">
-          {/* <Navbar /> */}
-          <NavbarTry />
+          <Navbar />
           {children}
-        </div> 
+          <Footer />
+        </div>
       </body>
     </html>
   );

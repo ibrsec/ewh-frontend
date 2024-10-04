@@ -4,7 +4,7 @@ import { GrInstagram } from "react-icons/gr";
 
 const HeadInfos = ({children}) => {
   return (
-    <div className="bg-gradient-to-r from-red via-dark-red to-orange   hidden sm:flex items-center justify-center gap-5 sm:gap-3 py-3 px-2 text-light-yellow h-[40px] relative poppins-font">
+    <div className="bg-gradient-to-r from-black via-dark-red to-black   hidden sm:flex items-center justify-center gap-5 sm:gap-3 py-3 px-2 text-light-yellow h-[40px] relative poppins-font">
       <a
         href="mailto:info@projectName.com"
         className=" flex items-center gap-1 font-semibold "

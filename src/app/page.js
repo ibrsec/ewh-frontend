@@ -10,7 +10,7 @@ export default function Home() {
       <div className="max-w-6xl mx-auto">
         <Hero />
       </div>
-        <SlidingText />
+      <SlidingText />
       <div className="max-w-6xl mx-auto">
         <AboutUsHome />
       </div>

@@ -2,6 +2,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import Link from "next/link";
 
 const JoinedPeople = () => {
   const sectionRef = useRef(null);
@@ -33,14 +34,14 @@ const JoinedPeople = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative h-[320px] bg-cover bg-center bg-fixed"
+      className="relative h-[320px] bg-cover bg-top bg-fixed"
       style={{
         backgroundImage: `url('https://plus.unsplash.com/premium_photo-1661414878687-e8c1c0a4a4cf?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlJTIwd29ya2luZ')`,
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-80 filter blur-sm"></div>
       <div className="relative z-10 text-white text-center flex items-center justify-center h-full">
-        <div className="h-screen flex items-center justify-center flex-col gap-6 poppins-font px-2">
+        <div className="flex items-center justify-center flex-col gap-6 poppins-font px-2">
           <div className="">
             <motion.span
               className="text-light-orange text-5xl sm:text-6xl"
@@ -59,7 +60,7 @@ const JoinedPeople = () => {
             </p>
           </div>
           <div className="">
-            <button className="primary-button-white">İLETİŞİME GEÇ</button>
+            <Link href="/contact" className="primary-button-white">İLETİŞİME GEÇ</Link>
           </div>
         </div>
       </div>
