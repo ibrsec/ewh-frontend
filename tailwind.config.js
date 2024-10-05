@@ -34,12 +34,20 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'rotate(-2deg)' },
-          '50%': { transform: 'rotate(2deg)' },
+          "0%, 100%": { transform: "rotate(-2deg)" },
+          "50%": { transform: "rotate(2deg)" },
+        },
+        grow: {
+          '0%': { transform: 'scale(0)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
         },
       },
       animation: {
-        wiggle: 'wiggle 6s ease-in-out infinite',
+        wiggle: "wiggle 6s ease-in-out infinite",
+        grow: 'grow 1s ease-in-out', 
+      },
+      screens: {
+        xs: "450px", // new screenbreak point.
       },
     },
   },

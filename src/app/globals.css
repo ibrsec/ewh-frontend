@@ -257,6 +257,9 @@
   .primary-button-white{
     @apply text-light-orange hover:text-white border border-white hover:bg-dark-red hover:border-light-orange font-medium rounded-md text-sm px-7 py-4 text-center me-2 mb-2 w-full sm:w-[200px] transition-all active:opacity-90;
   } 
+  .primary-button-main{
+    @apply text-light-yellow bg-orange hover:text-yellow border border-yellow hover:bg-dark-red font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full sm:w-[200px] transition-all active:opacity-90;
+  }
 }
 
 

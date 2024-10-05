@@ -1,8 +1,13 @@
+import Banner from "@/components/banner/Banner"
+
 
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <div>
+      
+      <Banner path="/images/contact.jpg" title="İLETİŞİM"/>
+    </div>
   )
 }
 
