@@ -65,6 +65,7 @@ const Navbar = () => {
         <div className=" flex flex-wrap md:flex-nowrap items-center justify-between  px-2 max-w-6xl mx-auto"> 
           <Link
             href="/"
+            id="logo"
             className="flex items-center space-x-3 rtl:space-x-reverse flex-shrink-0"
           >
             <img src="/images/logo-siyah.png" className="h-32 sm:h-40  ]" alt="Logo" />

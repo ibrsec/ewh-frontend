@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import HeadInfos from "@/components/navbar/HeadInfos";
 import Footer from "@/components/footer/Footer";
+import WhatsappButton from "@/components/whatsapp/WhatsappButton";
+import TopButton from "@/components/topButton/TopButton";
 
 export const metadata = {
   title: "Create Next App",
@@ -21,6 +23,8 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <WhatsappButton />
+          <TopButton />
         </div>
       </body>
     </html>
