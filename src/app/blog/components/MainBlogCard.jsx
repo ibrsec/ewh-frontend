@@ -24,16 +24,16 @@ const MainBlogCard = ({ blog }) => {
 
   return (
     <Link href={blog?.href} className="flex gap-5 flex-col md:flex-row group">
-      <div className="flex-none md:flex-1 h-1/3 md:h-auto">
+      <div className="flex-none md:flex-1 h-1/3 md:h-auto rounded-md overflow-hidden">
         <img
           src={blog?.image}
           alt="blog"
-          className="w-full h-full object-cover rounded-md"
+          className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-700"
         />
       </div>
       <div className="bg-gray-500 h-0.5 w-full block md:hidden"></div>
       <div className="flex-1 flex-col gap-2 flex   ">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold poppins-font">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold poppins-font group-hover:text-yellow transition-colors duration-400">
           {blog.title}
         </h3>
         <div className="bg-gray-500 h-0.5 w-full block md:hidden my-3"></div>
@@ -46,7 +46,7 @@ const MainBlogCard = ({ blog }) => {
             {blog?.author}
           </span>
         </div>
-        <p className="text-gray-600 text-lg poppins-font hidden md:block">
+        <p className="text-gray-600 group-hover:text-black transition-all duration-400 text-lg poppins-font hidden md:block">
           {blog.content.slice(0, 350)}...
         </p>
         <p className="text-gray-600 text-lg poppins-font block md:hidden">

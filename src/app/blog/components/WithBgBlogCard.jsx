@@ -1,3 +1,5 @@
+ 
+
 import Link from "next/link";
 
 const aylar = [
@@ -14,18 +16,18 @@ const aylar = [
   "Kasım",
   "Aralık",
 ];
-const RecentBlogCard = ({ blog }) => {
+const WithBgBlogCard = ({ blog, isSmall }) => {
   const tarih = new Date(blog?.createdAt); // Ocak 24, 2024
   const gun = tarih.getDate();
   const ay = aylar[tarih.getMonth()];
   const yil = tarih.getFullYear();
 
-  const formatliTarih = `${ay} ${gun}, ${yil}`;
+  const formatliTarih = `${ay} ${gun}, ${yil}`; 
 
   return (
     <Link
       href={blog?.href}
-      className={`flex gap-5 flex-col group cursor-pointer relative `}
+      className={`flex gap-5 flex-col group cursor-pointer relative  `}
     >
       <img
         src="/images/hovershapes.png"
@@ -41,7 +43,11 @@ const RecentBlogCard = ({ blog }) => {
       </div>
       <div className="bg-gray-500 h-0.5 w-full  "></div>
       <div className="flex-1 flex-col gap-2 flex   ">
-        <h3 className="text-2xl  md:text-3xl font-bold poppins-font group-hover:text-yellow transition-colors duration-400">
+        <h3
+          className={` font-bold poppins-font group-hover:text-yellow transition-colors duration-400 ${
+            isSmall ? " text-xl  md:text-2xl" : " text-2xl  md:text-3xl"
+          }`}
+        >
           {blog.title}
         </h3>
 
@@ -55,10 +61,14 @@ const RecentBlogCard = ({ blog }) => {
             {blog?.author}
           </span>
         </div>
-        <p className="text-gray-600 group-hover:text-black transition-all duration-400 text-lg poppins-font  ">
-          {blog.content.slice(0, 150)}...
+        <p
+          className={`text-gray-600 group-hover:text-black transition-all duration-400 text-lg poppins-font  ${
+            isSmall ? " text-md" : " text-lg"
+          }`}
+        >
+          {isSmall ? blog.content.slice(0, 120) : blog.content.slice(0, 150)}...
         </p>
-        <div className="text-end pe-6">
+        <div className="flex items-center justify-between pe-6"> 
           <button className="  text-gray-500 font-semibold   group-hover:text-red transition-all duration-400 geist-font">
             Read More...
           </button>
@@ -68,4 +78,4 @@ const RecentBlogCard = ({ blog }) => {
   );
 };
 
-export default RecentBlogCard;
+export default WithBgBlogCard;

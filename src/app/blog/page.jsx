@@ -1,6 +1,7 @@
 import Banner from "@/components/banner/Banner";
 import MainBlogCard from "./components/MainBlogCard";
 import RecentBlogCard from "./components/RecentBlogCard";
+import WithBgBlogCard from "./components/WithBgBlogCard";
 
 const blogs = [
   {
@@ -26,7 +27,85 @@ const blogs = [
       Eğer bunları yapmak istiyor ancak nereden başlayacağını veya nasıl program oluşturacağını bilemiyorsan, benimle veya kurumumuzdaki başka bir öğretmen ile çalışmaya başlayabilirsin. Keep learning, you’ve got this!`,
     href: "/yeni-bir-egitim-yaratiyoruz",
     createdAt: "2024-09-27T06:45:00.000+02:00",
-    author: "Yagmur Bilgec"
+    author: "Yagmur Bilgec",
+  },
+  {
+    title: "İşte İngilizcenizi Geliştirebileceğiniz Bazı Çizgi Film Önerileri!",
+    image: "https://storage.acerapps.io/app-1509/539343.jpg",
+    content: `
+    ngilizce geliştirmek için çizgi film izlemek harika bir yol olabilir! İşte bazı çizgi film önerileri:
+    1. *SpongeBob SquarePants:* Bu çocukların ve yetişkinlerin keyifle izleyebileceği komik bir çizgi film. İngilizce konuşulan karakterlerin etkileyici aksanları vardır.
+    2. *Adventure Time:* Bu çizgi film, eğlenceli diyaloglar ve farklı aksanları içerir. Kelimelerin ve ifadelerin nasıl kullanıldığını öğrenmek için faydalı olabilir.
+    3. *The Simpsons:* Bu klasik çizgi film, Amerikan kültürünü ve dilini eğlenceli bir şekilde yansıtır. İzlerken çeşitli kelime ve ifadeleri yakalayabilirsiniz.
+    4. *Rick and Morty:* Bu bilim kurgu komedisi, zekice yazılmış diyaloglar ve karmaşık kelime oyunları içerir. İngilizce kelime dağarcığınızı geliştirebilirsiniz.
+    5. *South Park:* Bu çizgi film, çeşitli aksanları ve kültürel referansları içerir. Dil becerilerinizi sınamak için iyi bir seçenek olabilir.
+    6. *Family Guy:* Bu çizgi film, mizah ve kelime oyunlarına dayalıdır. İzlerken farklı ifadeleri ve dil kullanımını öğrenmek mümkün olabilir.
+    7. *BoJack Horseman:* Bu çizgi film, karmaşık karakter gelişimi ve duygusal diyalogları içerir. İngilizceyi daha derinlemesine anlamak için kullanışlı olabilir.
+    Bu çizgi filmleri izlerken İngilizce altyazıları açabilir veya İngilizce dublajlı versiyonlarını tercih edebilirsiniz. Ayrıca, kelime dağarcığınızı geliştirmek ve telaffuzunuza yardımcı olmak için çizgi filmlerdeki konuşmaları tekrarlayabilirsiniz.
+    `,
+    href: "/cizgifilmler",
+    createdAt: "2024-02-19T06:45:00.000+02:00",
+    author: "Merve Saman",
+  },
+  {
+    title: "Ders Çalışma Planında Mutlaka Olması Gerekenler",
+    image: "https://storage.acerapps.io/app-1509/study(2).jpg",
+    content: `
+    Ders Çalışma Planında Mutlaka Olması Gerekenler
+        🙌Her gün 4 beceriye yönelik,şu kaynaklardan ilgi alanına göre seçebilirsin;(hadi hemen kalemi kağıda eline al not et
+        ✅Listening için
+        🌟lyricstraining.com
+        🌟esl-lab.com
+        🌟elllo.org
+        ✅Speaking için
+        🌟British Council Teens
+        🌟English Club
+        🌟BBC Learning
+        🌟Talk English
+        ✅Writing için
+        🌟Grammarly.com
+        🌟Ludwig.guru
+        🌟paperrater.com
+        ✅Reading için
+        🌟els-bits.net
+        🌟adapted-English-books.site
+        🌟manybooks.net
+        🌟breakingnewsenglish.com
+        🌟readpoopfiction.com
+        🌟british council teens
+        ✅Kelime çalışması için;
+        🌟rh+ sözlük
+        🌟merriam webster
+        ✅Toefl-ielts-yökdil çalışması için;
+        🌟Atlas uygulaması
+        🌟Grammarbank.com
+        🌟engvid.com
+    `,
+    href: "/dersprogrami",
+    createdAt: "2024-02-14:45:00.000+02:00",
+    author: "Mustafa Kadir",
+  },
+  {
+    title: "Ingilizce Öğrenmeye Sıfırdan Başlayanlar İçin Bazı Yöntemler",
+    image:
+      "https://storage.acerapps.io/app-1509/woman-teaching-students-english-lesson-online%20(1)%20(1).jpg",
+    content: `
+    İngilizce öğrenmeye sıfırdan başlayanlar için bazı yöntemler:
+    1. Düzenli Pratik Yapma: Her gün belirli bir süre İngilizce konuşma veya yazma pratiği yapmak, dil becerilerinizi geliştirmenize yardımcı olur.
+    2. Dil Kurslarına Katılma: Yerel dil kurslarına veya online dil kurslarına katılarak profesyonel rehberlik ve yapıcı geri bildirim alabilirsiniz.
+    3. Dil Değiştirme Pratiği: İngilizceyi günlük yaşamınıza dahil etmek için mümkün olduğunca dil değiştirme pratiği yapın. Örneğin, İngilizce haberleri izleyin veya İngilizce podcast'ler dinleyin.
+    4. Kelime Kartları Kullanma: Yeni kelimeleri öğrenmek ve ezberlemek için kelime kartları kullanabilirsiniz.
+    5. Yazma Alıştırmaları: Günlük günlük tutmak veya makaleler yazmak gibi yazma alıştırmaları yaparak yazma becerilerinizi geliştirebilirsiniz.
+    6. Dil Değişim Partneri Bulma: Dil değişim partneri ile pratik yapmak, İngilizce konuşma yeteneklerinizi artırabilir. Kendi dilinizi öğretmeye çalışan birinin size kendi dilini öğretmesi gibi.
+    7. Dil Öğrenme Uygulamaları: İngilizce öğrenme uygulamaları, oyunlar ve çevrimiçi kaynaklar, dil öğrenme sürecinizi eğlenceli ve etkili bir şekilde destekleyebilir.
+    8. Dil Kitapları Okuma: İngilizce romanlar, öyküler veya makaleler okuyarak hem kelime dağarcığınızı genişletebilir hem de okuma becerilerinizi geliştirebilirsiniz.
+    9. Dinleme Becerilerinizi Geliştirme: İngilizce konuşulan müzik, podcast'ler ve videoları dinleyerek dinleme becerilerinizi güçlendirebilirsiniz.
+    10. Hata Yapmaktan Korkma: Dil öğrenirken hatalar kaçınılmazdır. Hataları bir öğrenme fırsatı olarak görün ve cesurca iletişim kurmaktan korkmayın.
+    Bu yöntemleri kullanarak, İngilizce öğrenme sürecinizi daha etkili ve keyifli hale getirebilirsiniz. Unutmayın ki sabır ve düzenlilik başarınızı artırmada önemlidir.
+    `,
+    href: "/sifirdan",
+    createdAt: "2024-05-16T06:45:00.000+02:00",
+    author: "Necati Kavur",
   },
   {
     title:
@@ -51,7 +130,85 @@ const blogs = [
       Eğer bunları yapmak istiyor ancak nereden başlayacağını veya nasıl program oluşturacağını bilemiyorsan, benimle veya kurumumuzdaki başka bir öğretmen ile çalışmaya başlayabilirsin. Keep learning, you’ve got this!`,
     href: "/yeni-bir-egitim-yaratiyoruz",
     createdAt: "2024-09-27T06:45:00.000+02:00",
-    author: "Ali Bilgec"
+    author: "Yagmur Bilgec",
+  },
+  {
+    title: "İşte İngilizcenizi Geliştirebileceğiniz Bazı Çizgi Film Önerileri!",
+    image: "https://storage.acerapps.io/app-1509/539343.jpg",
+    content: `
+    ngilizce geliştirmek için çizgi film izlemek harika bir yol olabilir! İşte bazı çizgi film önerileri:
+    1. *SpongeBob SquarePants:* Bu çocukların ve yetişkinlerin keyifle izleyebileceği komik bir çizgi film. İngilizce konuşulan karakterlerin etkileyici aksanları vardır.
+    2. *Adventure Time:* Bu çizgi film, eğlenceli diyaloglar ve farklı aksanları içerir. Kelimelerin ve ifadelerin nasıl kullanıldığını öğrenmek için faydalı olabilir.
+    3. *The Simpsons:* Bu klasik çizgi film, Amerikan kültürünü ve dilini eğlenceli bir şekilde yansıtır. İzlerken çeşitli kelime ve ifadeleri yakalayabilirsiniz.
+    4. *Rick and Morty:* Bu bilim kurgu komedisi, zekice yazılmış diyaloglar ve karmaşık kelime oyunları içerir. İngilizce kelime dağarcığınızı geliştirebilirsiniz.
+    5. *South Park:* Bu çizgi film, çeşitli aksanları ve kültürel referansları içerir. Dil becerilerinizi sınamak için iyi bir seçenek olabilir.
+    6. *Family Guy:* Bu çizgi film, mizah ve kelime oyunlarına dayalıdır. İzlerken farklı ifadeleri ve dil kullanımını öğrenmek mümkün olabilir.
+    7. *BoJack Horseman:* Bu çizgi film, karmaşık karakter gelişimi ve duygusal diyalogları içerir. İngilizceyi daha derinlemesine anlamak için kullanışlı olabilir.
+    Bu çizgi filmleri izlerken İngilizce altyazıları açabilir veya İngilizce dublajlı versiyonlarını tercih edebilirsiniz. Ayrıca, kelime dağarcığınızı geliştirmek ve telaffuzunuza yardımcı olmak için çizgi filmlerdeki konuşmaları tekrarlayabilirsiniz.
+    `,
+    href: "/cizgifilmler",
+    createdAt: "2024-02-19T06:45:00.000+02:00",
+    author: "Merve Saman",
+  },
+  {
+    title: "Ders Çalışma Planında Mutlaka Olması Gerekenler",
+    image: "https://storage.acerapps.io/app-1509/study(2).jpg",
+    content: `
+    Ders Çalışma Planında Mutlaka Olması Gerekenler
+        🙌Her gün 4 beceriye yönelik,şu kaynaklardan ilgi alanına göre seçebilirsin;(hadi hemen kalemi kağıda eline al not et
+        ✅Listening için
+        🌟lyricstraining.com
+        🌟esl-lab.com
+        🌟elllo.org
+        ✅Speaking için
+        🌟British Council Teens
+        🌟English Club
+        🌟BBC Learning
+        🌟Talk English
+        ✅Writing için
+        🌟Grammarly.com
+        🌟Ludwig.guru
+        🌟paperrater.com
+        ✅Reading için
+        🌟els-bits.net
+        🌟adapted-English-books.site
+        🌟manybooks.net
+        🌟breakingnewsenglish.com
+        🌟readpoopfiction.com
+        🌟british council teens
+        ✅Kelime çalışması için;
+        🌟rh+ sözlük
+        🌟merriam webster
+        ✅Toefl-ielts-yökdil çalışması için;
+        🌟Atlas uygulaması
+        🌟Grammarbank.com
+        🌟engvid.com
+    `,
+    href: "/dersprogrami",
+    createdAt: "2024-02-14:45:00.000+02:00",
+    author: "Mustafa Kadir",
+  },
+  {
+    title: "Ingilizce Öğrenmeye Sıfırdan Başlayanlar İçin Bazı Yöntemler",
+    image:
+      "https://storage.acerapps.io/app-1509/woman-teaching-students-english-lesson-online%20(1)%20(1).jpg",
+    content: `
+    İngilizce öğrenmeye sıfırdan başlayanlar için bazı yöntemler:
+    1. Düzenli Pratik Yapma: Her gün belirli bir süre İngilizce konuşma veya yazma pratiği yapmak, dil becerilerinizi geliştirmenize yardımcı olur.
+    2. Dil Kurslarına Katılma: Yerel dil kurslarına veya online dil kurslarına katılarak profesyonel rehberlik ve yapıcı geri bildirim alabilirsiniz.
+    3. Dil Değiştirme Pratiği: İngilizceyi günlük yaşamınıza dahil etmek için mümkün olduğunca dil değiştirme pratiği yapın. Örneğin, İngilizce haberleri izleyin veya İngilizce podcast'ler dinleyin.
+    4. Kelime Kartları Kullanma: Yeni kelimeleri öğrenmek ve ezberlemek için kelime kartları kullanabilirsiniz.
+    5. Yazma Alıştırmaları: Günlük günlük tutmak veya makaleler yazmak gibi yazma alıştırmaları yaparak yazma becerilerinizi geliştirebilirsiniz.
+    6. Dil Değişim Partneri Bulma: Dil değişim partneri ile pratik yapmak, İngilizce konuşma yeteneklerinizi artırabilir. Kendi dilinizi öğretmeye çalışan birinin size kendi dilini öğretmesi gibi.
+    7. Dil Öğrenme Uygulamaları: İngilizce öğrenme uygulamaları, oyunlar ve çevrimiçi kaynaklar, dil öğrenme sürecinizi eğlenceli ve etkili bir şekilde destekleyebilir.
+    8. Dil Kitapları Okuma: İngilizce romanlar, öyküler veya makaleler okuyarak hem kelime dağarcığınızı genişletebilir hem de okuma becerilerinizi geliştirebilirsiniz.
+    9. Dinleme Becerilerinizi Geliştirme: İngilizce konuşulan müzik, podcast'ler ve videoları dinleyerek dinleme becerilerinizi güçlendirebilirsiniz.
+    10. Hata Yapmaktan Korkma: Dil öğrenirken hatalar kaçınılmazdır. Hataları bir öğrenme fırsatı olarak görün ve cesurca iletişim kurmaktan korkmayın.
+    Bu yöntemleri kullanarak, İngilizce öğrenme sürecinizi daha etkili ve keyifli hale getirebilirsiniz. Unutmayın ki sabır ve düzenlilik başarınızı artırmada önemlidir.
+    `,
+    href: "/sifirdan",
+    createdAt: "2024-05-16T06:45:00.000+02:00",
+    author: "Necati Kavur",
   },
   {
     title:
@@ -76,7 +233,85 @@ const blogs = [
       Eğer bunları yapmak istiyor ancak nereden başlayacağını veya nasıl program oluşturacağını bilemiyorsan, benimle veya kurumumuzdaki başka bir öğretmen ile çalışmaya başlayabilirsin. Keep learning, you’ve got this!`,
     href: "/yeni-bir-egitim-yaratiyoruz",
     createdAt: "2024-09-27T06:45:00.000+02:00",
-    author: "Mustafa Kadir"
+    author: "Yagmur Bilgec",
+  },
+  {
+    title: "İşte İngilizcenizi Geliştirebileceğiniz Bazı Çizgi Film Önerileri!",
+    image: "https://storage.acerapps.io/app-1509/539343.jpg",
+    content: `
+    ngilizce geliştirmek için çizgi film izlemek harika bir yol olabilir! İşte bazı çizgi film önerileri:
+    1. *SpongeBob SquarePants:* Bu çocukların ve yetişkinlerin keyifle izleyebileceği komik bir çizgi film. İngilizce konuşulan karakterlerin etkileyici aksanları vardır.
+    2. *Adventure Time:* Bu çizgi film, eğlenceli diyaloglar ve farklı aksanları içerir. Kelimelerin ve ifadelerin nasıl kullanıldığını öğrenmek için faydalı olabilir.
+    3. *The Simpsons:* Bu klasik çizgi film, Amerikan kültürünü ve dilini eğlenceli bir şekilde yansıtır. İzlerken çeşitli kelime ve ifadeleri yakalayabilirsiniz.
+    4. *Rick and Morty:* Bu bilim kurgu komedisi, zekice yazılmış diyaloglar ve karmaşık kelime oyunları içerir. İngilizce kelime dağarcığınızı geliştirebilirsiniz.
+    5. *South Park:* Bu çizgi film, çeşitli aksanları ve kültürel referansları içerir. Dil becerilerinizi sınamak için iyi bir seçenek olabilir.
+    6. *Family Guy:* Bu çizgi film, mizah ve kelime oyunlarına dayalıdır. İzlerken farklı ifadeleri ve dil kullanımını öğrenmek mümkün olabilir.
+    7. *BoJack Horseman:* Bu çizgi film, karmaşık karakter gelişimi ve duygusal diyalogları içerir. İngilizceyi daha derinlemesine anlamak için kullanışlı olabilir.
+    Bu çizgi filmleri izlerken İngilizce altyazıları açabilir veya İngilizce dublajlı versiyonlarını tercih edebilirsiniz. Ayrıca, kelime dağarcığınızı geliştirmek ve telaffuzunuza yardımcı olmak için çizgi filmlerdeki konuşmaları tekrarlayabilirsiniz.
+    `,
+    href: "/cizgifilmler",
+    createdAt: "2024-02-19T06:45:00.000+02:00",
+    author: "Merve Saman",
+  },
+  {
+    title: "Ders Çalışma Planında Mutlaka Olması Gerekenler",
+    image: "https://storage.acerapps.io/app-1509/study(2).jpg",
+    content: `
+    Ders Çalışma Planında Mutlaka Olması Gerekenler
+        🙌Her gün 4 beceriye yönelik,şu kaynaklardan ilgi alanına göre seçebilirsin;(hadi hemen kalemi kağıda eline al not et
+        ✅Listening için
+        🌟lyricstraining.com
+        🌟esl-lab.com
+        🌟elllo.org
+        ✅Speaking için
+        🌟British Council Teens
+        🌟English Club
+        🌟BBC Learning
+        🌟Talk English
+        ✅Writing için
+        🌟Grammarly.com
+        🌟Ludwig.guru
+        🌟paperrater.com
+        ✅Reading için
+        🌟els-bits.net
+        🌟adapted-English-books.site
+        🌟manybooks.net
+        🌟breakingnewsenglish.com
+        🌟readpoopfiction.com
+        🌟british council teens
+        ✅Kelime çalışması için;
+        🌟rh+ sözlük
+        🌟merriam webster
+        ✅Toefl-ielts-yökdil çalışması için;
+        🌟Atlas uygulaması
+        🌟Grammarbank.com
+        🌟engvid.com
+    `,
+    href: "/dersprogrami",
+    createdAt: "2024-02-14:45:00.000+02:00",
+    author: "Mustafa Kadir",
+  },
+  {
+    title: "Ingilizce Öğrenmeye Sıfırdan Başlayanlar İçin Bazı Yöntemler",
+    image:
+      "https://storage.acerapps.io/app-1509/woman-teaching-students-english-lesson-online%20(1)%20(1).jpg",
+    content: `
+    İngilizce öğrenmeye sıfırdan başlayanlar için bazı yöntemler:
+    1. Düzenli Pratik Yapma: Her gün belirli bir süre İngilizce konuşma veya yazma pratiği yapmak, dil becerilerinizi geliştirmenize yardımcı olur.
+    2. Dil Kurslarına Katılma: Yerel dil kurslarına veya online dil kurslarına katılarak profesyonel rehberlik ve yapıcı geri bildirim alabilirsiniz.
+    3. Dil Değiştirme Pratiği: İngilizceyi günlük yaşamınıza dahil etmek için mümkün olduğunca dil değiştirme pratiği yapın. Örneğin, İngilizce haberleri izleyin veya İngilizce podcast'ler dinleyin.
+    4. Kelime Kartları Kullanma: Yeni kelimeleri öğrenmek ve ezberlemek için kelime kartları kullanabilirsiniz.
+    5. Yazma Alıştırmaları: Günlük günlük tutmak veya makaleler yazmak gibi yazma alıştırmaları yaparak yazma becerilerinizi geliştirebilirsiniz.
+    6. Dil Değişim Partneri Bulma: Dil değişim partneri ile pratik yapmak, İngilizce konuşma yeteneklerinizi artırabilir. Kendi dilinizi öğretmeye çalışan birinin size kendi dilini öğretmesi gibi.
+    7. Dil Öğrenme Uygulamaları: İngilizce öğrenme uygulamaları, oyunlar ve çevrimiçi kaynaklar, dil öğrenme sürecinizi eğlenceli ve etkili bir şekilde destekleyebilir.
+    8. Dil Kitapları Okuma: İngilizce romanlar, öyküler veya makaleler okuyarak hem kelime dağarcığınızı genişletebilir hem de okuma becerilerinizi geliştirebilirsiniz.
+    9. Dinleme Becerilerinizi Geliştirme: İngilizce konuşulan müzik, podcast'ler ve videoları dinleyerek dinleme becerilerinizi güçlendirebilirsiniz.
+    10. Hata Yapmaktan Korkma: Dil öğrenirken hatalar kaçınılmazdır. Hataları bir öğrenme fırsatı olarak görün ve cesurca iletişim kurmaktan korkmayın.
+    Bu yöntemleri kullanarak, İngilizce öğrenme sürecinizi daha etkili ve keyifli hale getirebilirsiniz. Unutmayın ki sabır ve düzenlilik başarınızı artırmada önemlidir.
+    `,
+    href: "/sifirdan",
+    createdAt: "2024-05-16T06:45:00.000+02:00",
+    author: "Necati Kavur",
   },
   {
     title:
@@ -101,7 +336,85 @@ const blogs = [
       Eğer bunları yapmak istiyor ancak nereden başlayacağını veya nasıl program oluşturacağını bilemiyorsan, benimle veya kurumumuzdaki başka bir öğretmen ile çalışmaya başlayabilirsin. Keep learning, you’ve got this!`,
     href: "/yeni-bir-egitim-yaratiyoruz",
     createdAt: "2024-09-27T06:45:00.000+02:00",
-    author: "Necati Kavur"
+    author: "Yagmur Bilgec",
+  },
+  {
+    title: "İşte İngilizcenizi Geliştirebileceğiniz Bazı Çizgi Film Önerileri!",
+    image: "https://storage.acerapps.io/app-1509/539343.jpg",
+    content: `
+    ngilizce geliştirmek için çizgi film izlemek harika bir yol olabilir! İşte bazı çizgi film önerileri:
+    1. *SpongeBob SquarePants:* Bu çocukların ve yetişkinlerin keyifle izleyebileceği komik bir çizgi film. İngilizce konuşulan karakterlerin etkileyici aksanları vardır.
+    2. *Adventure Time:* Bu çizgi film, eğlenceli diyaloglar ve farklı aksanları içerir. Kelimelerin ve ifadelerin nasıl kullanıldığını öğrenmek için faydalı olabilir.
+    3. *The Simpsons:* Bu klasik çizgi film, Amerikan kültürünü ve dilini eğlenceli bir şekilde yansıtır. İzlerken çeşitli kelime ve ifadeleri yakalayabilirsiniz.
+    4. *Rick and Morty:* Bu bilim kurgu komedisi, zekice yazılmış diyaloglar ve karmaşık kelime oyunları içerir. İngilizce kelime dağarcığınızı geliştirebilirsiniz.
+    5. *South Park:* Bu çizgi film, çeşitli aksanları ve kültürel referansları içerir. Dil becerilerinizi sınamak için iyi bir seçenek olabilir.
+    6. *Family Guy:* Bu çizgi film, mizah ve kelime oyunlarına dayalıdır. İzlerken farklı ifadeleri ve dil kullanımını öğrenmek mümkün olabilir.
+    7. *BoJack Horseman:* Bu çizgi film, karmaşık karakter gelişimi ve duygusal diyalogları içerir. İngilizceyi daha derinlemesine anlamak için kullanışlı olabilir.
+    Bu çizgi filmleri izlerken İngilizce altyazıları açabilir veya İngilizce dublajlı versiyonlarını tercih edebilirsiniz. Ayrıca, kelime dağarcığınızı geliştirmek ve telaffuzunuza yardımcı olmak için çizgi filmlerdeki konuşmaları tekrarlayabilirsiniz.
+    `,
+    href: "/cizgifilmler",
+    createdAt: "2024-02-19T06:45:00.000+02:00",
+    author: "Merve Saman",
+  },
+  {
+    title: "Ders Çalışma Planında Mutlaka Olması Gerekenler",
+    image: "https://storage.acerapps.io/app-1509/study(2).jpg",
+    content: `
+    Ders Çalışma Planında Mutlaka Olması Gerekenler
+        🙌Her gün 4 beceriye yönelik,şu kaynaklardan ilgi alanına göre seçebilirsin;(hadi hemen kalemi kağıda eline al not et
+        ✅Listening için
+        🌟lyricstraining.com
+        🌟esl-lab.com
+        🌟elllo.org
+        ✅Speaking için
+        🌟British Council Teens
+        🌟English Club
+        🌟BBC Learning
+        🌟Talk English
+        ✅Writing için
+        🌟Grammarly.com
+        🌟Ludwig.guru
+        🌟paperrater.com
+        ✅Reading için
+        🌟els-bits.net
+        🌟adapted-English-books.site
+        🌟manybooks.net
+        🌟breakingnewsenglish.com
+        🌟readpoopfiction.com
+        🌟british council teens
+        ✅Kelime çalışması için;
+        🌟rh+ sözlük
+        🌟merriam webster
+        ✅Toefl-ielts-yökdil çalışması için;
+        🌟Atlas uygulaması
+        🌟Grammarbank.com
+        🌟engvid.com
+    `,
+    href: "/dersprogrami",
+    createdAt: "2024-02-14:45:00.000+02:00",
+    author: "Mustafa Kadir",
+  },
+  {
+    title: "Ingilizce Öğrenmeye Sıfırdan Başlayanlar İçin Bazı Yöntemler",
+    image:
+      "https://storage.acerapps.io/app-1509/woman-teaching-students-english-lesson-online%20(1)%20(1).jpg",
+    content: `
+    İngilizce öğrenmeye sıfırdan başlayanlar için bazı yöntemler:
+    1. Düzenli Pratik Yapma: Her gün belirli bir süre İngilizce konuşma veya yazma pratiği yapmak, dil becerilerinizi geliştirmenize yardımcı olur.
+    2. Dil Kurslarına Katılma: Yerel dil kurslarına veya online dil kurslarına katılarak profesyonel rehberlik ve yapıcı geri bildirim alabilirsiniz.
+    3. Dil Değiştirme Pratiği: İngilizceyi günlük yaşamınıza dahil etmek için mümkün olduğunca dil değiştirme pratiği yapın. Örneğin, İngilizce haberleri izleyin veya İngilizce podcast'ler dinleyin.
+    4. Kelime Kartları Kullanma: Yeni kelimeleri öğrenmek ve ezberlemek için kelime kartları kullanabilirsiniz.
+    5. Yazma Alıştırmaları: Günlük günlük tutmak veya makaleler yazmak gibi yazma alıştırmaları yaparak yazma becerilerinizi geliştirebilirsiniz.
+    6. Dil Değişim Partneri Bulma: Dil değişim partneri ile pratik yapmak, İngilizce konuşma yeteneklerinizi artırabilir. Kendi dilinizi öğretmeye çalışan birinin size kendi dilini öğretmesi gibi.
+    7. Dil Öğrenme Uygulamaları: İngilizce öğrenme uygulamaları, oyunlar ve çevrimiçi kaynaklar, dil öğrenme sürecinizi eğlenceli ve etkili bir şekilde destekleyebilir.
+    8. Dil Kitapları Okuma: İngilizce romanlar, öyküler veya makaleler okuyarak hem kelime dağarcığınızı genişletebilir hem de okuma becerilerinizi geliştirebilirsiniz.
+    9. Dinleme Becerilerinizi Geliştirme: İngilizce konuşulan müzik, podcast'ler ve videoları dinleyerek dinleme becerilerinizi güçlendirebilirsiniz.
+    10. Hata Yapmaktan Korkma: Dil öğrenirken hatalar kaçınılmazdır. Hataları bir öğrenme fırsatı olarak görün ve cesurca iletişim kurmaktan korkmayın.
+    Bu yöntemleri kullanarak, İngilizce öğrenme sürecinizi daha etkili ve keyifli hale getirebilirsiniz. Unutmayın ki sabır ve düzenlilik başarınızı artırmada önemlidir.
+    `,
+    href: "/sifirdan",
+    createdAt: "2024-05-16T06:45:00.000+02:00",
+    author: "Necati Kavur",
   },
 ];
 
@@ -109,7 +422,7 @@ const BlogPage = () => {
   return (
     <div>
       <Banner path="/images/blog.jpg" title="BLOG" />
-      <div className="max-w-6xl mx-auto px-2 mb-24 flex flex-col gap-5">
+      <div className="max-w-6xl mx-auto px-2 mb-16 flex flex-col gap-5">
         {/* main blog */}
         <h5 className=" mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
           LAST POST
@@ -124,8 +437,41 @@ const BlogPage = () => {
             <RecentBlogCard key={idx} blog={blog} />
           ))}
         </div>
-        {/* green part */}
+
         {/* kalanlar */}
+      </div>
+
+      {/* green part */}
+      <div className="bg-light-orange py-5  mb-16 flex flex-col gap-5">
+        <div className=" grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4   gap-10 lg:gap-6 max-w-6xl mx-auto px-2 ">
+          <div className="col-span-1  hidden lg:block ">
+            <WithBgBlogCard blog={blogs[1]} isSmall={true} />
+          </div>
+          <div className="col-span-1 block lg:hidden  ">
+            <WithBgBlogCard blog={blogs[1]} isSmall={false} />
+          </div>
+          <div className="cols-span-1 sm:col-span-2 -order-1 lg:order-none mb-10 lg:mb-0  ">
+            <WithBgBlogCard blog={blogs[2]} isSmall={false} />
+          </div>
+          <div className="col-span-1 hidden lg:block ">
+            <WithBgBlogCard blog={blogs[3]} isSmall={true} />
+          </div>
+          <div className="col-span-1 block lg:hidden ">
+            <WithBgBlogCard blog={blogs[3]} isSmall={false} />
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-2 mb-24 flex flex-col gap-5">
+        {/* 3 blog */}
+        <h5 className="mt-20 mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
+          REST OF THE POSTS
+        </h5>
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {blogs.slice(7).map((blog, idx) => (
+            <RecentBlogCard key={idx} blog={blog} />
+          ))}
+        </div>
       </div>
     </div>
   );
