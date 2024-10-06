@@ -44,18 +44,19 @@ const TrainingCard = ({ training, index }) => {
 
         <div className="flex flex-col gap-3 flex-1">
           <p className="text-gray-600 font-semibold">{training.description}</p>
-          <div className="flex items-center gap-1 justify-between">
-            <p className="text-black font-bold text-lg">{training?.time}</p>
-            <p className=" text-end text-2xl text-red font-semibold">
+          <div className="flex items-center gap-1 justify-center mt-3">
+            <p className="text-black font-bold text-xl ">{training?.time}</p>
+            {/* <p className=" text-end text-2xl text-red font-semibold">
               ${training.price}
-            </p>
+            </p> */}
           </div>
           <div className="text-center w-full flex mt-7 ">
             <Link
-              href={training.href}
+              href="https://wa.me/905554443355"
+              target="_blank"
               className="primary-button-main w-full text-lg z-40"
             >
-              Detaylar
+              Bilgi Al
             </Link>
           </div>
         </div>

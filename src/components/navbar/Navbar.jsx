@@ -71,7 +71,7 @@ const Navbar = () => {
             <img src="/images/logo-siyah.png" className="h-32 sm:h-40  ]" alt="Logo" />
           </Link>
           <div className="flex items-center md:order-2 space-x-3  rtl:space-x-reverse">
-            <button
+            {/* <button
               type="button"
               className={
                 "text-red  hover:text-red-orange active:text-black  font-medium  text-xl transition-all duration-1000 ease-in-out " +
@@ -92,7 +92,7 @@ const Navbar = () => {
               }
             >
               <HiMiniShoppingBag />
-            </button>
+            </button> */}
             <button
               onClick={toggleMenu} // Menüyü açıp kapatmak için
               data-collapse-toggle="navbar-sticky"
@@ -153,7 +153,7 @@ const Navbar = () => {
                   <Link
                     href={nav.href}
                     className={
-                      "group relative  block py-2 px-3 md:font-[600] text-[18px] text-dark-red md:text-[16px] lg:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " +
+                      "group relative  block py-2 px-3 md:font-[600] text-[18px] text-dark-red md:text-[16px] lg:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-orange-mid md:hover:bg-transparent  transition-all active:bg-orange    " +
                       (pathName === nav.href
                         ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
                         : "")

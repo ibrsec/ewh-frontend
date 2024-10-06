@@ -35,15 +35,16 @@ const BookCard = ({ book, index }) => {
         <div className="  px-5 flex flex-col gap-3 items-center">
           <p className="  text-xl manrope-font ">{book.name}</p>
           {/* <span className="bg-gray-500 h-0.5 w-full "></span> */}
-          <p className="text-red font-semibold text-xl md:text-2xl poppins-font">
+          {/* <p className="text-red font-semibold text-xl md:text-2xl poppins-font">
             $ {book.price}
-          </p>
+          </p> */}
           <div className="text-center w-[200px] flex mt-7 ">
             <Link
-              href={book.href}
+              href="https://wa.me/905554443355"
+              target="_blank"
               className="primary-button w-full text-lg z-40"
             >
-              İncele
+              Bilgi Al
             </Link>
           </div>
         </div>

@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { GrInstagram } from "react-icons/gr";
+import { FaWhatsapp } from "react-icons/fa";
 
 const navs = [
   { name: "Anasayfa", href: "/" },
@@ -38,7 +39,12 @@ const contacts = [
     href: "https://www.instagram.com/english.with.hatice/",
     icon: <GrInstagram className="text-lg" />,
   },
-];
+  {
+    name: "Whats App",
+    href: "https://wa.me/905554443355",
+    icon: <FaWhatsapp className="text-lg" />,
+  },
+]; 
 
 const Footer = () => {
   const pathName = usePathname();
@@ -157,7 +163,7 @@ const Footer = () => {
                   {trainings?.map((training, idx) => (
                     <li key={idx}>
                       <Link
-                        href={training.href}
+                        href='/trainings'
                         className={
                           "text-center sm:text-left group relative  block py-2 px-3 md:font-[600] text-[18px]  text-sm lg:text-md hover:text-light-yellow     transition-all active:text-yellow  font-semibold text-white "
                           // + (pathName === training.href ? "text-yellow" : "text-white")
@@ -195,7 +201,7 @@ const Footer = () => {
                     <li key={idx}>
                       <Link
                         href={contact.href}
-                        target={contact.name === "Instagram" ? "_blank" : ""}
+                        target={contact.name === "Instagram" || contact.name === "Whats App" ? "_blank" : ""}
                         className={
                           "text-center sm:text-left group relative   py-2 px-3 md:font-[600] text-[18px]  text-sm lg:text-md hover:text-light-yellow     transition-all active:text-yellow  font-semibold text-white flex items-center gap-2"
                           // + (pathName === contact.href ? "text-yellow" : "text-white")
