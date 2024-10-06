@@ -3,6 +3,7 @@ import Hero from "@/components/hero/Hero";
 import JoinedPeople from "@/components/joinedPeople/JoinedPeople";
 import SlidingComments from "@/components/slidingComments/SlidingComments";
 import SlidingText from "@/components/slidingText/SlidingText";
+import TrainingsHome from "@/components/trainingsHome/TrainingsHome";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <SlidingText />
       <div className="max-w-6xl mx-auto">
         <AboutUsHome />
+        <TrainingsHome />
       </div>
       <JoinedPeople />
       <div className="max-w-6xl mx-auto">

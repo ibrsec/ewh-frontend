@@ -1,5 +1,24 @@
+"use client";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+
 const ContactForm = () => {
+
+  const sectionRef = useRef(null);
+
+  // Bileşenin ekranda görünür olup olmadığını kontrol eden hook
+  const isVisible = useIntersectionObserver(sectionRef, {
+    threshold: 0.1, // %10'u görünür olunca tetikler
+  });
   return (
+    <motion.div
+    ref={sectionRef}
+    initial={{ scale: 0 }} // Start invisible
+    animate={isVisible ? { scale: 1 } : {}} // Scale up to original size
+    transition={{ type: "spring", duration: 2, bounce: 0.4 }} // Smooth spring effect
+      className=""
+    >
     <form className="max-w-sm mx-auto">
         <h3 className="text-2xl md:text-3xl font-bold robot-font mb-8">Bize Ulaşın!</h3>
         
@@ -72,6 +91,7 @@ const ContactForm = () => {
         Submit
       </button>
     </form>
+    </motion.div>
   );
 };
 

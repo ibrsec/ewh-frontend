@@ -33,7 +33,7 @@ const AboutUsHome = () => {
       </div>
 
       {/* content */}
-      <div className="flex-1 ">
+      <div className="flex-1 overflow-hidden ">
         <motion.section
           ref={sectionRef}
           initial={{ opacity: 0, x: 100 }} // Başlangıçta görünmez

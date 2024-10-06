@@ -37,7 +37,7 @@ const Hero = () => {
         </div>
         {/* <div className="flex items-center gap-1 justify-center flex-col lg:flex-row "> */}
         <div className="">
-          <Link href="/trainings" type="button" className="primary-button">
+          <Link href="/contact" type="button" className="primary-button">
             Kurs Hakkinda Bilgi Al
           </Link>
         </div>
