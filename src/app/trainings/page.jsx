@@ -1,5 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import TrainingCard from "./components/TrainingCard";
+import TrainingsHome from "@/components/trainingsHome/TrainingsHome";
 
 const trainings = [
   {
@@ -14,7 +15,7 @@ const trainings = [
       "Kaçırdığınız dersler için tekrar izleme imkanı",
       "Koçluk & Mentörlük (Aylık takip çizelgesi)",
       "3 Aylık ödev programı ve ödev dosyası",
-      "3 Aylık vocaprof.com üyeliği"
+      "3 Aylık vocaprof.com üyeliği",
     ],
     time: "48 saat",
   },
@@ -29,7 +30,6 @@ const trainings = [
     points: [
       "72 Saat Online Canlı Ders",
       "Kaçırdığınız dersler için tekrar izleme imkanı",
-
     ],
   },
   {
@@ -42,7 +42,7 @@ const trainings = [
     time: "3 gün saat",
     points: [
       "3 Aylık ödev programı ve ödev dosyası",
-      "3 Aylık vocaprof.com üyeliği"
+      "3 Aylık vocaprof.com üyeliği",
     ],
   },
   {
@@ -56,7 +56,7 @@ const trainings = [
     points: [
       "72 Saat Online Canlı Ders",
       "Kaçırdığınız dersler için tekrar izleme imkanı",
-      "3 Aylık vocaprof.com üyeliği"
+      "3 Aylık vocaprof.com üyeliği",
     ],
   },
   {
@@ -67,10 +67,10 @@ const trainings = [
     href: "/ielts",
     price: 100,
     time: "3 ay",
-    points: [ 
+    points: [
       "Kaçırdığınız dersler için tekrar izleme imkanı",
       "Koçluk & Mentörlük (Aylık takip çizelgesi)",
-      "3 Aylık ödev programı ve ödev dosyası", 
+      "3 Aylık ödev programı ve ödev dosyası",
     ],
   },
 ];
@@ -81,6 +81,7 @@ const TrainingsPage = () => {
       <Banner path="/images/trainings.jpg" title="EĞİTİMLERİMİZ" />
 
       <div className="max-w-6xl mx-auto px-2">
+        <TrainingsHome buttonShow={false} />
         {/* trainings list */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  ">
           {trainings?.map((training, idx) => (

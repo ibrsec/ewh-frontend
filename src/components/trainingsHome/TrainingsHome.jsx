@@ -3,8 +3,9 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import Link from "next/link";
+//https://freesvgillustration.com/product/corporate-wellness/
 
-const TrainingsHome = () => {
+const TrainingsHome = ({ buttonShow }) => {
   const sectionRef = useRef(null);
 
   // Bileşenin ekranda görünür olup olmadığını kontrol eden hook
@@ -49,11 +50,13 @@ const TrainingsHome = () => {
                 güçlendiriyorlar
               </li>
             </ul>
-            <div className="">
-              <Link href="/trainings" className="primary-button">
-                İncele
-              </Link>
-            </div>
+            {buttonShow && (
+              <div className="">
+                <Link href="/trainings" className="primary-button">
+                  İncele
+                </Link>
+              </div>
+            )}
           </div>
         </motion.section>
       </div>

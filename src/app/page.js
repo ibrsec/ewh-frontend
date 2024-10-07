@@ -14,7 +14,7 @@ export default function Home() {
       <SlidingText />
       <div className="max-w-6xl mx-auto">
         <AboutUsHome />
-        <TrainingsHome />
+        <TrainingsHome buttonShow={true}/>
       </div>
       <JoinedPeople />
       <div className="max-w-6xl mx-auto">
@@ -23,3 +23,10 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+// !Backend
+//? email bulten isi
+//? 
