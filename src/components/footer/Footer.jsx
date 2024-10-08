@@ -6,6 +6,10 @@ import { IoMailOutline } from "react-icons/io5";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { GrInstagram } from "react-icons/gr";
 import { FaWhatsapp } from "react-icons/fa";
+import useEmailServices from "@/lib/services/useEmailServices";
+import { useState } from "react";
+import emailValidation from "@/helpers/emailValidation";
+import { toastWarnNotify } from "@/helpers/toastify";
 
 const navs = [
   { name: "Anasayfa", href: "/" },
@@ -47,8 +51,25 @@ const contacts = [
 ]; 
 
 const Footer = () => {
+  const {subscriptionApi} = useEmailServices();
+  const  [email, setEmail] = useState("");
   const pathName = usePathname();
-  console.log(pathName);
+  // console.log(pathName);
+
+const handleEmailSubscriptionSubmit = (e) => {
+  e.preventDefault();
+  if(!emailValidation(email)){
+    toastWarnNotify("Lütfen uygun bir email adresi giriniz! - example@email.com")
+    return;
+  }
+
+
+  subscriptionApi(email);
+  setEmail("");
+
+}
+
+
   return (
     <div className=" w-screen  px-2 ">
       <div className="relative h-[200px] ">
@@ -71,7 +92,7 @@ const Footer = () => {
               Yeniliklerden haberdar olabilmek için e-posta bültenimize abone
               olmayı unutmayın!
             </p>
-            <form className="mb-6">
+            <form className="mb-6" onSubmit={handleEmailSubscriptionSubmit}>
               <label
                 htmlFor="email-subs"
                 className=" flex items-center gap-2 w-full md:w-[768px] mx-auto  p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base "
@@ -83,10 +104,12 @@ const Footer = () => {
                   id="email-subs"
                   placeholder="Email Adresiniz"
                   className="  bg-transparent text-base   flex-1    border-none focus:ring-0 "
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </label>
               <div className="text-center mt-5">
-                <button className="primary-button-white ">Abone Ol</button>
+                <button type="submit" className="primary-button-white ">Abone Ol</button>
               </div>
             </form>
           </div>

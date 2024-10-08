@@ -7,6 +7,7 @@ import HeadInfos from "@/components/navbar/HeadInfos";
 import Footer from "@/components/footer/Footer";
 import WhatsappButton from "@/components/whatsapp/WhatsappButton";
 import TopButton from "@/components/topButton/TopButton";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Create Next App",
@@ -25,6 +26,8 @@ export default function RootLayout({ children }) {
           <Footer />
           <WhatsappButton />
           <TopButton />
+
+          <ToastContainer />
         </div>
       </body>
     </html>

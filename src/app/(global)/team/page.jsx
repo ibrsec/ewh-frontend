@@ -1,7 +1,11 @@
+"use client";
 import Banner from "@/components/banner/Banner";
 import TeamCard from "./components/TeamCard";
+import useTeamServices from "@/lib/services/useTeamServices";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
-const team = [
+const team2 = [
   {
     image:
       "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWI5NGRhMjEwLTRlOGUtMTFlZi1iMzFjLWM3ZTc5MGQ0OWM0MS5qcGc=",
@@ -35,6 +39,14 @@ const team = [
 ];
 
 const TeamPage = () => {
+  const {getTeamApi} = useTeamServices();
+  const team =useSelector(state => state.team.teamMembers);
+  useEffect(()=>{
+    console.log("useEffect triggered");
+    getTeamApi();
+    //eslint-disable-next-line
+  },[])
+
   return (
     <div>
       <Banner path="/images/team.png" title="EKİBİMİZ" />

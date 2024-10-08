@@ -25,8 +25,19 @@ export default function Home() {
 }
 
 
+//!frontend
+//? apiler uygulanacak
+//? redux
+//? metadatalar
+//* email bulten api uygulamasi - OK
+//? email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
 
 
 // !Backend
-//? email bulten isi
-//? 
+//* email bulten isi - OK
+//? egitimlerimiz
+//? ekibimiz
+//? iletisim form 
+//? bloglar. stil render isi,
+//? resimler yuklme indirme link alma pclouda bak
+//? email toplu gonderimi - hepsine mi olacak gelen emaillere mi olacak sececem
