@@ -1,12 +1,12 @@
-import { taostStopLoading, toastLoading } from "@/helpers/toastify";
+import { taostStopLoading, toastErrorNotify, toastLoading, toastSuccessNotify } from "@/helpers/toastify";
 import useAxios from "./useAxios"
 import { useDispatch } from "react-redux";
-import { fetchTeamFail, fetchTeamStart, fetchTeamSuccess } from "../features/teamSlice";
+import { fetchTeamFail, fetchTeamStart, fetchTeamSuccess, fetchTeamSuccessWithOutPayload } from "../features/teamSlice";
 
  
 
 const useTeamServices = () => {
-    const {axiosPublic} = useAxios()
+    const {axiosPublic, axiosToken} = useAxios()
     const dispatch = useDispatch()
 
     const getTeamApi = async() => {
@@ -26,7 +26,33 @@ const useTeamServices = () => {
         }
 
     }
-  return {getTeamApi}
+    const createNewTeamMember = async(payload) => {
+        const endPoint = "/team";
+
+        dispatch(fetchTeamStart());
+        try {
+          const response = await axiosToken.post(endPoint, payload, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+          console.log("create new team member response =", response);
+          const data = response?.data;
+          dispatch(fetchTeamSuccessWithOutPayload());
+    
+           
+            getTeamApi();
+    
+          //warnings
+          toastSuccessNotify(data?.message);
+        } catch (error) {
+          dispatch(fetchTeamFail());
+          toastErrorNotify(error?.response?.data?.message);
+          console.log("create new team member api error:", error);
+        }
+
+    }
+  return {getTeamApi, createNewTeamMember}
 }
 
 export default useTeamServices

@@ -1,17 +1,18 @@
 import { taostStopLoading, toastLoading } from "@/helpers/toastify";
-import useAxios from "./useAxios"
+import axios from "axios";
+// import useAxios from "./useAxios"
 
  
 
 const useEmailServices = () => {
-    const {axiosPublic} = useAxios()
+    // const {axiosPublic} = useAxios()
 
     const subscriptionApi = async(email) => {
 
         const idLoading = toastLoading(`Loading...` );
         try {
 
-            const response = await axiosPublic.post('/emails/subscription', { email });
+            const response = await axios.post('http://localhost:10000/api/emails/subscription', { email });
             console.log('response subsc email = ', response)
 
             taostStopLoading(idLoading,"success",response?.data?.message) 

@@ -1,17 +1,25 @@
 "use client";
 
+import { toastWarnNotify } from "@/helpers/toastify";
+import useTeamServices from "@/lib/services/useTeamServices";
 import { useState } from "react";
 
 const NewEkipMember = () => {
+    const { createNewTeamMember } = useTeamServices(); 
   const [inputs, setInputs] = useState({
     fullName: "",
     email: "",
     description: "",
-    imageFile: "",
+    imageFile: null,
   });
 
   const handleChange = (e) => {
-    setInputs({...inputs, [e.target.name]: e.target.value });
+    // setInputs({...inputs, [e.target.name]: e.target.value });
+    const { name, value, files } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: files ? files[0] : value, // Dosya seçildiyse `files` kullanılır
+    });
   }
 
   //handling submit login form
@@ -24,24 +32,28 @@ console.log('inputs', inputs)
       return;
     }
     console.log(inputs);
- 
-    //make the login request with the credentials to the backend
-    // loginApi(inputs);
-    //navigating to the home page is happening in the login api request function
 
+    const formPayload = new FormData();
+    for (let key in inputs) {
+      formPayload.append(key, inputs[key]);
+    }
+
+    createNewTeamMember(inputs);
+ 
+    
     //reset input fields
-    // setInputs({
-    //     fullName: "",
-    //     email: "",
-    //     description: "",
-    //     imageFile: "",
-    // });
+    setInputs({
+        fullName: "",
+        email: "",
+        description: "",
+        imageFile: null,
+    });
   };
 
   //! sinirlar yazilacak
   //? gecince max asildi vs
-  //? uyarilar eklenecek
-  //? api yazilacak uygulanacak
+  //? sinir uyarilar eklenecek
+  //*ok api yazilacak uygulanacak - multipart - axiosToken
 
   return (
     <form className=" w-full " onSubmit={handleSubmit}>
@@ -82,7 +94,6 @@ console.log('inputs', inputs)
           required={true}
           name="imageFile"
           placeholder="Image File*"
-          value={inputs.imageFile}
           onChange={handleChange}
         />
       </div>
@@ -93,7 +104,7 @@ console.log('inputs', inputs)
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
           required={true}
           name="description"
-          placeholder="Description*"
+          placeholder="Team member description max: 300*"
           value={inputs.description}
           onChange={handleChange}
         >Team member description max: 300</textarea>
