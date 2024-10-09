@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { HiMiniShoppingBag } from "react-icons/hi2";
+
 const navs = [
   { name: "Anasayfa", href: "/" },
   { name: "Hakkımızda", href: "/aboutus" },
@@ -71,6 +72,9 @@ const Navbar = () => {
             <img src="/images/logo-siyah.png" className="h-32 sm:h-40  ]" alt="Logo" />
           </Link>
           <div className="flex items-center md:order-2 space-x-3  rtl:space-x-reverse">
+
+            
+{/* -------------------------- */}
             {/* <button
               type="button"
               className={
@@ -93,6 +97,10 @@ const Navbar = () => {
             >
               <HiMiniShoppingBag />
             </button> */}
+{/* ------------ */}
+
+
+
             <button
               onClick={toggleMenu} // Menüyü açıp kapatmak için
               data-collapse-toggle="navbar-sticky"
@@ -171,141 +179,6 @@ const Navbar = () => {
                 </li>
               ))}
 
-              {/* 
-              <li>
-                <Link
-                  href="/"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-[18px] text-dark-red md:text-[14px] lg:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " +
-                    (pathName === "/"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                  onClick={()=> setIsOpen(false)}
-                >
-                  <span className=" ">Anasayfa</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/aboutus"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " +
-                    (pathName === "/aboutus"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                >
-                  <span>Hakkımızda</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/aboutus" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/trainings"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange     " +
-                    (pathName === "/trainings"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                >
-                  <span>Eğitimlerimiz</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/trainings" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/team"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange    " +
-                    (pathName === "/team"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                >
-                  <span>Ekibimiz</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/team" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/books"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " +
-                    (pathName === "/books"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                >
-                  <span>Kitaplarımız</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/books" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " +
-                    (pathName === "/blog"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                >
-                  <span>Blog</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/blog" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className={
-                    "group relative  block py-2 px-3 md:font-[600] text-dark-red md:text-[17px] hover:text-light-yellow  md:hover:text-red rounded hover:bg-red-orange md:hover:bg-transparent  transition-all active:bg-orange   " +
-                    (pathName === "/contact"
-                      ? "bg-orange-mid md:bg-transparent text-light-yellow md:text-red"
-                      : "")
-                  }
-                >
-                  <span>İletişim</span>
-                  <span
-                    className={
-                      "absolute -bottom-1 right-0 w-0 transition-all h-0.5 bg-red group-hover:w-full hidden md:inline group-active:bg-black " +
-                      (pathName === "/contact" ? " w-full " : "")
-                    }
-                  ></span>
-                </Link>
-              </li> */}
             </ul>
           </div>
         </div>

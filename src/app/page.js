@@ -31,7 +31,8 @@ export default function Home() {
 //? metadatalar
 //* email bulten api uygulamasi - OK
 //? email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
-
+//? footer cizgi
+//loadingler
 
 // !Backend
 //* email bulten isi - OK
