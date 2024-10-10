@@ -26,12 +26,12 @@ export default function Home() {
 
 
 //!frontend
-//? order eklenecek -be fe
 //? apiler uygulanacak
 //? metadatalar
 //? email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
 //? blog icin duzenleme rich edittor? be ye nasil kaydedece nasil render edecez vs.
 //? navbara admin panel ve logout koysak?
+//?* order eklenecek -be fe - ekipe eklendi
   //* ekip
 //* redux
 //* email bulten api uygulamasi - OK

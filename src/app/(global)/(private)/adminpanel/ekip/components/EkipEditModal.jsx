@@ -16,13 +16,13 @@ import SpinnerOne from "@/components/spinner/SpinnerOne";
 const EkipEditModal = ({ open, setOpen, choosedMember }) => {
   const { updateTeamMember } = useTeamServices();
   const loading = useSelector((state) => state.team.loading);
- 
-   
+
   console.log("choosedMember", choosedMember);
   const [inputs, setInputs] = useState({
     fullName: choosedMember?.fullName || "",
     email: choosedMember?.email || "",
     description: choosedMember?.description || "",
+    order: choosedMember?.order || "",
     imageFile: null,
   });
   useEffect(() => {
@@ -30,9 +30,10 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
       fullName: choosedMember?.fullName || "",
       email: choosedMember?.email || "",
       description: choosedMember?.description || "",
+      order: choosedMember?.order || "",
       imageFile: null,
     });
-  }, [choosedMember,open]);
+  }, [choosedMember, open]);
 
   const handleChange = (e) => {
     // setInputs({...inputs, [e.target.name]: e.target.value });
@@ -46,16 +47,12 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log(inputs);
     //check if fields are entered
-    if (
-      !inputs.fullName ||
-      !inputs.email ||
-      !inputs.description 
-    ) {
+    if (!inputs.fullName || !inputs.email || !inputs.description || !inputs.order) {
       toastWarnNotify("All fields are required - expect imageFile!");
       return;
     }
-    console.log(inputs);
 
     //length restricts!
     if (inputs.fullName.length > 40) {
@@ -83,6 +80,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
       fullName: "",
       email: "",
       description: "",
+      order: "",
       imageFile: null,
     });
 
@@ -169,9 +167,28 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                           onChange={handleChange}
                         />
                         <div className="">Image - max 5 MB size limit</div>
-                      <div className="">Image is not required for update!</div>
-
+                        <div className="">
+                          Image is not required for update!
+                        </div>
                       </div>
+
+                      <div className="mb-5">
+                        <input
+                          type="number"
+                          id="order"
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
+                          required={true}
+                          name="order"
+                          placeholder="Order* - manual order as number"
+                          value={inputs.order}
+                          onChange={handleChange}
+                        />
+
+                        <div className="">
+                          Manual order - number - example: 5!
+                        </div>
+                      </div>
+
                       <div className="mb-5">
                         <textarea
                           type="text"
@@ -193,7 +210,6 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                           </span>
                         )}
                       </div>
-
 
                       <div className="mt-3 w-9/12 flex items-center gap-2">
                         <button

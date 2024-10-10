@@ -30,6 +30,7 @@ const EkipCard = ({
             {person.description}
           </p>
         </div>
+        <div className=" text-center text-lg text-red font-semibold">Order: {person?.order}</div>
         <div className="flex gap-2 px-3 pt-2 pb-3 z-50">
           <button
             className="flex-1 primary-button"

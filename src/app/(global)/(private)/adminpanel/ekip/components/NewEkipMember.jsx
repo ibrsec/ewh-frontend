@@ -13,6 +13,7 @@ const NewEkipMember = () => {
     fullName: "",
     email: "",
     description: "",
+    order: "",
     imageFile: null,
   });
 
@@ -34,7 +35,8 @@ const NewEkipMember = () => {
       !inputs.fullName ||
       !inputs.email ||
       !inputs.description ||
-      !inputs.imageFile
+      !inputs.imageFile ||
+      !inputs.order
     ) {
       toastWarnNotify("All fields are required!");
       return;
@@ -69,6 +71,7 @@ const NewEkipMember = () => {
       fullName: "",
       email: "",
       description: "",
+      order: "",
       imageFile: null,
     });
   };
@@ -139,6 +142,22 @@ const NewEkipMember = () => {
           degil onizleme var)(genislik daha buyuk olacak)
         </div>
       </div>
+
+      <div className="mb-5">
+        <input
+          type="number"
+          id="order"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
+          required={true}
+          name="order"
+          placeholder="Order* - manual order as number"
+          value={inputs.order}
+          onChange={handleChange}
+        />
+
+        <div className="">Manual order - number - example: 5!</div>
+      </div>
+
       <div className="mb-5">
         <textarea
           type="text"
@@ -161,7 +180,11 @@ const NewEkipMember = () => {
         )}
       </div>
 
-      <button type="submit" className="primary-button-main w-full mt-8 text-lg" disabled={loading}>
+      <button
+        type="submit"
+        className="primary-button-main w-full mt-8 text-lg"
+        disabled={loading}
+      >
         {loading ? <SpinnerOne /> : "Submit"}
       </button>
     </form>
