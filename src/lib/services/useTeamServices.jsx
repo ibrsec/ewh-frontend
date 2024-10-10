@@ -15,7 +15,7 @@ const useTeamServices = () => {
         const idLoading = toastLoading(`Loading...` );
         try {
             
-            const response = await axiosPublic('/team', );
+            const response = await axiosToken('/team', );
             console.log('response get team = ', response)
             taostStopLoading(idLoading,"success",response?.data?.message) 
             dispatch(fetchTeamSuccess(response?.data?.data))
@@ -52,7 +52,55 @@ const useTeamServices = () => {
         }
 
     }
-  return {getTeamApi, createNewTeamMember}
+    const updateTeamMember = async(id,payload) => {
+        const endPoint = "/team/"+id;
+
+        dispatch(fetchTeamStart());
+        try {
+          const response = await axiosToken.put(endPoint, payload, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+          console.log("update team member response =", response);
+          const data = response?.data;
+          dispatch(fetchTeamSuccessWithOutPayload());
+    
+           
+            getTeamApi();
+    
+          //warnings
+          toastSuccessNotify(data?.message);
+        } catch (error) {
+          dispatch(fetchTeamFail());
+          toastErrorNotify(error?.response?.data?.message);
+          console.log("update team member api error:", error);
+        }
+
+    }
+    const deleteTeamMember = async(id) => {
+        const endPoint = "/team/"+id;
+
+        dispatch(fetchTeamStart());
+        try {
+          const response = await axiosToken.delete(endPoint);
+          console.log("delete team member response =", response);
+          const data = response?.data;
+          dispatch(fetchTeamSuccessWithOutPayload());
+    
+           
+            getTeamApi();
+    
+          //warnings
+          toastSuccessNotify(data?.message || "Team member is deleted!");
+        } catch (error) {
+          dispatch(fetchTeamFail());
+          toastErrorNotify(error?.response?.data?.message || "Deleting Team member is failed!");
+          console.log("delete team member api error:", error);
+        }
+
+    }
+  return {getTeamApi, createNewTeamMember, updateTeamMember, deleteTeamMember}
 }
 
 export default useTeamServices

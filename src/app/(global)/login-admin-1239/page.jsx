@@ -1,14 +1,19 @@
 "use client";
 
 import Banner from "@/components/banner/Banner";
+import SpinnerOne from "@/components/spinner/SpinnerOne";
 import { passwordValidation } from "@/helpers/passwordValidation";
 import { toastWarnNotify } from "@/helpers/toastify";
 import useAuthServices from "@/lib/services/useAuthServices";
 import { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const LoginAdmin = () => {
   const { loginApi } = useAuthServices();
+  const loading = useSelector((state) => state.auth.loading);
+ 
+   
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -100,8 +105,8 @@ console.log('inputs', inputs)
               </div>
             </div>
 
-            <button type="submit" className="primary-button-main w-full mt-8">
-              Submit
+            <button type="submit" className="primary-button-main w-full mt-8" disabled={loading}>
+              {loading ? <SpinnerOne /> : "Submit"}
             </button>
           </form>
         </div>

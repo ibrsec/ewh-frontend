@@ -71,17 +71,17 @@ const handleEmailSubscriptionSubmit = (e) => {
 
 
   return (
-    <div className=" w-screen  px-2 ">
-      <div className="relative h-[200px] ">
-        <div className="absolute top-0 left-0 right-0 z-10 ">
+    <div className=" w-screen   ">
+      <div className="relative h-[200px]  ">
+        {/* <div className="absolute top-0 left-0 right-0 z-10 ">
           <img
             src="/images/footer-top.svg"
             alt="footer-top"
             className="w-full"
           />
-        </div>
+        </div> */}
       </div>
-      <div className="bg-gradient-to-b from-black  to-dark-red relative z-20 min-h-[500px] -top-28 sm:-top-10 md:top-0 pb-12">
+      <div className="bg-gradient-to-b from-black  to-dark-red relative z-20 min-h-[500px] -top-28 sm:-top-10 md:top-0 pb-12 pt-28">
         <div className="text-white  max-w-6xl mx-auto px-2  ">
           {/* mail */}
           <div className="flex flex-col gap-3  ">

@@ -26,18 +26,23 @@ export default function Home() {
 
 
 //!frontend
+//? order eklenecek -be fe
 //? apiler uygulanacak
-//? redux
 //? metadatalar
-//* email bulten api uygulamasi - OK
 //? email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
-//? footer cizgi
-//loadingler
+//? blog icin duzenleme rich edittor? be ye nasil kaydedece nasil render edecez vs.
+//? navbara admin panel ve logout koysak?
+  //* ekip
+//* redux
+//* email bulten api uygulamasi - OK
+//* footer cizgi
+//* loadingler, no contentler
+//* admin tablarini route yapacaz
 
 // !Backend
 //* email bulten isi - OK
 //? egitimlerimiz
-//? ekibimiz
+//* ekibimiz
 //? iletisim form 
 //? bloglar. stil render isi,
 //? resimler yuklme indirme link alma pclouda bak

@@ -21,7 +21,7 @@ const TeamCard = ({ person, index}) => {
 
 
         <div className="flex-1 overflow-hidden">
-          <img src={person?.image} alt="egitmen" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 rounded-t-lg object-top" />
+          <img src={person?.image.url} alt="egitmen" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 rounded-t-lg object-top" />
         </div>
 
         <div className=" flex-1 px-5 flex flex-col gap-5">

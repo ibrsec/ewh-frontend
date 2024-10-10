@@ -1,7 +1,12 @@
 // "use client";
 // import { useEffect  } from "react";
 
-const EkipCard = ({ person }) => {
+const EkipCard = ({
+  person,
+  setChoosedMember,
+  setDeleteModalOpen,
+  setEditModalOpen,
+}) => {
   return (
     <div className=" border-2 border-dark-red   transition-all duration-1000 rounded-lg  pb-4 shadow-md shadow-dark-red group  relative  transform   ">
       <img
@@ -12,7 +17,7 @@ const EkipCard = ({ person }) => {
       <div className="flex flex-col gap-9  h-full justify-between">
         <div className="flex-1 overflow-hidden">
           <img
-            src={person?.image}
+            src={person?.image?.url}
             alt="egitmen"
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 rounded-t-lg object-top"
           />
@@ -24,6 +29,26 @@ const EkipCard = ({ person }) => {
           <p className="text-gray-600    text-md poppins-font">
             {person.description}
           </p>
+        </div>
+        <div className="flex gap-2 px-3 pt-2 pb-3 z-50">
+          <button
+            className="flex-1 primary-button"
+            onClick={() => {
+              setChoosedMember(person);
+              setEditModalOpen(true);
+            }}
+          >
+            Edit
+          </button>
+          <button
+            className="flex-1 primary-button-main"
+            onClick={() => {
+              setChoosedMember(person);
+              setDeleteModalOpen(true);
+            }}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
