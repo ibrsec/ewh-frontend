@@ -30,7 +30,7 @@ const TrainingCard = ({ training, index }) => {
           <div className=" flex items-center gap-5 text-dark-red text-lg">
             <SiSololearn className="group-hover:rotate-180 transition-all duration-700" />
             <p className="font-semibold text-xl text-dark-red poppins-font">
-              {training.name}
+              {training.title}
             </p>
           </div>
           <ul className=" ">

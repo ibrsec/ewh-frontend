@@ -67,10 +67,11 @@ const useTeamServices = () => {
           dispatch(fetchTeamSuccessWithOutPayload());
     
            
-            getTeamApi();
-    
+          
           //warnings
           toastSuccessNotify(data?.message);
+          
+          getTeamApi();
         } catch (error) {
           dispatch(fetchTeamFail());
           toastErrorNotify(error?.response?.data?.message);

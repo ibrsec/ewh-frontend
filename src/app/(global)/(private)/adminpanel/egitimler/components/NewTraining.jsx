@@ -3,40 +3,57 @@
 import SpinnerOne from "@/components/spinner/SpinnerOne";
 import { toastWarnNotify } from "@/helpers/toastify";
 import useTeamServices from "@/lib/services/useTeamServices";
-import { useState } from "react";
+import useTrainingServices from "@/lib/services/useTrainingServices";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import PointsComp from "./PointsComp";
 
-const NewEkipMember = () => {
-  const loading = useSelector((state) => state.team.loading);
-  const { createNewTeamMember } = useTeamServices();
+const NewTraining = () => {
+  const loading = useSelector((state) => state.training.loading);
+  const { createNewTrainingMember } = useTrainingServices();
   const [inputs, setInputs] = useState({
-    fullName: "",
-    email: "",
+    title: "",
     description: "",
+    time: "",
     order: "",
-    imageFile: null,
+    points: [],
   });
+  const [points, setPoints] = useState(['']);
 
-  const handleChange = (e) => {
-    // setInputs({...inputs, [e.target.name]: e.target.value });
-    const { name, value, files } = e.target;
+  useEffect(() => {
+    //points -> inputs
+    setInputs({
+      ...inputs, points
+    })
+  },[points])
+
+  const handleChange = (e) => { 
     setInputs({
       ...inputs,
-      [name]: files ? files[0] : value, // Dosya seçildiyse `files` kullanılır
+      [e.target.name] : e.target.value,  
     });
   };
 
   //handling submit login form
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log(inputs);
+
+    //boslari sil
+    setInputs({...inputs, points: inputs.points.filter(point => point.length > 0)});
+    
+
+
     console.log("inputs", inputs);
     //check if fields are entered
     if (
-      !inputs.fullName ||
-      !inputs.email ||
+      !inputs.title ||
       !inputs.description ||
-      !inputs.imageFile ||
-      !inputs.order
+      !inputs.time ||
+      !inputs.order ||
+      inputs.points?.length < 1 ||
+      inputs.points?.some((point) => point.length === 0)
     ) {
       toastWarnNotify("All fields are required!");
       return;
@@ -44,18 +61,18 @@ const NewEkipMember = () => {
     console.log(inputs);
 
     //length restricts!
-    if (inputs.fullName.length > 40) {
+    if (inputs.title.length > 40) {
       console.log("girdi");
-      toastWarnNotify("Full Name 40 karakteri geçemez!");
+      toastWarnNotify("title 40 karakteri geçemez!");
       return;
       console.log("return sonrasi");
     }
-    if (inputs.email.length > 100) {
-      toastWarnNotify("Email 100 karakteri geçemez!");
+    if (inputs.time.length > 25) {
+      toastWarnNotify("time 100 karakteri geçemez!");
       return;
     }
     if (inputs.description.length > 300) {
-      toastWarnNotify("Description 300 karakteri geçemez!");
+      toastWarnNotify("description 300 karakteri geçemez!");
       return;
     }
 
@@ -64,86 +81,70 @@ const NewEkipMember = () => {
     //   formPayload.append(key, inputs[key]);
     // }
 
-    createNewTeamMember(inputs);
+    createNewTrainingMember(inputs);
 
     //reset input fields
     setInputs({
-      fullName: "",
-      email: "",
+      title: "",
       description: "",
+      time: "",
       order: "",
-      imageFile: null,
+      points: [],
     });
+    setPoints([''])
   };
-
-  //! sinirlar yazilacak
-  //? gecince max asildi vs
-  //? sinir uyarilar eklenecek
-  //*ok api yazilacak uygulanacak - multipart - axiosToken
-
+ 
   return (
     <form
       className=" w-full rounded-lg shadow-xl border border-dark-red shadow-dark-red pt-4 pb-12 px-5 mt-10"
       onSubmit={handleSubmit}
     >
       <h3 className="text-2xl md:text-3xl font-bold robot-font mb-8 mt-10 ">
-        Create new team member!
+        Create new Training!
       </h3>
 
       <div className="mb-5">
+        <div className="">Title</div>
         <input
           type="text"
-          id="fullName"
+          id="title"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
           required={true}
-          name="fullName"
-          placeholder="Full Name*  - max 40 char length"
-          value={inputs.fullName}
+          name="title"
+          placeholder="Title*  - max 40 char length"
+          value={inputs.title}
           onChange={handleChange}
+          maxLength="40"
         />
-        {inputs.fullName.length > 40 && (
+        {inputs.title.length > 40 && (
           <span className="px-2 text-xs text-red-500">
-            Full Name 40 karakteri geçemez!
+            Title 40 karakteri geçemez!
           </span>
         )}
       </div>
       <div className="mb-5">
+        <div className="">Time</div>
         <input
-          type="email"
-          id="email"
+          type="text"
+          id="time"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
           required={true}
-          name="email"
-          placeholder="Email* - max 100 char length"
-          value={inputs.email}
+          name="time"
+          placeholder="Time* - max 25 char length"
+          value={inputs.time}
           onChange={handleChange}
+          maxLength="25"
         />
 
-        {inputs.email.length > 100 && (
+        {inputs.time.length > 25 && (
           <span className="px-2 text-xs text-red-500">
-            Email 100 karakteri geçemez!
+            Time 25 karakteri geçemez!
           </span>
         )}
       </div>
-
-      <div className="mb-12">
-        <input
-          type="file"
-          id="imageFile"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
-          required={true}
-          name="imageFile"
-          placeholder="Image File*"
-          onChange={handleChange}
-        />
-        <div className="">Image - max 5 MB size limit</div>
-        <div className="">
-          - cozunurluk (oran olarak yaklasik): 1080-768, 1920- 1080 (cok oneli
-          degil onizleme var)(genislik daha buyuk olacak)
-        </div>
-      </div>
-
+ 
       <div className="mb-5">
+        <div className="">Order</div>
         <input
           type="number"
           id="order"
@@ -158,7 +159,30 @@ const NewEkipMember = () => {
         <div className="">Manual order - number - example: 5!</div>
       </div>
 
+      {/* <div className="mb-5">
+        <input
+          type="text"
+          id="points"
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5 "
+          required={true}
+          name="points"
+          placeholder="Points* - max 25 char length"
+          value={inputs.points}
+          onChange={handleChange}
+        />
+
+        <button type="button" className="primary-button">Madde ekle</button>
+
+        {inputs.points.length < 1 && (
+          <span className="px-2 text-xs text-red-500">
+            En az 1 madde eklenmelidir!
+          </span>
+        )}
+      </div> */}
+      <PointsComp points={points} setPoints={setPoints}/>
+
       <div className="mb-5">
+        <div className="">Description</div>
         <textarea
           type="text"
           id="description"
@@ -170,8 +194,9 @@ const NewEkipMember = () => {
           placeholder="Team member description* - max 300 char length"
           value={inputs.description}
           onChange={handleChange}
+          maxLength="300"
         >
-          Team member description max: 300
+          Egitim description max: 300
         </textarea>
         {inputs.description.length > 300 && (
           <span className="px-2 text-xs text-red-500">
@@ -191,4 +216,4 @@ const NewEkipMember = () => {
   );
 };
 
-export default NewEkipMember;
+export default NewTraining;

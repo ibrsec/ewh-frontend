@@ -12,8 +12,9 @@ import { fetchAuthLogout, refreshTokenSuccess } from '../features/authSlice';
 
 const useAxios = () => {
 
-    const baseURL = "http://localhost:10000/api";
-    // const baseURL = process.env.NEXT_APP_BASE_URL;
+    // const baseURL = "http://localhost:10000/api";
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+    // console.log('baseURL', baseURL)
     // const baseURL = "/api";
 const accessToken = useSelector(state=> state.auth.accessToken);
 const refreshToken = useSelector((state) => state.auth.refreshToken);

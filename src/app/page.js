@@ -45,5 +45,5 @@ export default function Home() {
 //* ekibimiz
 //? iletisim form 
 //? bloglar. stil render isi,
-//? resimler yuklme indirme link alma pclouda bak
+//* resimler yuklme indirme link alma pclouda bak -> supabase cloud cdn kullandik
 //? email toplu gonderimi - hepsine mi olacak gelen emaillere mi olacak sececem

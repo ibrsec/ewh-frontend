@@ -18,6 +18,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import emailSlice from "./features/emailSlice";
 import teamSlice from "./features/teamSlice";
 import authSlice from "./features/authSlice";
+import trainingSlice from "./features/trainingSlice";
 
 
 
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
     email:emailSlice,
     team:teamSlice,
     auth:authSlice,
+    training:trainingSlice,
   });
   
 

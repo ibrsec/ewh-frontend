@@ -12,7 +12,7 @@ const useEmailServices = () => {
         const idLoading = toastLoading(`Loading...` );
         try {
 
-            const response = await axios.post('http://localhost:10000/api/emails/subscription', { email });
+            const response = await axios.post(process.env.NEXT_PUBLIC_BASE_URL+'/emails/subscription', { email });
             console.log('response subsc email = ', response)
 
             taostStopLoading(idLoading,"success",response?.data?.message) 

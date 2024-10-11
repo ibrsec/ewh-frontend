@@ -49,8 +49,8 @@ const TeamPage = () => {
   const { getTeamApi } = useTeamServices();
   const team = useSelector((state) => state.team.teamMembers);
   const loading = useSelector((state) => state.team.loading);
+
   useEffect(() => {
-    console.log("useEffect triggered");
     getTeamApi();
     //eslint-disable-next-line
   }, []);

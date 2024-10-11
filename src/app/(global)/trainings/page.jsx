@@ -1,13 +1,17 @@
+"use client";
 import Banner from "@/components/banner/Banner";
 import TrainingCard from "./components/TrainingCard";
 import TrainingsHome from "@/components/trainingsHome/TrainingsHome";
+import useTrainingServices from "@/lib/services/useTrainingServices";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
-const trainings = [
+const trainings2 = [
   {
-    name: "Genel ingilizce",
+    title: "Genel ingilizce",
     image: "/images/genel-ingilizce.jpg",
     description:
-      "Genel ingilizce derslerini almanız için özel bir eğitimimiziz.",
+      "Genel ingilizce derslerini almanız için özel bir eğitimimiziz.Genel ingilizce derslerini almanız için özel bir eğitimimiziz.Genel ingilizce derslerini almanız için özel bir eğitimimiziz.Genel ingilizce derslerini almanız için özel bir eğitimimiziz.Genel ingilizce derslerini almanız için özel birsdff",
     href: "/genelingilizce",
     price: 150,
     points: [
@@ -17,10 +21,10 @@ const trainings = [
       "3 Aylık ödev programı ve ödev dosyası",
       "3 Aylık vocaprof.com üyeliği",
     ],
-    time: "48 saat",
+    time: "48 saat 48 saat 48 saat w",
   },
   {
-    name: "Grup Dersleri",
+    title: "Grup Dersleri",
     image: "/images/grup-dersleri.jpg",
     description:
       "Grup dersleri eğitimimiziz. Grup derslerinde eğitim üzerine çok yardımcı olun.",
@@ -33,7 +37,7 @@ const trainings = [
     ],
   },
   {
-    name: "Ozel Dersleri",
+    title: "Ozel Dersleri",
     image: "/images/ozel-dersleri.jpg",
     description:
       "Ozel Dersler eğitimimiz. Özel derslerde eğitim üzerine çok yardımcı olun.",
@@ -46,7 +50,7 @@ const trainings = [
     ],
   },
   {
-    name: "Speaking club",
+    title: "Speaking club",
     image: "/images/speaking-club.jpg",
     description:
       "Speaking club eğitimimiz. Speaking club derslerinde eğitim üzerine çok yardımcı olun.",
@@ -60,7 +64,7 @@ const trainings = [
     ],
   },
   {
-    name: "IELTS kursu",
+    title: "IELTS kursu",
     image: "/images/ielts-kursu.jpg",
     description:
       "IELTS kursu eğitimimiz. IELTS kursları için özel bir eğitimimiziz.",
@@ -76,6 +80,13 @@ const trainings = [
 ];
 
 const TrainingsPage = () => {
+  const {getTrainingApi} = useTrainingServices()
+  const trainings = useSelector((state) => state.training.trainings);
+  const loading = useSelector((state) => state.training.loading);
+  useEffect(() => { 
+    getTrainingApi();
+    //eslint-disable-next-line
+  }, []);
   return (
     <div className="mb-24">
       <Banner path="/images/trainings.jpg" title="EĞİTİMLERİMİZ" />
