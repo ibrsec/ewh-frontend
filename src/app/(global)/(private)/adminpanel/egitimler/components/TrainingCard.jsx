@@ -36,7 +36,9 @@ const TrainingCard = ({
 
         <div className="flex flex-col gap-3 flex-1">
           <p className="text-gray-600 font-semibold">{training.description}</p>
-          <div className="flex items-center gap-1 justify-center mt-3">
+         
+        </div>
+        <div className="flex items-center gap-1 justify-center mt-3">
             <p className="text-black font-bold text-xl ">{training?.time}</p>
             {/* <p className=" text-end text-2xl text-red font-semibold">
               ${training.price}
@@ -64,8 +66,6 @@ const TrainingCard = ({
             Delete
           </button>
         </div>
-        </div>
-
 
       </div>
     </div>

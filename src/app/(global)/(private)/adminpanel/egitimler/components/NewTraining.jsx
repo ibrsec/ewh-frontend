@@ -89,7 +89,7 @@ const NewTraining = () => {
       description: "",
       time: "",
       order: "",
-      points: [],
+      points: [''],
     });
     setPoints([''])
   };

@@ -31,17 +31,23 @@ export default function Home() {
 //? email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
 //? blog icin duzenleme rich edittor? be ye nasil kaydedece nasil render edecez vs.
 //? navbara admin panel ve logout koysak?
-//?* order eklenecek -be fe - ekipe eklendi
+//? egitimlerimiz public loading no content eklenecek
+//* egitimlerimiz admin panel
+//* order eklenecek -be fe - ekipe eklendi
   //* ekip
 //* redux
 //* email bulten api uygulamasi - OK
 //* footer cizgi
 //* loadingler, no contentler
 //* admin tablarini route yapacaz
+//? iletisim bilgileri environmentten cekilecek
+//? static resimler icin cdn yapilacak ordan cekilecek
+//? yorum resimleri ni napacaz yorum html mi yapacaz yoksa direk resim seklinde mi koyacaz.?
+
 
 // !Backend
 //* email bulten isi - OK
-//? egitimlerimiz
+//* egitimlerimiz
 //* ekibimiz
 //? iletisim form 
 //? bloglar. stil render isi,
