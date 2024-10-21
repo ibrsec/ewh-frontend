@@ -1,9 +1,13 @@
+"use client";
 import Banner from "@/components/banner/Banner";
 import MainBlogCard from "./components/MainBlogCard";
 import RecentBlogCard from "./components/RecentBlogCard";
 import WithBgBlogCard from "./components/WithBgBlogCard";
+import useBlogServices from "@/lib/services/useBlogServices";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
-const blogs = [
+const blogs2 = [
   {
     title:
       "İngilizce Öğrenirken Yapılan 7 Yanlış ve Bunların Yerine Yapabileceğiniz Aktiviteler",
@@ -419,6 +423,14 @@ const blogs = [
 ];
 
 const BlogPage = () => {
+  const {getBlogsApi} = useBlogServices();
+  const blogs = useSelector(state=> state.blog.blogs);
+  console.log('blogs', blogs)
+
+  useEffect(() => {
+    getBlogsApi();
+  },[])
+
   return (
     <div>
       <Banner path="/images/blog.jpg" title="BLOG" />

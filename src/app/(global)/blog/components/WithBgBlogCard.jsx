@@ -26,7 +26,7 @@ const WithBgBlogCard = ({ blog, isSmall }) => {
 
   return (
     <Link
-      href={blog?.href}
+      href={"/blog/" + blog?._id || ""}
       className={`flex gap-5 flex-col group cursor-pointer relative  `}
     >
       <img
@@ -36,7 +36,7 @@ const WithBgBlogCard = ({ blog, isSmall }) => {
       />
       <div className="flex-none  h-1/3 rounded-md overflow-hidden">
         <img
-          src={blog?.image}
+          src={blog?.image?.url}
           alt="blog"
           className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-700"
         />
@@ -48,7 +48,7 @@ const WithBgBlogCard = ({ blog, isSmall }) => {
             isSmall ? " text-xl  md:text-2xl" : " text-2xl  md:text-3xl"
           }`}
         >
-          {blog.title}
+          {blog?.title}
         </h3>
 
         <div className="bg-gray-500 h-0.5 w-full   my-3"></div>
@@ -66,7 +66,7 @@ const WithBgBlogCard = ({ blog, isSmall }) => {
             isSmall ? " text-md" : " text-lg"
           }`}
         >
-          {isSmall ? blog.content.slice(0, 120) : blog.content.slice(0, 150)}...
+          {isSmall ? blog?.shortDescription.slice(0, 120) : blog?.shortDescription.slice(0, 150)}...
         </p>
         <div className="flex items-center justify-between pe-6"> 
           <button className="  text-gray-500 font-semibold   group-hover:text-red transition-all duration-400 geist-font">

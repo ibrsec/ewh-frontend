@@ -19,6 +19,7 @@ import emailSlice from "./features/emailSlice";
 import teamSlice from "./features/teamSlice";
 import authSlice from "./features/authSlice";
 import trainingSlice from "./features/trainingSlice";
+import blogSlice from "./features/blogSlice";
 
 
 
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
     team:teamSlice,
     auth:authSlice,
     training:trainingSlice,
+    blog:blogSlice,
   });
   
 
