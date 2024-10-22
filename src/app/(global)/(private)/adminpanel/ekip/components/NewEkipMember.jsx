@@ -91,6 +91,7 @@ const NewEkipMember = () => {
       </h3>
 
       <div className="mb-5">
+        <label htmlFor="fullName">Full Name:</label>
         <input
           type="text"
           id="fullName"
@@ -108,6 +109,7 @@ const NewEkipMember = () => {
         )}
       </div>
       <div className="mb-5">
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"
@@ -127,6 +129,7 @@ const NewEkipMember = () => {
       </div>
 
       <div className="mb-12">
+        <label htmlFor="imageFile">Image File:</label>
         <input
           type="file"
           id="imageFile"
@@ -144,6 +147,7 @@ const NewEkipMember = () => {
       </div>
 
       <div className="mb-5">
+        <label htmlFor="order">Order:</label>
         <input
           type="number"
           id="order"
@@ -159,6 +163,7 @@ const NewEkipMember = () => {
       </div>
 
       <div className="mb-5">
+        <label htmlFor="description">Description:</label>
         <textarea
           type="text"
           id="description"

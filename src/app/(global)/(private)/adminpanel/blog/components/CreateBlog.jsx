@@ -75,15 +75,15 @@ useEffect(()=>{
     createBlogApi(inputs);
 
     //reset input fields
-    setInputs({
-        title: "",
-        shortDescription: "",
-        author: "",
-        order: "",
-        imageFile: null,
-        content : "",
-    });
-    setContent("");
+    // setInputs({
+    //     title: "",
+    //     shortDescription: "",
+    //     author: "",
+    //     order: "",
+    //     imageFile: null,
+    //     content : "",
+    // });
+    // setContent("");
   };
  
 
@@ -97,6 +97,7 @@ useEffect(()=>{
       </h3>
 
       <div className="mb-5">
+        <label htmlFor="title">Blog Title:</label>
         <input
           type="text"
           id="title"
@@ -114,6 +115,7 @@ useEffect(()=>{
         )}
       </div>
       <div className="mb-5">
+        <label htmlFor="author">Author:</label>
         <input
           type="text"
           id="author"
@@ -133,6 +135,7 @@ useEffect(()=>{
       </div>
 
       <div className="mb-12">
+        <label htmlFor="imageFile">Blog Main Image:</label>
         <input
           type="file"
           id="imageFile"
@@ -150,6 +153,7 @@ useEffect(()=>{
       </div>
 
       <div className="mb-5">
+        <label htmlFor="order">Order:</label>
         <input
           type="number"
           id="order"
@@ -165,6 +169,7 @@ useEffect(()=>{
       </div>
 
       <div className="mb-5">
+        <label htmlFor="shortDescription">Short Description:</label>
         <textarea
           type="text"
           id="shortDescription"
@@ -185,6 +190,8 @@ useEffect(()=>{
           </span>
         )}
       </div>
+
+      <label htmlFor="">Blog Content:</label>
       <QuilEditor content={content} setContent={setContent}/>
 
       <button

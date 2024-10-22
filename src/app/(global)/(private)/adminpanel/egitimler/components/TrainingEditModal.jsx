@@ -36,8 +36,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
       points: choosedTraining?.points || [],
     });
 
-    setPoints(choosedTraining?.points)
-    
+    setPoints(choosedTraining?.points);
   }, [choosedTraining, open]);
 
   const [points, setPoints] = useState([""]);
@@ -152,7 +151,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
                       onSubmit={handleSubmit}
                     >
                       <div className="mb-5">
-                        <div className="">Title</div>
+                        <label htmlFor="title">Title:</label>
                         <input
                           type="text"
                           id="title"
@@ -171,7 +170,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
                         )}
                       </div>
                       <div className="mb-5">
-                        <div className="">Time</div>
+                        <label htmlFor="time">Time:</label>
                         <input
                           type="text"
                           id="time"
@@ -192,7 +191,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
                       </div>
 
                       <div className="mb-5">
-                        <div className="">Order</div>
+                        <label htmlFor="order">Order:</label> 
                         <input
                           type="number"
                           id="order"
@@ -232,7 +231,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
                       <PointsComp points={points} setPoints={setPoints} />
 
                       <div className="mb-5">
-                        <div className="">Description</div>
+                        <label htmlFor="description">Description:</label> 
                         <textarea
                           type="text"
                           id="description"

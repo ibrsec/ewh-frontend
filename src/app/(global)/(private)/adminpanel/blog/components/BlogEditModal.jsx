@@ -1,3 +1,4 @@
+"use client";
 import {
   Dialog,
   DialogBackdrop,
@@ -7,16 +8,22 @@ import {
 
 import { MdOutlineEditCalendar } from "react-icons/md";
 
-import useTeamServices from "@/lib/services/useTeamServices";
 import { toastWarnNotify } from "@/helpers/toastify";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import SpinnerOne from "@/components/spinner/SpinnerOne";
 import useBlogServices from "@/lib/services/useBlogServices";
-import QuilEditor from "./QuilEditor";
 import QuilEditEditor from "./QuilEditEditor";
 
 const BlogEditModal = ({ open, setOpen, choosedBlog }) => {
+  const { getOneBlogApi } = useBlogServices();
+  const askedblog = useSelector((state) => state.blog.blog);
+  useEffect(() => {
+    if (open) {
+      getOneBlogApi(choosedBlog?._id);
+    }
+  }, [open]);
+
   const { updateBlog } = useBlogServices();
   const loading = useSelector((state) => state.blog.loading);
 
@@ -26,7 +33,7 @@ const BlogEditModal = ({ open, setOpen, choosedBlog }) => {
     author: choosedBlog?.author || "",
     shortDescription: choosedBlog?.shortDescription || "",
     order: choosedBlog?.order || "",
-    content: choosedBlog?.content || "",
+    content: askedblog?.content || "",
     imageFile: null,
   });
   useEffect(() => {
@@ -35,20 +42,17 @@ const BlogEditModal = ({ open, setOpen, choosedBlog }) => {
       author: choosedBlog?.author || "",
       shortDescription: choosedBlog?.shortDescription || "",
       order: choosedBlog?.order || "",
-      content: choosedBlog?.content || "",
+      content: askedblog?.content || "",
       imageFile: null,
     });
-    setContent(choosedBlog?.content);
-    console.log('choosedBlog', choosedBlog)
-  }, [choosedBlog, open]);
+    setContent(askedblog?.content);
+    console.log("choosedBlog", choosedBlog);
+  }, [choosedBlog, open, askedblog]);
 
-
-const [content, setContent] = useState(choosedBlog?.content);
-useEffect(()=>{
-  setInputs({...inputs,content:content})
-},[content])
-
-
+  const [content, setContent] = useState(askedblog?.content);
+  useEffect(() => {
+    setInputs({ ...inputs, content: content });
+  }, [content]);
 
   const handleChange = (e) => {
     // setInputs({...inputs, [e.target.name]: e.target.value });
@@ -70,15 +74,15 @@ useEffect(()=>{
       !inputs.shortDescription ||
       !inputs.content ||
       !inputs.order
-      ) {
+    ) {
       toastWarnNotify("All fields are required - except imageFile!");
       return;
     }
 
     //length restricts!
-    if (inputs.title.length > 150) { 
+    if (inputs.title.length > 150) {
       toastWarnNotify("title 100 karakteri geçemez!");
-      return; 
+      return;
     }
     if (inputs.author.length > 100) {
       toastWarnNotify("author 100 karakteri geçemez!");
@@ -100,16 +104,14 @@ useEffect(()=>{
 
     setContent("");
 
-
     setInputs({
       title: "",
       shortDescription: "",
       author: "",
       order: "",
       imageFile: null,
-      content : "",
+      content: "",
     });
-
 
     setOpen(false);
   };
@@ -122,20 +124,20 @@ useEffect(()=>{
       />
 
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center  ">
           <DialogPanel
             transition
-            className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-lg data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95  border border-dark-red shadow-dark-red"
+            className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 sm:w-full sm:max-w-5xl data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95  border border-dark-red shadow-dark-red"
           >
-            <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4   ">
               <div className="sm:flex sm:items-start">
-                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-transparent sm:mx-0 sm:h-10 sm:w-10">
+                <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-transparent sm:mx-0 sm:h-10 sm:w-10 ">
                   <MdOutlineEditCalendar
                     className="text-dark-red"
                     size="45px"
                   />
                 </div>
-                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left ">
                   <DialogTitle
                     as="h3"
                     className="text-lg font-semibold  leading-6 text-dark-red"
@@ -229,16 +231,21 @@ useEffect(()=>{
                           value={inputs.shortDescription}
                           onChange={handleChange}
                         >
-                          Short Description max: 300
+                          Short Description max: 350
                         </textarea>
-                        {inputs.shortDescription.length > 300 && (
+                        {inputs.shortDescription.length > 350 && (
                           <span className="px-2 text-xs text-red-500">
                             Short Description 350 karakteri geçemez!
                           </span>
                         )}
                       </div>
 
-                      <QuilEditEditor content={content} setContent={setContent}/>
+                      <div className="w-full">
+                        <QuilEditEditor
+                          content={content}
+                          setContent={setContent}
+                        />
+                      </div>
 
                       <div className="mt-3 w-9/12 flex items-center gap-2">
                         <button

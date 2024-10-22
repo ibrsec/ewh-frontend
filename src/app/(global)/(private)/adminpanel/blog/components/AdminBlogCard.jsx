@@ -1,6 +1,5 @@
-import useBlogServices from "@/lib/services/useBlogServices";
+
 import Link from "next/link";
-import { useSelector } from "react-redux";
 
 const aylar = [
   "Ocak",
@@ -29,9 +28,7 @@ const AdminBlogCard = ({
 
   const formatliTarih = `${ay} ${gun}, ${yil}`;
 
-  const { getOneBlogApi } = useBlogServices();
-  const askedblog = useSelector((state) => state.blog.blog);
-
+ 
   return (
     <div>
       <Link
@@ -76,19 +73,17 @@ const AdminBlogCard = ({
           </div>
         </div>
       </Link>
-
+      <div className=" text-center text-lg text-red font-semibold my-5">Order: {blog?.order}</div>
       <div className="flex gap-2 px-3 pt-2 pb-3 z-50 mt-20">
-        {/* <button
+        <button
           className="flex-1 primary-button"
-          onClick={() => {
-            getOneBlogApi(blog?._id).then(() => {
-              setChoosedBlog(askedblog);
-              setEditModalOpen(true);
-            });
+          onClick={() => { 
+            setChoosedBlog(blog);
+            setEditModalOpen(true);
           }}
         >
           Edit
-        </button> */}
+        </button>
         <button
           className="flex-1 primary-button-main"
           onClick={() => {

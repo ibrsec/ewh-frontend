@@ -49,7 +49,12 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
 
     console.log(inputs);
     //check if fields are entered
-    if (!inputs.fullName || !inputs.email || !inputs.description || !inputs.order) {
+    if (
+      !inputs.fullName ||
+      !inputs.email ||
+      !inputs.description ||
+      !inputs.order
+    ) {
       toastWarnNotify("All fields are required - expect imageFile!");
       return;
     }
@@ -121,6 +126,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                       onSubmit={handleSubmit}
                     >
                       <div className="mb-5">
+                        <label htmlFor="fullName">Full Name:</label>
                         <input
                           type="text"
                           id="fullName"
@@ -138,6 +144,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                         )}
                       </div>
                       <div className="mb-5">
+                        <label htmlFor="email">Email:</label>
                         <input
                           type="email"
                           id="email"
@@ -157,6 +164,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                       </div>
 
                       <div className="mb-12">
+                        <label htmlFor="imageFile">Image File:</label>
                         <input
                           type="file"
                           id="imageFile"
@@ -173,6 +181,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                       </div>
 
                       <div className="mb-5">
+                        <label htmlFor="order">Order:</label>
                         <input
                           type="number"
                           id="order"
@@ -190,6 +199,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
                       </div>
 
                       <div className="mb-5">
+                        <label htmlFor="description">Description:</label>
                         <textarea
                           type="text"
                           id="description"

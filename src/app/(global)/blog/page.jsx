@@ -37,7 +37,7 @@ const blogs2 = [
     title: "İşte İngilizcenizi Geliştirebileceğiniz Bazı Çizgi Film Önerileri!",
     image: "https://storage.acerapps.io/app-1509/539343.jpg",
     content: `
-    ngilizce geliştirmek için çizgi film izlemek harika bir yol olabilir! İşte bazı çizgi film önerileri:
+    ingilizce geliştirmek için çizgi film izlemek harika bir yol olabilir! İşte bazı çizgi film önerileri:
     1. *SpongeBob SquarePants:* Bu çocukların ve yetişkinlerin keyifle izleyebileceği komik bir çizgi film. İngilizce konuşulan karakterlerin etkileyici aksanları vardır.
     2. *Adventure Time:* Bu çizgi film, eğlenceli diyaloglar ve farklı aksanları içerir. Kelimelerin ve ifadelerin nasıl kullanıldığını öğrenmek için faydalı olabilir.
     3. *The Simpsons:* Bu klasik çizgi film, Amerikan kültürünü ve dilini eğlenceli bir şekilde yansıtır. İzlerken çeşitli kelime ve ifadeleri yakalayabilirsiniz.

@@ -104,7 +104,7 @@ const NewTraining = () => {
       </h3>
 
       <div className="mb-5">
-        <div className="">Title</div>
+        <label htmlFor="title">Title:</label> 
         <input
           type="text"
           id="title"
@@ -123,7 +123,7 @@ const NewTraining = () => {
         )}
       </div>
       <div className="mb-5">
-        <div className="">Time</div>
+        <label htmlFor="time">Time:</label> 
         <input
           type="text"
           id="time"
@@ -144,7 +144,8 @@ const NewTraining = () => {
       </div>
  
       <div className="mb-5">
-        <div className="">Order</div>
+        
+      <label htmlFor="order">Order:</label>
         <input
           type="number"
           id="order"
@@ -181,8 +182,8 @@ const NewTraining = () => {
       </div> */}
       <PointsComp points={points} setPoints={setPoints}/>
 
-      <div className="mb-5">
-        <div className="">Description</div>
+      <div className="mb-5"> 
+        <label htmlFor="description">Description:</label>
         <textarea
           type="text"
           id="description"

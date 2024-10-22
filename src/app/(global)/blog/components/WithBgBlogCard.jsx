@@ -1,28 +1,29 @@
  
 
+import { formatliTarih } from "@/helpers/formatDate";
 import Link from "next/link";
 
-const aylar = [
-  "Ocak",
-  "Şubat",
-  "Mart",
-  "Nisan",
-  "Mayıs",
-  "Haziran",
-  "Temmuz",
-  "Ağustos",
-  "Eylül",
-  "Ekim",
-  "Kasım",
-  "Aralık",
-];
+// const aylar = [
+//   "Ocak",
+//   "Şubat",
+//   "Mart",
+//   "Nisan",
+//   "Mayıs",
+//   "Haziran",
+//   "Temmuz",
+//   "Ağustos",
+//   "Eylül",
+//   "Ekim",
+//   "Kasım",
+//   "Aralık",
+// ];
 const WithBgBlogCard = ({ blog, isSmall }) => {
-  const tarih = new Date(blog?.createdAt); // Ocak 24, 2024
-  const gun = tarih.getDate();
-  const ay = aylar[tarih.getMonth()];
-  const yil = tarih.getFullYear();
+  // const tarih = new Date(blog?.createdAt); // Ocak 24, 2024
+  // const gun = tarih.getDate();
+  // const ay = aylar[tarih.getMonth()];
+  // const yil = tarih.getFullYear();
 
-  const formatliTarih = `${ay} ${gun}, ${yil}`; 
+  // const formatliTarih = `${ay} ${gun}, ${yil}`; 
 
   return (
     <Link
@@ -55,7 +56,7 @@ const WithBgBlogCard = ({ blog, isSmall }) => {
 
         <div className="flex items-center justify-between">
           <span className="poppins-font font-semibold text-dark-red">
-            {formatliTarih}
+            {formatliTarih(blog?.createdAt)}
           </span>
           <span className="poppins-font text-red font-bold">
             {blog?.author}
