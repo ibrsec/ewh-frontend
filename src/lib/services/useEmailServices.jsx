@@ -114,7 +114,33 @@ const useEmailServices = () => {
     }
   };
 
-  return { getEmailsApi, createNewEmail, updateEmail, deleteEmail };
+  const sendMailToEveryOne = async (payload) => {
+    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchEmailStart());
+    try {
+      const response = await axiosToken.post(endPoint+ "/everyone", payload);
+      console.log("send email to everyone response =", response);
+      const data = response?.data;
+      dispatch(fetchEmailSuccessWithOutPayload());
+
+      //warnings
+      //   toastSuccessNotify(data?.message);
+      taostStopLoading(idLoading, "success", response?.data?.message);
+
+      getEmailsApi();
+    } catch (error) {
+      dispatch(fetchEmailFail());
+      taostStopLoading(
+        idLoading,
+        "error",
+        "" + "" + error?.response?.data?.message
+      );
+
+      console.log("send email to everyone api error:", error);
+    }
+  };
+
+  return { getEmailsApi, createNewEmail, updateEmail, deleteEmail, sendMailToEveryOne };
 };
 
 export default useEmailServices;

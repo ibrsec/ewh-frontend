@@ -9,6 +9,7 @@ import NewEmail from "./components/NewEmail";
 import EmailLine from "./components/EmailLine";
 import EmailDeleteModal from "./components/EmailDeleteModal";
 import EmailEditModal from "./components/EmailEditModal";
+import EmailSendAccordion from "./components/EmailSendAccordion";
 
 const EmailAdminPage = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -25,11 +26,24 @@ const EmailAdminPage = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-2 mb-24">
+      <div className=" my-14"> 
+        <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-b-2 pb-5 border-dark-red">
+        Send Email Settings
+      </h3>
+        <EmailSendAccordion
+          title="Accordion Title 1"
+          content="This is the content of the first accordion."
+        />
+      </div>
+
       {/* yeni ekip uyesi */}
+      <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-b-2 pb-5 border-dark-red">
+        Create New Email
+      </h3>
       <NewEmail />
 
       {/* trainings list */}
-      <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-t-2 pt-5 border-dark-red">
+      <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-b-2 pb-5 border-dark-red">
         Kayıtlı Emailler
       </h3>
       {loading ? (
@@ -57,15 +71,28 @@ const EmailAdminPage = () => {
             </thead>
             <tbody>
               {emails?.map((email, idx) => (
-                
-                <EmailLine key={idx} email={email} setChoosedEmail={setChoosedEmail}   setDeleteModalOpen={setDeleteModalOpen}  setEditModalOpen={setEditModalOpen}  />
+                <EmailLine
+                  key={idx}
+                  email={email}
+                  setChoosedEmail={setChoosedEmail}
+                  setDeleteModalOpen={setDeleteModalOpen}
+                  setEditModalOpen={setEditModalOpen}
+                />
               ))}
             </tbody>
           </table>
         </div>
       )}
-      <EmailDeleteModal open={deleteModalOpen} setOpen={setDeleteModalOpen} choosedEmail={choosedEmail}  />
-      <EmailEditModal open={editModalOpen} setOpen={setEditModalOpen} choosedEmail={choosedEmail}  />
+      <EmailDeleteModal
+        open={deleteModalOpen}
+        setOpen={setDeleteModalOpen}
+        choosedEmail={choosedEmail}
+      />
+      <EmailEditModal
+        open={editModalOpen}
+        setOpen={setEditModalOpen}
+        choosedEmail={choosedEmail}
+      />
     </div>
   );
 };
