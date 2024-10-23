@@ -6,10 +6,10 @@ import { IoMailOutline } from "react-icons/io5";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { GrInstagram } from "react-icons/gr";
 import { FaWhatsapp } from "react-icons/fa"; 
-import { useState } from "react";
-import emailValidation from "@/helpers/emailValidation";
+import { useState } from "react"; 
 import { toastWarnNotify } from "@/helpers/toastify";
 import useSubscriptionServices from "@/lib/services/useSubscriptionServices";
+import { emailValidation } from "@/helpers/emailValidation";
 
 const navs = [
   { name: "Anasayfa", href: "/" },
