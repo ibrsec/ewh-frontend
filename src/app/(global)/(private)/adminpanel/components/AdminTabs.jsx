@@ -17,12 +17,12 @@ const tabs = [
       href: "/adminpanel/blog"
     },
     {
-      title: "Kitaplar",
-      href: "/adminpanel/kitaplar"
-    },
-    {
       title: "Email",
       href: "/adminpanel/email"
+    },
+    {
+      title: "Contact",
+      href: "/adminpanel/contact"
     },
 ]
 
