@@ -1,28 +1,120 @@
 import { taostStopLoading, toastLoading } from "@/helpers/toastify";
-import axios from "axios";
-// import useAxios from "./useAxios"
-
- 
+import {
+  fetchEmailFail,
+  fetchEmailStart,
+  fetchEmailSuccess,
+  fetchEmailSuccessWithOutPayload,
+} from "../features/emailSlice";
+import useAxios from "./useAxios";
+import { useDispatch } from "react-redux";
 
 const useEmailServices = () => {
-    // const {axiosPublic} = useAxios()
+  const { axiosToken } = useAxios();
+  const endPoint = "/emails";
+  const dispatch = useDispatch();
 
-    const subscriptionApi = async(email) => {
-
-        const idLoading = toastLoading(`Loading...` );
-        try {
-
-            const response = await axios.post(process.env.NEXT_PUBLIC_BASE_URL+'/emails/subscription', { email });
-            console.log('response subsc email = ', response)
-
-            taostStopLoading(idLoading,"success",response?.data?.message) 
-        } catch (error) {
-            taostStopLoading(idLoading,"error",""+ ""+error?.response?.data?.message) 
-            console.log('error email subs', error)
-        }
-
+  const getEmailsApi = async () => {
+    dispatch(fetchEmailStart());
+    const idLoading = toastLoading(`Loading...`);
+    try {
+      const response = await axiosToken(endPoint);
+      console.log("response get emails = ", response);
+      taostStopLoading(idLoading, "success", response?.data?.message);
+      dispatch(fetchEmailSuccess(response?.data?.data));
+    } catch (error) {
+      dispatch(fetchEmailFail());
+      taostStopLoading(
+        idLoading,
+        "error",
+        "" + "" + error?.response?.data?.message
+      );
+      console.log("error get emails", error);
     }
-  return {subscriptionApi}
-}
+  };
+  const createNewEmail = async (payload) => {
+    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchEmailStart());
+    try {
+      const response = await axiosToken.post(endPoint, payload);
+      console.log("create new email response =", response);
+      const data = response?.data;
+      dispatch(fetchEmailSuccessWithOutPayload());
 
-export default useEmailServices
+      //warnings
+      //   toastSuccessNotify(data?.message);
+      taostStopLoading(idLoading, "success", response?.data?.message);
+
+      getEmailsApi();
+    } catch (error) {
+      dispatch(fetchEmailFail());
+      taostStopLoading(
+        idLoading,
+        "error",
+        "" + "" + error?.response?.data?.message
+      );
+
+      console.log("create new email api error:", error);
+    }
+  };
+  const updateEmail = async (id, payload) => {
+    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchEmailStart());
+    try {
+      const response = await axiosToken.put(endPoint + "/" + id, payload);
+      console.log("update email response =", response);
+      const data = response?.data;
+      dispatch(fetchEmailSuccessWithOutPayload());
+
+      //warnings
+      // toastSuccessNotify(data?.message);
+
+      taostStopLoading(idLoading, "success", response?.data?.message);
+
+      getEmailsApi();
+    } catch (error) {
+      dispatch(fetchEmailFail());
+      // toastErrorNotify(error?.response?.data?.message);
+      taostStopLoading(
+        idLoading,
+        "error",
+        "" + "" + error?.response?.data?.message
+      );
+      console.log("update email api error:", error);
+    }
+  };
+  const deleteEmail = async (id) => {
+    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchEmailStart());
+    try {
+      const response = await axiosToken.delete(endPoint + "/" + id);
+      console.log("delete email response =", response);
+      const data = response?.data;
+      dispatch(fetchEmailSuccessWithOutPayload());
+
+      //warnings
+      // toastSuccessNotify(data?.message || "Email is deleted!");
+
+      taostStopLoading(
+        idLoading,
+        "success",
+        response?.data?.message || "Email is deleted!"
+      );
+
+      getEmailsApi();
+    } catch (error) {
+      dispatch(fetchEmailFail());
+      // toastErrorNotify(error?.response?.data?.message || "Deleting email is failed!");
+
+      taostStopLoading(
+        idLoading,
+        "error",
+        "" + "" + error?.response?.data?.message || "Deleting email is failed!"
+      );
+      console.log("delete email api error:", error);
+    }
+  };
+
+  return { getEmailsApi, createNewEmail, updateEmail, deleteEmail };
+};
+
+export default useEmailServices;

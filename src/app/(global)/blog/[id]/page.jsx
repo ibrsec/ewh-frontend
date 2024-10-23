@@ -14,10 +14,12 @@ import { IoLink } from "react-icons/io5";
 import { toastSuccessNotify } from "@/helpers/toastify";
 import { formatliTarih } from "@/helpers/formatDate";
 import DOMPurify from "dompurify";
+import Spinner from "@/components/spinner/Spinner";
 
 const BlogDetailPage = ({ params }) => {
   const { getOneBlogApi } = useBlogServices();
   const blog = useSelector((state) => state.blog.blog);
+  const loading = useSelector((state) => state.blog.loading);
   useEffect(() => {
     getOneBlogApi(params?.id);
     // eslint-disable-next-line
@@ -40,6 +42,12 @@ const BlogDetailPage = ({ params }) => {
 
 
   const cleanHTML = DOMPurify.sanitize(blog?.content);
+
+
+  
+  if(loading){
+    return <div className=" my-20 text-center"><Spinner /></div>
+  }
 
   return (
     <div className=" max-w-6xl mx-auto px-2 mb-16 flex flex-col gap-5 poppins-font">

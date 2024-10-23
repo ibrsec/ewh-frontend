@@ -1,6 +1,6 @@
  
-const emailValidation = (email) => {
+export const emailValidation = (email) => {
     return /.+@.+\..+/.test(email);
 }
 
-module.exports = emailValidation;
+ 

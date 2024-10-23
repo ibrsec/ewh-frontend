@@ -5,11 +5,11 @@ import { MdEmail } from "react-icons/md";
 import { IoMailOutline } from "react-icons/io5";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { GrInstagram } from "react-icons/gr";
-import { FaWhatsapp } from "react-icons/fa";
-import useEmailServices from "@/lib/services/useEmailServices";
+import { FaWhatsapp } from "react-icons/fa"; 
 import { useState } from "react";
 import emailValidation from "@/helpers/emailValidation";
 import { toastWarnNotify } from "@/helpers/toastify";
+import useSubscriptionServices from "@/lib/services/useSubscriptionServices";
 
 const navs = [
   { name: "Anasayfa", href: "/" },
@@ -51,7 +51,7 @@ const contacts = [
 ]; 
 
 const Footer = () => {
-  const {subscriptionApi} = useEmailServices();
+  const {subscriptionApi} = useSubscriptionServices();
   const  [email, setEmail] = useState("");
   const pathName = usePathname();
   // console.log(pathName);

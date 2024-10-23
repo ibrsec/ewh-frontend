@@ -11,7 +11,7 @@ const initialState = {
 
 
 const emailSlice = createSlice({
-    name:'emails',
+    name:'email',
     initialState,
     reducers:{
         fetchEmailStart:(state)=>{
