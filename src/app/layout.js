@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return ( 
         <html lang="en">
-          <body className={` antialiased bg-main-bg`}>
+          <body className={` `}>
             {/* HeadInfos component */}
             <HeadInfos />
             <div className="sticky top-0  z-50   min-h-screen ">

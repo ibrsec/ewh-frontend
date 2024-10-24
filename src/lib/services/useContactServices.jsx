@@ -16,8 +16,7 @@ const useContactServices = () => {
   const search = useSelector((state) => state.contact.search);
 
   const getContactsApi = async () => {
-    dispatch(fetchContactStart());
-    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchContactStart()); 
     try {
       const response = await axiosToken(endPoint + "?page=" + page + "&search[fullName]="+search);
       console.log("response get contact infos = ", response);
@@ -25,11 +24,12 @@ const useContactServices = () => {
       dispatch(fetchContactSuccess(response?.data));
     } catch (error) {
       dispatch(fetchContactFail());
-      taostStopLoading(
-        idLoading,
-        "error",
-        "" + "" + error?.response?.data?.message
-      );
+      // taostStopLoading(
+      //   idLoading,
+      //   "error",
+      //   "" + "" + error?.response?.data?.message
+      // );
+      toastErrorNotify( error?.response?.data?.message );
       console.log("error get contact infos", error);
     }
   };

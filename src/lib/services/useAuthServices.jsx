@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import useAxios from "./useAxios";
 
 import { fetchAuthFail, fetchAuthLoginSuccess, fetchAuthLogout, fetchAuthStart } from "../features/authSlice";
-import { toastErrorNotify, toastSuccessNotify } from "@/helpers/toastify";
+import { taostStopLoading, toastErrorNotify, toastLoading, toastSuccessNotify } from "@/helpers/toastify";
 import { useRouter } from "next/navigation";
  
 
@@ -15,6 +15,7 @@ const useAuthServices = () => {
   const loginApi = async (payload) => {
     const endPoint = "/auth/login";
 
+    const idLoading = toastLoading(`Loading...`);
     dispatch(fetchAuthStart());
     try {
       const response = await axiosPublic.post(endPoint, payload);
@@ -26,10 +27,15 @@ const useAuthServices = () => {
       router.push("/adminpanel");
 
       //warnings
-      toastSuccessNotify(data?.message);
+      // toastSuccessNotify(data?.message);
+      taostStopLoading(idLoading, "success", response?.data?.message);
     } catch (error) {
       dispatch(fetchAuthFail());
-      toastErrorNotify(error?.response?.data?.message);
+      // toastErrorNotify(error?.response?.data?.message);
+      taostStopLoading(
+        idLoading,
+        "error", error?.response?.data?.message
+      );
       console.log("login api error:", error);
     }
   };
@@ -57,6 +63,7 @@ const useAuthServices = () => {
 
   const logoutApi = async () => {
     const endPoint = "/auth/logout";
+    const idLoading = toastLoading(`Loading...`);
 
     dispatch(fetchAuthStart());
     try {
@@ -70,13 +77,18 @@ const useAuthServices = () => {
 
       
       //!navigate
-      router.push("/login-admin-1239");
+      router.push("/admin-login");
 
       //warnings
-      toastSuccessNotify(data?.message);
+      // toastSuccessNotify(data?.message);
+      taostStopLoading(idLoading, "success", response?.data?.message);
     } catch (error) {
       dispatch(fetchAuthFail());
-      toastErrorNotify(error?.response?.data?.message);
+      // toastErrorNotify(error?.response?.data?.message);
+      taostStopLoading(
+        idLoading,
+        "error", error?.response?.data?.message
+      );
       console.log("logout api error:", error);
     }
   };

@@ -1,4 +1,4 @@
-import { taostStopLoading, toastLoading } from "@/helpers/toastify";
+import { taostStopLoading, toastErrorNotify, toastLoading, toastSuccessNotify } from "@/helpers/toastify";
 import {
   fetchEmailFail,
   fetchEmailStart,
@@ -18,7 +18,6 @@ const useEmailServices = () => {
 
   const getEmailsApi = async () => {
     dispatch(fetchEmailStart());
-    const idLoading = toastLoading(`Loading...`);
     try {
       const response = await axiosToken(endPoint+ "?page=" + page + "&search[email]="+search);
       console.log("response get emails = ", response);
@@ -26,11 +25,7 @@ const useEmailServices = () => {
       dispatch(fetchEmailSuccess(response?.data));
     } catch (error) {
       dispatch(fetchEmailFail());
-      taostStopLoading(
-        idLoading,
-        "error",
-        "" + "" + error?.response?.data?.message
-      );
+      toastErrorNotify( error?.response?.data?.message );
       console.log("error get emails", error);
     }
   };

@@ -19,46 +19,49 @@ const useBlogServices = () => {
   const dispatch = useDispatch();
 
   const getBlogsApi = async () => {
-    dispatch(fetchBlogStart());
-    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchBlogStart()); 
     try {
       const response = await axiosToken("/blogs");
       console.log("response get blogs = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
+      toastSuccessNotify(data?.message);
       dispatch(fetchBlogSuccess(response?.data?.data));
     } catch (error) {
       dispatch(fetchBlogFail());
-      taostStopLoading(
-        idLoading,
-        "error",
-        "" + "" + error?.response?.data?.message
-      );
+      // taostStopLoading(
+      //   idLoading,
+      //   "error",
+      //   "" + "" + error?.response?.data?.message
+      // );
+      toastErrorNotify(error?.response?.data?.message);
       console.log("error get blogs", error);
     }
   };
 
 
   const getOneBlogApi = async (id) => {
-    dispatch(fetchBlogStart());
-    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchBlogStart()); 
     try {
       const response = await axiosToken("/blogs/"+id);
       console.log("response get one blog = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
+      toastSuccessNotify(data?.message);
       dispatch(fetchOneBlogSuccess(response?.data?.data));
     } catch (error) {
       dispatch(fetchBlogFail());
-      taostStopLoading(
-        idLoading,
-        "error",
-        "" + "" + error?.response?.data?.message
-      );
+      // taostStopLoading(
+      //   idLoading,
+      //   "error",
+      //   "" + "" + error?.response?.data?.message
+      // );
+      toastErrorNotify(error?.response?.data?.message);
       console.log("error get one blog", error);
     }
   };
 
 
   const createBlogApi = async (payload) => {
+    const idLoading = toastLoading(`Loading...`);
     const endPoint = "/blogs";
 
     dispatch(fetchBlogStart());
@@ -75,14 +78,20 @@ const useBlogServices = () => {
       getBlogsApi();
 
       //warnings
-      toastSuccessNotify(data?.message);
+      // toastSuccessNotify(data?.message);
+      taostStopLoading(idLoading, "success", response?.data?.message);
     } catch (error) {
       dispatch(fetchBlogFail());
-      toastErrorNotify(error?.response?.data?.message);
+      // toastErrorNotify(error?.response?.data?.message);
+      taostStopLoading(
+        idLoading,
+        "error", error?.response?.data?.message
+      );
       console.log("create new blog api error:", error);
     }
   };
   const updateBlog = async (id, payload) => {
+    const idLoading = toastLoading(`Loading...`);
     const endPoint = "/blogs/" + id;
 
     dispatch(fetchBlogStart());
@@ -97,16 +106,22 @@ const useBlogServices = () => {
       dispatch(fetchBlogSuccessWithOutPayload());
 
       //warnings
-      toastSuccessNotify(data?.message);
+      // toastSuccessNotify(data?.message);
+      taostStopLoading(idLoading, "success", response?.data?.message);
 
       getBlogsApi();
     } catch (error) {
       dispatch(fetchBlogFail());
-      toastErrorNotify(error?.response?.data?.message);
+      // toastErrorNotify(error?.response?.data?.message);
+      taostStopLoading(
+        idLoading,
+        "error", error?.response?.data?.message
+      );
       console.log("update blog api error:", error);
     }
   };
   const deleteBlog = async (id) => {
+    const idLoading = toastLoading(`Loading...`);
     const endPoint = "/blogs/" + id;
     dispatch(fetchBlogStart());
     try {
@@ -118,11 +133,16 @@ const useBlogServices = () => {
       getBlogsApi();
 
       //warnings
-      toastSuccessNotify(data?.message || "Blog is deleted!");
+      // toastSuccessNotify(data?.message || "Blog is deleted!");
+      taostStopLoading(idLoading, "success", response?.data?.message || "Blog is deleted!");
     } catch (error) {
       dispatch(fetchBlogFail());
-      toastErrorNotify(
-        error?.response?.data?.message || "Deleting blog is failed!"
+      // toastErrorNotify(
+      //   error?.response?.data?.message || "Deleting blog is failed!"
+      // );
+      taostStopLoading(
+        idLoading,
+        "error", error?.response?.data?.message || "Deleting blog is failed!"
       );
       console.log("delete blog api error:", error);
     }

@@ -20,14 +20,14 @@ const ContactLine = ({
         onClick={() => {
           setIsOpen(!isOpen);
         }}
-        class={
+        className={
           " cursor-pointer hover:opacity-75 transition-opacity  " +
           (contact?.status === "new"
             ? " odd:bg-light-orange even:bg-light-orange"
             : " odd:bg-white even:bg-gray-200")
         }
       >
-        <td class="px-2 py-4 text-xs sx:text-sm flex items-center gap-2">
+        <td className="px-2 py-4 text-xs sx:text-sm flex items-center gap-2">
           <span>
             {isOpen ? (
               <FaChevronUp size={"16"} />
@@ -39,24 +39,24 @@ const ContactLine = ({
         </td>
         <th
           scope="row"
-          class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap   text-sm sx:text-md"
+          className="px-2 py-4 font-medium text-gray-900 whitespace-nowrap   text-sm sx:text-md"
         >
           {contact?.fullName}
         </th>
-        <td class="px-2 py-4 text-xs sx:text-sm">{contact?.email}</td>
-        <td class="px-2 py-4 text-xs sx:text-sm">{contact?.phone}</td>
-        <td class="px-2 py-4 text-xs sx:text-sm">
+        <td className="px-2 py-4 text-xs sx:text-sm">{contact?.email}</td>
+        <td className="px-2 py-4 text-xs sx:text-sm">{contact?.phone}</td>
+        <td className="px-2 py-4 text-xs sx:text-sm">
           {new Date(contact?.createdAt).toLocaleString("tr-TR")}
         </td>
         <td
-          class={
+          className={
             "px-2 py-4 text-xs sx:text-sm font-bold " +
             (contact?.status === "new" ? " text-red" : " text-green-600")
           }
         >
           {contact?.status}
         </td>
-        <td class="px-2 py-4 text-xs sx:text-sm flex items-center gap-2">
+        <td className="px-2 py-4 text-xs sx:text-sm flex items-center gap-2">
           <button
             className="  text-red-600 hover:underline"
             onClick={() => {

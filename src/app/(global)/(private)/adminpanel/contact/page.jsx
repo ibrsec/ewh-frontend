@@ -42,28 +42,28 @@ const EmailAdminPage = () => {
         <NoContent />
       ) : (
         <div className="border-2 border-dark-red   transition-all duration-1000 rounded-lg pt-7 pb-4 px-5 shadow-md shadow-dark-red mt-10 flex flex-col gap-3 overflow-auto ">
-          <table class="w-full text-sm text-left rtl:text-right text-gray-950  ">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-950  ">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50  ">
               <tr>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   #
                 </th>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   Ad Soyad
                 </th>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   email
                 </th>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   telefon
                 </th>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   created
                 </th>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   status
                 </th>
-                <th scope="col" class="px-2 py-3">
+                <th scope="col" className="px-2 py-3">
                   actions
                 </th>
               </tr>

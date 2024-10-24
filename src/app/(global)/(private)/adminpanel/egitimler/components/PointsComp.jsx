@@ -21,9 +21,9 @@ const PointsComp = ({ points, setPoints }) => {
     <div className="mb-5">
       <div className="">Maddeler:</div>
       {points.map((point, index) => (
-        <div className="mb-2">
+        <div className="mb-2" 
+        key={index}>
           <input
-            key={index}
             type="text"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-dark-red focus:border-dark-red block w-full p-2.5  "
             placeholder={`Madde ${index + 1}* - max 100 char`}
