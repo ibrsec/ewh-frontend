@@ -2,29 +2,8 @@
 
 import { formatliTarih } from "@/helpers/formatDate";
 import Link from "next/link";
-
-// const aylar = [
-//   "Ocak",
-//   "Şubat",
-//   "Mart",
-//   "Nisan",
-//   "Mayıs",
-//   "Haziran",
-//   "Temmuz",
-//   "Ağustos",
-//   "Eylül",
-//   "Ekim",
-//   "Kasım",
-//   "Aralık",
-// ];
-const WithBgBlogCard = ({ blog, isSmall }) => {
-  // const tarih = new Date(blog?.createdAt); // Ocak 24, 2024
-  // const gun = tarih.getDate();
-  // const ay = aylar[tarih.getMonth()];
-  // const yil = tarih.getFullYear();
-
-  // const formatliTarih = `${ay} ${gun}, ${yil}`; 
-
+ 
+const WithBgBlogCard = ({ blog, isSmall }) => { 
   return (
     <Link
       href={"/blog/" + blog?._id || ""}
@@ -35,12 +14,12 @@ const WithBgBlogCard = ({ blog, isSmall }) => {
         alt=""
         className="absolute w-full h-full z-30   opacity-0 group-hover:opacity-30  group-hover:scale-125 transition-all duration-1000"
       />
-      <div className="flex-none  h-[220px] rounded-md overflow-hidden">
+      <div className={"flex-none   rounded-md overflow-hidden " + (isSmall ? " h-[220px]" : " h-[350px]") }>
         {/* h-1/3 */}
         <img
           src={blog?.image?.url}
           alt="blog"
-          className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-top rounded-md group-hover:scale-105 transition-transform duration-700"
         />
       </div>
       <div className="bg-gray-500 h-0.5 w-full  "></div>

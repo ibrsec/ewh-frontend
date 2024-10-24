@@ -37,7 +37,7 @@ const RecentBlogCard = ({ blog }) => {
         <img
           src={blog?.image?.url}
           alt="blog"
-          className="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-cover object-top rounded-md group-hover:scale-105 transition-transform duration-700"
         />
       </div>
       <div className="bg-gray-500 h-0.5 w-full  "></div>
