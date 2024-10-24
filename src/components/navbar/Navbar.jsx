@@ -23,7 +23,7 @@ const Navbar = () => {
     setIsOpen(!isOpen); // Menu açılma/kapanma durumunu değiştir
   };
   const pathName = usePathname();
-  console.log(pathName);
+  // console.log(pathName);
 
   const [isVisible, setIsVisible] = useState(false);
 

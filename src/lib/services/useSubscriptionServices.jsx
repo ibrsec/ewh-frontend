@@ -13,7 +13,7 @@ const useSubscriptionServices = () => {
         try {
 
             const response = await axios.post(process.env.NEXT_PUBLIC_BASE_URL+'/emails/subscription', { email });
-            console.log('response subsc email = ', response)
+            // console.log('response subsc email = ', response)
 
             taostStopLoading(idLoading,"success",response?.data?.message) 
         } catch (error) {

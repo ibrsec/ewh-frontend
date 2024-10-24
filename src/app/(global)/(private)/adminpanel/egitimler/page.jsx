@@ -18,7 +18,7 @@ const EgitimlerAdminPage = () => {
   const { getTrainingApi } = useTrainingServices();
   const trainings = useSelector((state) => state.training.trainings);
   const loading = useSelector((state) => state.training.loading);
-console.log(trainings);
+// console.log(trainings);
   useEffect(() => {
     getTrainingApi();
     // eslint-disable-next-line

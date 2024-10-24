@@ -20,7 +20,7 @@ const useEmailServices = () => {
     dispatch(fetchEmailStart());
     try {
       const response = await axiosToken(endPoint+ "?page=" + page + "&search[email]="+search);
-      console.log("response get emails = ", response);
+      // console.log("response get emails = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
       dispatch(fetchEmailSuccess(response?.data));
     } catch (error) {
@@ -34,7 +34,7 @@ const useEmailServices = () => {
     dispatch(fetchEmailStart());
     try {
       const response = await axiosToken.post(endPoint, payload);
-      console.log("create new email response =", response);
+      // console.log("create new email response =", response);
       const data = response?.data;
       dispatch(fetchEmailSuccessWithOutPayload());
 
@@ -59,7 +59,7 @@ const useEmailServices = () => {
     dispatch(fetchEmailStart());
     try {
       const response = await axiosToken.put(endPoint + "/" + id, payload);
-      console.log("update email response =", response);
+      // console.log("update email response =", response);
       const data = response?.data;
       dispatch(fetchEmailSuccessWithOutPayload());
 
@@ -85,7 +85,7 @@ const useEmailServices = () => {
     dispatch(fetchEmailStart());
     try {
       const response = await axiosToken.delete(endPoint + "/" + id);
-      console.log("delete email response =", response);
+      // console.log("delete email response =", response);
       const data = response?.data;
       dispatch(fetchEmailSuccessWithOutPayload());
 
@@ -117,7 +117,7 @@ const useEmailServices = () => {
     dispatch(fetchEmailStart());
     try {
       const response = await axiosToken.post(endPoint+ "/everyone", payload);
-      console.log("send email to everyone response =", response);
+      // console.log("send email to everyone response =", response);
       const data = response?.data;
       dispatch(fetchEmailSuccessWithOutPayload());
 

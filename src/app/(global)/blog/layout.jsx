@@ -1,4 +1,8 @@
-import React from 'react'
+
+export const metadata = {
+  title: "English With Hatice | Blog Sayfası",
+  description: "Learn English with Hatice",
+};
 
 const BlogLayout = ({children}) => {
   return (

@@ -1,4 +1,9 @@
-import React from 'react'
+
+
+export const metadata = {
+  title: "English With Hatice | Eğitimlerimiz",
+  description: "Learn English with Hatice",
+};
 
 const TrainingsLayout = ({children}) => {
   return (

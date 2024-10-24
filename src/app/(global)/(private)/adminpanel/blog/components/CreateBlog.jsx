@@ -38,7 +38,7 @@ useEffect(()=>{
   //handling submit login form
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("inputs", inputs);
+    // console.log("inputs", inputs);
     //check if fields are entered
     if (
       !inputs.title ||
@@ -51,7 +51,7 @@ useEffect(()=>{
       toastWarnNotify("All fields are required!");
       return;
     }
-    console.log(inputs);
+    // console.log(inputs);
 
     //length restricts!
     if (inputs.title.length > 150) { 

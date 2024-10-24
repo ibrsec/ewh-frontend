@@ -22,7 +22,7 @@ const useTeamServices = () => {
     // const idLoading = toastLoading(`Loading...` );
     try {
       const response = await axiosToken("/team");
-      console.log("response get team = ", response);
+      // console.log("response get team = ", response);
       // taostStopLoading(idLoading,"success",response?.data?.message)
       dispatch(fetchTeamSuccess(response?.data?.data));
     } catch (error) {
@@ -43,7 +43,7 @@ const useTeamServices = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("create new team member response =", response);
+      // console.log("create new team member response =", response);
       const data = response?.data;
       dispatch(fetchTeamSuccessWithOutPayload());
 
@@ -70,7 +70,7 @@ const useTeamServices = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("update team member response =", response);
+      // console.log("update team member response =", response);
       const data = response?.data;
       dispatch(fetchTeamSuccessWithOutPayload());
 
@@ -93,7 +93,7 @@ const useTeamServices = () => {
     dispatch(fetchTeamStart());
     try {
       const response = await axiosToken.delete(endPoint);
-      console.log("delete team member response =", response);
+      // console.log("delete team member response =", response);
       const data = response?.data;
       dispatch(fetchTeamSuccessWithOutPayload());
 

@@ -16,7 +16,7 @@ const EkipPage = () => {
   const { getTeamApi } = useTeamServices();
   const team = useSelector((state) => state.team.teamMembers);
   const loading = useSelector((state) => state.team.loading);
-console.log(team);
+// console.log(team);
   useEffect(() => {
     getTeamApi();
     // eslint-disable-next-line

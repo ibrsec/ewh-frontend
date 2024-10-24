@@ -19,7 +19,7 @@ const useContactServices = () => {
     dispatch(fetchContactStart()); 
     try {
       const response = await axiosToken(endPoint + "?page=" + page + "&search[fullName]="+search);
-      console.log("response get contact infos = ", response);
+      // console.log("response get contact infos = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
       dispatch(fetchContactSuccess(response?.data));
     } catch (error) {
@@ -39,7 +39,7 @@ const useContactServices = () => {
     dispatch(fetchContactStart());
     try {
       const response = await axiosToken.delete(endPoint + "/" + id);
-      console.log("delete contact info response =", response);
+      // console.log("delete contact info response =", response);
       const data = response?.data;
       dispatch(fetchContactSuccessWithOutPayload());
 
@@ -71,7 +71,7 @@ const useContactServices = () => {
     dispatch(fetchContactStart());
     try {
       const response = await axiosToken.put(endPoint + "/read/" + id);
-      console.log("read status contact info response =", response);
+      // console.log("read status contact info response =", response);
       const data = response?.data;
       dispatch(fetchContactSuccessWithOutPayload());
 

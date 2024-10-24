@@ -25,7 +25,7 @@ const useTrainingServices = () => {
     // const idLoading = toastLoading(`Loading...` );
     try {
       const response = await axiosPublic(endPoint);
-      console.log("response get training = ", response);
+      // console.log("response get training = ", response);
       // taostStopLoading(idLoading,"success",response?.data?.message)
       // toastSuccessNotify(response?.data?.message);
       dispatch(fetchTrainingSuccess(response?.data?.data));
@@ -47,7 +47,7 @@ const useTrainingServices = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("create new training member response =", response);
+      // console.log("create new training member response =", response);
       const data = response?.data;
       dispatch(fetchTrainingSuccessWithOutPayload());
 
@@ -72,8 +72,8 @@ const useTrainingServices = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("update training member response =", response);
-      const data = response?.data;
+      // console.log("update training member response =", response);
+      // const data = response?.data;
       dispatch(fetchTrainingSuccessWithOutPayload());
 
       //warnings
@@ -93,8 +93,8 @@ const useTrainingServices = () => {
     dispatch(fetchTrainingStart());
     try {
       const response = await axiosToken.delete(endPoint + "/" + id);
-      console.log("delete training member response =", response);
-      const data = response?.data;
+      // console.log("delete training member response =", response);
+      // const data = response?.data;
       dispatch(fetchTrainingSuccessWithOutPayload());
 
       //warnings

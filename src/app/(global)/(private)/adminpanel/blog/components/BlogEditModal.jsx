@@ -28,7 +28,7 @@ const BlogEditModal = ({ open, setOpen, choosedBlog }) => {
   const { updateBlog } = useBlogServices();
   const loading = useSelector((state) => state.blog.loading);
 
-  console.log("choosedBlog", choosedBlog);
+  // console.log("choosedBlog", choosedBlog);
   const [inputs, setInputs] = useState({
     title: choosedBlog?.title || "",
     author: choosedBlog?.author || "",
@@ -47,7 +47,7 @@ const BlogEditModal = ({ open, setOpen, choosedBlog }) => {
       imageFile: null,
     });
     setContent(askedblog?.content);
-    console.log("choosedBlog", choosedBlog);
+    // console.log("choosedBlog", choosedBlog);
   }, [choosedBlog, open, askedblog]);
 
   const [content, setContent] = useState(askedblog?.content);
@@ -67,7 +67,7 @@ const BlogEditModal = ({ open, setOpen, choosedBlog }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(inputs);
+    // console.log(inputs);
     //check if fields are entered
     if (
       !inputs.title ||

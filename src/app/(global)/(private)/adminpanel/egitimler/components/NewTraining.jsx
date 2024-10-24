@@ -38,14 +38,14 @@ const NewTraining = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(inputs);
+    // console.log(inputs);
 
     //boslari sil
     setInputs({...inputs, points: inputs.points.filter(point => point.length > 0)});
     
 
 
-    console.log("inputs", inputs);
+    // console.log("inputs", inputs);
     //check if fields are entered
     if (
       !inputs.title ||
@@ -58,14 +58,12 @@ const NewTraining = () => {
       toastWarnNotify("All fields are required!");
       return;
     }
-    console.log(inputs);
+    // console.log(inputs);
 
     //length restricts!
-    if (inputs.title.length > 40) {
-      console.log("girdi");
+    if (inputs.title.length > 40) { 
       toastWarnNotify("title 40 karakteri geçemez!");
-      return;
-      console.log("return sonrasi");
+      return; 
     }
     if (inputs.time.length > 25) {
       toastWarnNotify("time 100 karakteri geçemez!");

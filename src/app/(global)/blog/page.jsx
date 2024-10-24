@@ -425,7 +425,7 @@ const blogs2 = [
 const BlogPage = () => {
   const {getBlogsApi} = useBlogServices();
   const blogs = useSelector(state=> state.blog.blogs);
-  console.log('blogs', blogs)
+  // console.log('blogs', blogs)
 
   useEffect(() => {
     getBlogsApi();

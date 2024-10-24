@@ -52,7 +52,7 @@ const BlogDetailPage = ({ params }) => {
   return (
     <div className=" max-w-6xl mx-auto px-2 mb-16 flex flex-col gap-5 poppins-font">
       <h3 className="text-4xl md:text-5xl my-20 font-bold  ">
-        {capitalize(blog?.title)}
+        {blog?.title}
       </h3>
 
       {/* short desc */}

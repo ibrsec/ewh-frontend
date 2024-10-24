@@ -6,8 +6,7 @@ import {
 } from "@headlessui/react";
 
 import { MdOutlineEditCalendar } from "react-icons/md";
-
-import useTeamServices from "@/lib/services/useTeamServices";
+ 
 import { toastWarnNotify } from "@/helpers/toastify";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -19,7 +18,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
   const { updateTrainingMember } = useTrainingServices();
   const loading = useSelector((state) => state.training.loading);
 
-  console.log("choosedTraining", choosedTraining);
+  // console.log("choosedTraining", choosedTraining);
   const [inputs, setInputs] = useState({
     title: choosedTraining?.title || "",
     description: choosedTraining?.description || "",
@@ -65,7 +64,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
       points: inputs.points.filter((point) => point.length > 0),
     });
 
-    console.log(inputs);
+    // console.log(inputs);
 
     //check if fields are entered
     if (
@@ -79,7 +78,7 @@ const TrainingEditModal = ({ open, setOpen, choosedTraining }) => {
       toastWarnNotify("All fields are required!");
       return;
     }
-    console.log(inputs);
+    // console.log(inputs);
 
     //length restricts!
     if (inputs.title.length > 40) {

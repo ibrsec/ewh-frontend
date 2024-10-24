@@ -22,9 +22,9 @@ const useBlogServices = () => {
     dispatch(fetchBlogStart()); 
     try {
       const response = await axiosToken("/blogs");
-      console.log("response get blogs = ", response);
+      // console.log("response get blogs = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
-      toastSuccessNotify(data?.message);
+      // toastSuccessNotify(data?.message);
       dispatch(fetchBlogSuccess(response?.data?.data));
     } catch (error) {
       dispatch(fetchBlogFail());
@@ -43,9 +43,9 @@ const useBlogServices = () => {
     dispatch(fetchBlogStart()); 
     try {
       const response = await axiosToken("/blogs/"+id);
-      console.log("response get one blog = ", response);
+      // console.log("response get one blog = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
-      toastSuccessNotify(data?.message);
+      // toastSuccessNotify(response?.data?.message);
       dispatch(fetchOneBlogSuccess(response?.data?.data));
     } catch (error) {
       dispatch(fetchBlogFail());
@@ -71,7 +71,7 @@ const useBlogServices = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("create new blog response =", response);
+      // console.log("create new blog response =", response);
       const data = response?.data;
       dispatch(fetchBlogSuccessWithOutPayload());
 
@@ -101,7 +101,7 @@ const useBlogServices = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log("update blog response =", response);
+      // console.log("update blog response =", response);
       const data = response?.data;
       dispatch(fetchBlogSuccessWithOutPayload());
 
@@ -126,7 +126,7 @@ const useBlogServices = () => {
     dispatch(fetchBlogStart());
     try {
       const response = await axiosToken.delete(endPoint);
-      console.log("delete blog response =", response);
+      // console.log("delete blog response =", response);
       const data = response?.data;
       dispatch(fetchBlogSuccessWithOutPayload());
 

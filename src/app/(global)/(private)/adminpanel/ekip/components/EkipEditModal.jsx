@@ -17,7 +17,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
   const { updateTeamMember } = useTeamServices();
   const loading = useSelector((state) => state.team.loading);
 
-  console.log("choosedMember", choosedMember);
+  // console.log("choosedMember", choosedMember);
   const [inputs, setInputs] = useState({
     fullName: choosedMember?.fullName || "",
     email: choosedMember?.email || "",
@@ -47,7 +47,7 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(inputs);
+    // console.log(inputs);
     //check if fields are entered
     if (
       !inputs.fullName ||

@@ -13,7 +13,7 @@ const useContactInfoPostServices = () => {
         try {
 
             const response = await axios.post(process.env.NEXT_PUBLIC_BASE_URL+'/contactInfo', payload);
-            console.log('response contactInfo post  = ', response)
+            // console.log('response contactInfo post  = ', response)
 
             taostStopLoading(idLoading,"success",response?.data?.message) 
         } catch (error) {
