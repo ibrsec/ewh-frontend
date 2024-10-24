@@ -24,7 +24,7 @@ const useBlogServices = () => {
     try {
       const response = await axiosToken("/blogs");
       console.log("response get blogs = ", response);
-      taostStopLoading(idLoading, "success", response?.data?.message);
+      // taostStopLoading(idLoading, "success", response?.data?.message);
       dispatch(fetchBlogSuccess(response?.data?.data));
     } catch (error) {
       dispatch(fetchBlogFail());
@@ -44,7 +44,7 @@ const useBlogServices = () => {
     try {
       const response = await axiosToken("/blogs/"+id);
       console.log("response get one blog = ", response);
-      taostStopLoading(idLoading, "success", response?.data?.message);
+      // taostStopLoading(idLoading, "success", response?.data?.message);
       dispatch(fetchOneBlogSuccess(response?.data?.data));
     } catch (error) {
       dispatch(fetchBlogFail());

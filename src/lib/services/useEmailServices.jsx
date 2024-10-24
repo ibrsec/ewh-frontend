@@ -6,21 +6,24 @@ import {
   fetchEmailSuccessWithOutPayload,
 } from "../features/emailSlice";
 import useAxios from "./useAxios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const useEmailServices = () => {
   const { axiosToken } = useAxios();
   const endPoint = "/emails";
   const dispatch = useDispatch();
 
+  const page = useSelector((state) => state.email.page);
+  const search = useSelector((state) => state.email.search);
+
   const getEmailsApi = async () => {
     dispatch(fetchEmailStart());
     const idLoading = toastLoading(`Loading...`);
     try {
-      const response = await axiosToken(endPoint);
+      const response = await axiosToken(endPoint+ "?page=" + page + "&search[email]="+search);
       console.log("response get emails = ", response);
-      taostStopLoading(idLoading, "success", response?.data?.message);
-      dispatch(fetchEmailSuccess(response?.data?.data));
+      // taostStopLoading(idLoading, "success", response?.data?.message);
+      dispatch(fetchEmailSuccess(response?.data));
     } catch (error) {
       dispatch(fetchEmailFail());
       taostStopLoading(

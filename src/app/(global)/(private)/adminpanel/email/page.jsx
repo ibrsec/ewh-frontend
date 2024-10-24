@@ -10,6 +10,8 @@ import EmailLine from "./components/EmailLine";
 import EmailDeleteModal from "./components/EmailDeleteModal";
 import EmailEditModal from "./components/EmailEditModal";
 import EmailSendAccordion from "./components/EmailSendAccordion";
+import PaginationEmails from "./components/PaginationEmails";
+import SearchBoxEmail from "./components/SearchBoxEmail";
 
 const EmailAdminPage = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
@@ -18,18 +20,20 @@ const EmailAdminPage = () => {
   const { getEmailsApi } = useEmailServices();
   const emails = useSelector((state) => state.email.emails);
   const loading = useSelector((state) => state.email.loading);
+  const page = useSelector((state) => state.email.page);
+  const search = useSelector((state) => state.email.search);
   console.log(emails);
   useEffect(() => {
     getEmailsApi();
     // eslint-disable-next-line
-  }, []);
+  }, [page,search]);
 
   return (
     <div className="max-w-6xl mx-auto px-2 mb-24">
-      <div className=" my-14"> 
+      <div className=" my-14">
         <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-b-2 pb-5 border-dark-red">
-        Send Email Settings
-      </h3>
+          Send Email Settings
+        </h3>
         <EmailSendAccordion
           title="Accordion Title 1"
           content="This is the content of the first accordion."
@@ -46,6 +50,8 @@ const EmailAdminPage = () => {
       <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-b-2 pb-5 border-dark-red">
         Kayıtlı Emailler
       </h3>
+      <PaginationEmails />
+      <SearchBoxEmail />
       {loading ? (
         <Spinner />
       ) : emails?.length === 0 ? (
@@ -55,6 +61,9 @@ const EmailAdminPage = () => {
           <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
+                <th scope="col" class="px-2 py-3">
+                  #
+                </th>
                 <th scope="col" class="px-2 py-3">
                   Email
                 </th>
@@ -73,6 +82,7 @@ const EmailAdminPage = () => {
               {emails?.map((email, idx) => (
                 <EmailLine
                   key={idx}
+                  index={idx}
                   email={email}
                   setChoosedEmail={setChoosedEmail}
                   setDeleteModalOpen={setDeleteModalOpen}
@@ -93,6 +103,8 @@ const EmailAdminPage = () => {
         setOpen={setEditModalOpen}
         choosedEmail={choosedEmail}
       />
+
+      <PaginationEmails />
     </div>
   );
 };

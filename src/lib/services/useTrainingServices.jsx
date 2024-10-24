@@ -18,7 +18,7 @@ const useTrainingServices = () => {
             
             const response = await axiosPublic(endPoint );
             console.log('response get training = ', response)
-            taostStopLoading(idLoading,"success",response?.data?.message) 
+            // taostStopLoading(idLoading,"success",response?.data?.message) 
             dispatch(fetchTrainingSuccess(response?.data?.data))
         } catch (error) {
             dispatch(fetchTrainingFail())

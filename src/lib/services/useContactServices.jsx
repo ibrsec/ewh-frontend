@@ -1,21 +1,28 @@
-import { taostStopLoading, toastLoading } from "@/helpers/toastify"; 
+import { taostStopLoading, toastLoading } from "@/helpers/toastify";
 import useAxios from "./useAxios";
-import { useDispatch } from "react-redux";
-import { fetchContactFail, fetchContactStart, fetchContactSuccess, fetchContactSuccessWithOutPayload } from "../features/contactSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchContactFail,
+  fetchContactStart,
+  fetchContactSuccess,
+  fetchContactSuccessWithOutPayload,
+} from "../features/contactSlice";
 
 const useContactServices = () => {
   const { axiosToken } = useAxios();
   const endPoint = "/contactInfo";
   const dispatch = useDispatch();
+  const page = useSelector((state) => state.contact.page);
+  const search = useSelector((state) => state.contact.search);
 
   const getContactsApi = async () => {
     dispatch(fetchContactStart());
     const idLoading = toastLoading(`Loading...`);
     try {
-      const response = await axiosToken(endPoint);
+      const response = await axiosToken(endPoint + "?page=" + page + "&search[fullName]="+search);
       console.log("response get contact infos = ", response);
-      taostStopLoading(idLoading, "success", response?.data?.message);
-      dispatch(fetchContactSuccess(response?.data?.data));
+      // taostStopLoading(idLoading, "success", response?.data?.message);
+      dispatch(fetchContactSuccess(response?.data));
     } catch (error) {
       dispatch(fetchContactFail());
       taostStopLoading(
@@ -27,7 +34,6 @@ const useContactServices = () => {
     }
   };
 
- 
   const deleteContact = async (id) => {
     const idLoading = toastLoading(`Loading...`);
     dispatch(fetchContactStart());
@@ -54,14 +60,41 @@ const useContactServices = () => {
       taostStopLoading(
         idLoading,
         "error",
-        "" + "" + error?.response?.data?.message || "Deleting contact info is failed!"
+        "" + "" + error?.response?.data?.message ||
+          "Deleting contact info is failed!"
       );
       console.log("delete contact info api error:", error);
     }
   };
- 
+  const readStatusChangeApi = async (id) => {
+    const idLoading = toastLoading(`Loading...`);
+    dispatch(fetchContactStart());
+    try {
+      const response = await axiosToken.put(endPoint + "/read/" + id);
+      console.log("read status contact info response =", response);
+      const data = response?.data;
+      dispatch(fetchContactSuccessWithOutPayload());
 
-  return { getContactsApi, deleteContact };
+      //warnings
+      // toastSuccessNotify(data?.message || "Email is deleted!");
+
+      taostStopLoading(idLoading, "success", response?.data?.message);
+
+      getContactsApi();
+    } catch (error) {
+      dispatch(fetchContactFail());
+      // toastErrorNotify(error?.response?.data?.message || "Deleting email is failed!");
+
+      taostStopLoading(
+        idLoading,
+        "error",
+        "" + "" + error?.response?.data?.message
+      );
+      console.log("read status info api error:", error);
+    }
+  };
+
+  return { getContactsApi, deleteContact, readStatusChangeApi };
 };
 
 export default useContactServices;

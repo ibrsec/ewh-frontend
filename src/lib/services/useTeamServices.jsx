@@ -17,7 +17,7 @@ const useTeamServices = () => {
             
             const response = await axiosToken('/team', );
             console.log('response get team = ', response)
-            taostStopLoading(idLoading,"success",response?.data?.message) 
+            // taostStopLoading(idLoading,"success",response?.data?.message) 
             dispatch(fetchTeamSuccess(response?.data?.data))
         } catch (error) {
             dispatch(fetchTeamFail())
