@@ -12,13 +12,14 @@ const useContactServices = () => {
   const { axiosToken } = useAxios();
   const endPoint = "/contactInfo";
   const dispatch = useDispatch();
-  const page = useSelector((state) => state.contact.page);
-  const search = useSelector((state) => state.contact.search);
+  // const page = useSelector((state) => state.contact.page);
+  // const search = useSelector((state) => state.contact.search);
 
-  const getContactsApi = async () => {
+  const getContactsApi = async (query = "") => {
     dispatch(fetchContactStart()); 
     try {
-      const response = await axiosToken(endPoint + "?page=" + page + "&search[fullName]="+search);
+      // const response = await axiosToken(endPoint + "?page=" + page + "&search[fullName]="+search);
+      const response = await axiosToken(endPoint + query);
       // console.log("response get contact infos = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
       dispatch(fetchContactSuccess(response?.data));

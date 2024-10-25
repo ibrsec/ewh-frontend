@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   contactInfos: [],
-  page: 1,
-  search: "",
+  // page: 1,
+  // search: "",
   pagination: {
     search: {},
     page: 1,
@@ -38,13 +38,13 @@ const contactSlice = createSlice({
     fetchContactLogout: (state) => {
       state.contactInfos = [];
     },
-    fetchContactSetPage: (state, { payload }) => {
-      state.page = payload;
-    },
-    fetchContactSetSearch: (state, { payload }) => {
-      state.page = 1;
-      state.search = payload;
-    },
+    // fetchContactSetPage: (state, { payload }) => {
+    //   state.page = payload;
+    // },
+    // fetchContactSetSearch: (state, { payload }) => {
+    //   state.page = 1;
+    //   state.search = payload;
+    // },
   },
 });
 
@@ -54,7 +54,7 @@ export const {
   fetchContactSuccess,
   fetchContactSuccessWithOutPayload,
   fetchContactLogout,
-  fetchContactSetPage,
-  fetchContactSetSearch,
+  // fetchContactSetPage,
+  // fetchContactSetSearch,
 } = contactSlice.actions;
 export default contactSlice.reducer;

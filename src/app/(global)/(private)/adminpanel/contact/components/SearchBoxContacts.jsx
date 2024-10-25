@@ -1,25 +1,18 @@
 import { fetchContactSetSearch } from "@/lib/features/contactSlice";
-import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+// import { useDispatch } from "react-redux";
 
- 
+const SearchBoxContacts = ({ searchInput, setSearchInput, setPage }) => {
+  // const[searchInput , setSearchInput] = useState("");
+  // const dispatch = useDispatch();
 
-const SearchBoxContacts = () => {
-    const[searchInput , setSearchInput] = useState("");
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchContactSetSearch(searchInput));
-    },[searchInput])
+  // useEffect(() => {
+  //     dispatch(fetchContactSetSearch(searchInput));
+  // },[searchInput])
   return (
-    <form
-      className=" max-w-md mx-auto mt-10 "
-       
-    >
-       
-
+    <form className=" max-w-md mx-auto mt-10 ">
       <div className="mb-5 flex items-center gap-3 ">
-        <label htmlFor="email">Search:</label> 
+        <label htmlFor="email">Search:</label>
         <input
           type="text"
           id="searchInput"
@@ -28,12 +21,14 @@ const SearchBoxContacts = () => {
           name="searchInput"
           placeholder="Search with fullName here..."
           value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)} 
-        /> 
+          onChange={(e) => {
+            setPage(1); // reset page when search input changes
+            setSearchInput(e.target.value); 
+          }}
+        />
       </div>
- 
     </form>
-  )
-}
+  );
+};
 
-export default SearchBoxContacts
+export default SearchBoxContacts;

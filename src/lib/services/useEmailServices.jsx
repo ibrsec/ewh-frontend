@@ -13,13 +13,14 @@ const useEmailServices = () => {
   const endPoint = "/emails";
   const dispatch = useDispatch();
 
-  const page = useSelector((state) => state.email.page);
-  const search = useSelector((state) => state.email.search);
+  // const page = useSelector((state) => state.email.page);
+  // const search = useSelector((state) => state.email.search);
 
-  const getEmailsApi = async () => {
+  const getEmailsApi = async (query = "") => {
     dispatch(fetchEmailStart());
     try {
-      const response = await axiosToken(endPoint+ "?page=" + page + "&search[email]="+search);
+      // const response = await axiosToken(endPoint+ "?page=" + page + "&search[email]="+search);
+      const response = await axiosToken(endPoint+ query);
       // console.log("response get emails = ", response);
       // taostStopLoading(idLoading, "success", response?.data?.message);
       dispatch(fetchEmailSuccess(response?.data));

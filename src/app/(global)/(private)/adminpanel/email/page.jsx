@@ -20,13 +20,21 @@ const EmailAdminPage = () => {
   const { getEmailsApi } = useEmailServices();
   const emails = useSelector((state) => state.email.emails);
   const loading = useSelector((state) => state.email.loading);
-  const page = useSelector((state) => state.email.page);
-  const search = useSelector((state) => state.email.search);
-  console.log(emails);
+  // const page = useSelector((state) => state.email.page);
+  // const search = useSelector((state) => state.email.search);
+
+  const [page, setPage] = useState(1);
+  const [searchInput, setSearchInput] = useState("");
+  // console.log(emails);
+
   useEffect(() => {
-    getEmailsApi();
+    let query = "?page=" + page;
+    if (searchInput) {
+      query += "&search[email]=" + searchInput;
+    }
+    getEmailsApi(query);
     // eslint-disable-next-line
-  }, [page,search]);
+  }, [page, searchInput]);
 
   return (
     <div className="max-w-6xl mx-auto px-2 mb-24">
@@ -50,8 +58,12 @@ const EmailAdminPage = () => {
       <h3 className="text-2xl md:text-3xl font-bold robot-font mt-10 border-b-2 pb-5 border-dark-red">
         Kayıtlı Emailler
       </h3>
-      <PaginationEmails />
-      <SearchBoxEmail />
+      <PaginationEmails page={page} setPage={setPage}/>
+      <SearchBoxEmail 
+        searchInput={searchInput}
+        setSearchInput={ setSearchInput }
+        setPage={setPage}
+      />
       {loading ? (
         <Spinner />
       ) : emails?.length === 0 ? (
@@ -104,7 +116,7 @@ const EmailAdminPage = () => {
         choosedEmail={choosedEmail}
       />
 
-      <PaginationEmails />
+      <PaginationEmails page={page} setPage={setPage}/>
     </div>
   );
 };

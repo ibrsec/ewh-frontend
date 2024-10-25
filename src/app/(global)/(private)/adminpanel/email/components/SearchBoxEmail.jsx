@@ -2,13 +2,13 @@ import { fetchEmailSetSearch } from "@/lib/features/emailSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-const SearchBoxEmail = () => {
-  const [searchInput, setSearchInput] = useState("");
-  const dispatch = useDispatch();
+const SearchBoxEmail = ({ searchInput, setSearchInput, setPage }) => {
+  // const [searchInput, setSearchInput] = useState("");
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchEmailSetSearch(searchInput));
-  }, [searchInput]);
+  // useEffect(() => {
+  //   dispatch(fetchEmailSetSearch(searchInput));
+  // }, [searchInput]);
   return (
     <form className=" max-w-md mx-auto mt-10 ">
       <div className="mb-5 flex items-center gap-3 ">
@@ -21,7 +21,10 @@ const SearchBoxEmail = () => {
           name="searchInput"
           placeholder="Search with email here..."
           value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
+          onChange={(e) => {
+            setPage(1); // reset page when search input changes
+            setSearchInput(e.target.value);
+          }}
         />
       </div>
     </form>

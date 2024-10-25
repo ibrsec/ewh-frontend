@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   emails: [],
-  page: 1,
-  search: "",
+  // page: 1,
+  // search: "",
   pagination: {
     search: {},
     page: 1,
@@ -38,13 +38,13 @@ const emailSlice = createSlice({
     fetchEmailLogout: (state) => {
       state.emails = [];
     },
-    fetchEmailSetPage: (state, { payload }) => {
-      state.page = payload;
-    },
-    fetchEmailSetSearch: (state, { payload }) => {
-      state.page = 1;
-      state.search = payload;
-    },
+    // fetchEmailSetPage: (state, { payload }) => {
+    //   state.page = payload;
+    // },
+    // fetchEmailSetSearch: (state, { payload }) => {
+    //   state.page = 1;
+    //   state.search = payload;
+    // },
   },
 });
 
@@ -54,7 +54,7 @@ export const {
   fetchEmailSuccess,
   fetchEmailSuccessWithOutPayload,
   fetchEmailLogout,
-  fetchEmailSetPage,
-  fetchEmailSetSearch,
+  // fetchEmailSetPage,
+  // fetchEmailSetSearch,
 } = emailSlice.actions;
 export default emailSlice.reducer;

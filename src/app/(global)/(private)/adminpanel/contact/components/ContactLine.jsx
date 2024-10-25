@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaChevronUp } from "react-icons/fa6";
 import { FaChevronDown } from "react-icons/fa";
 import useContactServices from "@/lib/services/useContactServices";
+import { useSelector } from "react-redux";
 
 const ContactLine = ({
   contact,
@@ -13,6 +14,7 @@ const ContactLine = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { readStatusChangeApi } = useContactServices();
+  const pagination = useSelector(state => state.contact.pagination);
 
   return (
     <>
@@ -35,7 +37,8 @@ const ContactLine = ({
               <FaChevronDown size={"16"} />
             )}
           </span>
-          {index + 1}
+          {(pagination?.page - 1) * pagination?.limit + 1 + index}
+          {/* {index + 1} */}
         </td>
         <th
           scope="row"
