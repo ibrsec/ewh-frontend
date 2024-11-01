@@ -10,6 +10,7 @@ import { useState } from "react";
 import { toastWarnNotify } from "@/helpers/toastify";
 import useSubscriptionServices from "@/lib/services/useSubscriptionServices";
 import { emailValidation } from "@/helpers/emailValidation";
+import formatPhoneNumber from "@/helpers/formatPhoneNumber";
 
 const navs = [
   { name: "Anasayfa", href: "/" },
@@ -29,23 +30,23 @@ const trainings = [
 ];
 const contacts = [
   {
-    name: "info@projectName",
-    href: "mailto:info@projectName.com",
+    name: process.env.NEXT_PUBLIC_INFO_EMAIL,
+    href: "mailto:"+process.env.NEXT_PUBLIC_INFO_EMAIL,
     icon: <IoMailOutline className="text-lg" />,
   },
   {
-    name: "+90 (555) 444 33 44",
-    href: "tel:+905554443344",
+    name: formatPhoneNumber(process.env.NEXT_PUBLIC_INFO_PHONE),
+    href: "tel:"+process.env.NEXT_PUBLIC_INFO_PHONE,
     icon: <IoIosPhonePortrait className="text-lg" />,
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/english.with.hatice/",
+    href: process.env.NEXT_PUBLIC_INFO_INSTAGRAM,
     icon: <GrInstagram className="text-lg" />,
   },
   {
     name: "Whats App",
-    href: "https://wa.me/905554443355",
+    href: "https://wa.me/"+process.env.NEXT_PUBLIC_INFO_PHONE,
     icon: <FaWhatsapp className="text-lg" />,
   },
 ]; 

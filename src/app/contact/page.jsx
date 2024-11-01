@@ -23,7 +23,7 @@ const ContactPage = () => {
         
         <p className="">Bize Whatsapp üzerinden de ulaşabilirsiniz!</p>
         <Link
-          href="https://wa.me/905554443344"
+          href={"https://wa.me/"+process.env.NEXT_PUBLIC_INFO_PHONE}
           target="_blank"
           className="flex items-center gap-7 bg-dark-red py-4 px-10 rounded-2xl hover:opacity-80 active:opacity-90 tranision-all duration-500"
         >
