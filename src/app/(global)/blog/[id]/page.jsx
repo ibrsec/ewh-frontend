@@ -1,5 +1,4 @@
-"use client";
-import { capitalize } from "@/helpers/capitalize";
+"use client"; 
 import useBlogServices from "@/lib/services/useBlogServices";
 import Link from "next/link";
 import { useEffect } from "react";
