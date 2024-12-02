@@ -439,7 +439,7 @@ const BlogPage = () => {
         <h5 className=" mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
           LAST POST
         </h5>
-        {<MainBlogCard blog={blogs[0]} />}
+        {<MainBlogCard blog={blogs[blogs.length-1]} />}
         {/* 3 blog */}
         <h5 className="mt-20 mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
           RECENT POSTS

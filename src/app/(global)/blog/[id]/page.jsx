@@ -62,7 +62,7 @@ const BlogDetailPage = ({ params }) => {
         <img
           src={blog?.image?.url}
           alt="blog image"
-          className="w-full h-1/2 md:h-2/3 object-cover"
+          className="w-full max-h-[700px] md:h-2/3 object-cover object-top"
         />
       </div>
       <div className="flex items-center justify-between gap-3">
