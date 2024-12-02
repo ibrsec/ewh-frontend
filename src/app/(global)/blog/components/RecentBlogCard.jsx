@@ -59,7 +59,7 @@ const RecentBlogCard = ({ blog }) => {
         <p className="text-gray-600 group-hover:text-black transition-all duration-400 text-lg poppins-font  ">
           {blog?.shortDescription.slice(0, 150)}...
         </p>
-        <div className="text-end pe-6">
+        <div className="text-end pe-2">
           <button className="  text-gray-500 font-semibold   group-hover:text-red transition-all duration-400 geist-font">
             Read More...
           </button>

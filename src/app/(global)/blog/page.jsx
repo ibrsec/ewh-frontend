@@ -444,8 +444,8 @@ const BlogPage = () => {
         <h5 className="mt-20 mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
           RECENT POSTS
         </h5>
-        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogs.slice(1, 4).map((blog, idx) => (
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
+          {blogs.map((blog, idx) => (
             <RecentBlogCard key={idx} blog={blog} />
           ))}
         </div>
@@ -453,40 +453,52 @@ const BlogPage = () => {
         {/* kalanlar */}
       </div>
 
-      {/* green part */}
-      <div className="bg-light-orange py-5  mb-16 flex flex-col gap-5">
-        <div className=" grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4   gap-10 lg:gap-6 max-w-6xl mx-auto px-2 ">
-          <div className="col-span-1  hidden lg:block ">
-            <WithBgBlogCard blog={blogs[1]} isSmall={true} />
-          </div>
-          <div className="col-span-1 block lg:hidden  ">
-            <WithBgBlogCard blog={blogs[1]} isSmall={false} />
-          </div>
-          <div className="cols-span-1 sm:col-span-2 -order-1 lg:order-none mb-10 lg:mb-0  ">
-            <WithBgBlogCard blog={blogs[2]} isSmall={false} />
-          </div>
-          <div className="col-span-1 hidden lg:block ">
-            <WithBgBlogCard blog={blogs[3]} isSmall={true} />
-          </div>
-          <div className="col-span-1 block lg:hidden ">
-            <WithBgBlogCard blog={blogs[3]} isSmall={false} />
-          </div>
-        </div>
-      </div>
+ 
 
-      <div className="max-w-6xl mx-auto px-2 mb-24 flex flex-col gap-5">
-        {/* 3 blog */}
-        <h5 className="mt-20 mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
-          REST OF THE POSTS
-        </h5>
-        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {blogs.slice(7).map((blog, idx) => (
-            <RecentBlogCard key={idx} blog={blog} />
-          ))}
-        </div>
-      </div>
+
+
+
     </div>
   );
 };
 
 export default BlogPage;
+
+
+
+
+//blog sayfasinin alt kismi
+  //   {/* green part */}
+  //    <div className="bg-light-orange py-5  mb-16 flex flex-col gap-5">
+  //    <div className=" grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4   gap-10 lg:gap-6 max-w-6xl mx-auto px-2 ">
+  //      <div className="col-span-1  hidden lg:block ">
+  //        <WithBgBlogCard blog={blogs[1]} isSmall={true} />
+  //      </div>
+  //      <div className="col-span-1 block lg:hidden  ">
+  //        <WithBgBlogCard blog={blogs[1]} isSmall={false} />
+  //      </div>
+  //      <div className="cols-span-1 sm:col-span-2 -order-1 lg:order-none mb-10 lg:mb-0  ">
+  //        <WithBgBlogCard blog={blogs[2]} isSmall={false} />
+  //      </div>
+  //      <div className="col-span-1 hidden lg:block ">
+  //        <WithBgBlogCard blog={blogs[3]} isSmall={true} />
+  //      </div>
+  //      <div className="col-span-1 block lg:hidden ">
+  //        <WithBgBlogCard blog={blogs[3]} isSmall={false} />
+  //      </div>
+  //    </div>
+  //  </div>
+
+
+
+  //  <div className="max-w-6xl mx-auto px-2 mb-24 flex flex-col gap-5">
+  //    {/* 3 blog */}
+  //    <h5 className="mt-20 mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">
+  //      REST OF THE POSTS
+  //    </h5>
+  //    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+  //      {blogs.slice(7).map((blog, idx) => (
+  //        <RecentBlogCard key={idx} blog={blog} />
+  //      ))}
+  //    </div>
+  //  </div>
