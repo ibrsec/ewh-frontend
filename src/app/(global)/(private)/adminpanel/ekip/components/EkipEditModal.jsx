@@ -200,6 +200,9 @@ const EkipEditModal = ({ open, setOpen, choosedMember }) => {
 
                       <div className="mb-5">
                         <label htmlFor="description">Description:</label>
+                        <span className="px-2 text-xs ">
+                          yeni satir icin ** kullaniniz.
+                        </span>
                         <textarea
                           type="text"
                           id="description"

@@ -29,9 +29,9 @@ const TeamCard = ({ person, index}) => {
           <span className="bg-gray-500 h-0.5 w-full "></span>
           <p className="text-gray-600    text-md poppins-font">
           {person.description.split("**").map((line,index) => (
-              <>
-              <span   key={index}>{line}</span> <br />
-              </>
+              <div key={index} className="mb-2">
+              <span    >{line}</span> <br />
+              </div>
             ))}
             </p>
           
