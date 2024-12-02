@@ -47,35 +47,31 @@ const AboutUsHome = () => {
           <ul className="flex flex-col gap-5 text-sm text-[#5E5E5E]">
             <li className="">
               <p className="">
-                <b>Kaf Dil</b> olarak, <b>dil öğrenme</b> sürecini daha
-                erişilebilir ve keyifli hale getirmek için hizmet veriyoruz.
-                Amacımız, <b>öğrencilere ve profesyonellere</b> ihtiyaçlarına
-                yönelik en etkili ve pratik online İngilizce eğitimlerini
-                sunmak.
+                <em>LinguaPlus Akademi</em>, İngilizce dil eğitimine yenilikçi bir yaklaşım sunan, uluslararası standartlarda profesyonel ve bilimsel yöntemlerle dil öğretmeyi amaçlayan bir dil eğitim kurumudur. Yurtiçi ve yurtdışında <em>İngilizce eğitimi</em> konusunda eğitim almış, alanında uzun yıllara dayanan deneyime sahip uzman ve genç eğitmenlerimiz ile öğrencilerimize her seviyede kapsamlı ve etkili bir öğrenme deneyimi sunmayı hedeflemekteyiz. 
               </p>
             </li>
             <li className="">
               <p className="">
-                Alanında <b>uzman eğitmenlerimiz</b> ve yenilikçi eğitim
-                yaklaşımlarımızla, dil öğrenimini sıradanlıktan çıkarıyor ve
-                interaktif bir deneyime dönüştürüyoruz. Gelişen teknolojiyi
-                eğitim süreçlerimize entegre ederek, esnek ders programları,{" "}
-                <b>kişiye özel öğrenme planları</b> ve sürekli geri bildirim ile
-                öğrencilerimizin başarıya ulaşmasına yardımcı oluyoruz.
+              <b>LinguaPlus Akademi</b>, eğitmenlerimizin geniş bilgi birikimi, profesyonel yaklaşımı ve bireysel ders planlamalarıyla, öğrencilerimizin hedeflerine en doğru ve hızlı şekilde ulaşmalarını sağlamayı amaç edinmiştir. 
               </p>
             </li>
             <li className="">
               <p className="">
-                Online platformumuzda hem bireysel hem de kurumsal kullanıcılara
-                yönelik, her seviyeye uygun kurslar sunuyor, dil öğrenme
-                yolculuğunuzu en verimli hale getirmek için size özel çözümler
-                üretiyoruz. Hedeflerinize ulaşmak için her adımda yanınızdayız.
+              Öğrencilerimiz, esnek ders saatleri ve çeşitli eğitim seçenekleri ile ihtiyaç duydukları anda, kendi programlarına uygun biçimde eğitim alabilmektedir. Bu sayede dil öğrenme süreci, öğrencilerimizin yoğun programlarına uyum sağlarken, ulaşılabilir bir hale gelmektedir.
+
               </p>
             </li>
             <li className="">
               <p className="">
-                Bizimle <Link href="/contact" className="text-blue-500 hover:underline">iletişime</Link> geçin, İngilizce öğrenme serüveninizi hemen
-                başlatalım!
+              LinguaPlus Akademi olarak, dört beceri yaklaşımını benimseyerek dil öğrenimini destekliyoruz. Tüm ders içeriklerimizde; <b>konuşma, yazma, dinleme ve okuma</b> becerilerini bir arada sunarak, öğrencilerimizi günlük yaşam, iş hayatı ve akademik ortamlar için gerekli dil becerileriyle donatmayı hedeflemekteyiz. Bunun yanı sıra, bireysel farklılıkları gözeten özel ders planlamaları, kişiye özel ödevlendirme süreçleri ve düzenli geri bildirimlerle her öğrencinin kendine özgü ihtiyaçlarına yanıt vermekteyiz.
+              </p>
+            </li>
+            <li className="">
+              <p className="">
+                {/* Bizimle <Link href="/contact" className="text-blue-500 hover:underline">iletişime</Link> geçin, İngilizce öğrenme serüveninizi hemen
+                başlatalım! */}
+                Özetle, LinguaPlus Akademi, deneyimli kadrosu ve bilimsel öğretim yöntemleri ile her öğrencisini, İngiliz dilini dört beceriyi yetkin şekilde kullanabilen, dil kullanımında özgüven sahibi bireyler olarak yetiştirmeyi amaçlayan bir eğitim kurumudur.
+
               </p>
             </li>
           </ul>

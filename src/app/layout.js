@@ -10,8 +10,8 @@ import TopButton from "@/components/topButton/TopButton";
 import { ToastContainer } from "react-toastify"; 
 
 export const metadata = {
-  title: "English With Hatice | Anasayfa",
-  description: "Learn English with Hatice",
+  title: "LinguaPlus Akademi | Anasayfa",
+  description: "Learn English with LinguaPlus",
 };
 
 export default function RootLayout({ children }) {

@@ -27,12 +27,10 @@ const Hero = () => {
             // xl:text-[90px]
             style={{ lineHeight: "1.1" }}
           >
-            WONDERFULL <br /> STORIES
+            LinguaPlus <br /> Akademi
           </h1>
           <p className="text-md md:text-lg text-gray-500 font-medium mt-10  manrope-font ">
-            Listen to the little stories to improve your Russian and immerse
-            yourself in the nuances of the language, enhancing your
-            comprehension and fluency over time.
+          Profesyonel kadrosu, esnek ders saatleri ve bireysel ders planlamasıyla İngilizce öğrenme yolculuğunuzda yanınızda! Akademik, iş ya da günlük yaşam hedefleriniz ne olursa olsun, bilimsel yöntemlerle dört dil becerisini yetkin şekilde kullanmanızı sağlayarak sizi hedeflerinize ulaştırıyoruz.
           </p>
         </div>
         {/* <div className="flex items-center gap-1 justify-center flex-col lg:flex-row "> */}

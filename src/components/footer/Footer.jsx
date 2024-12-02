@@ -124,14 +124,15 @@ const handleEmailSubscriptionSubmit = (e) => {
                 className="flex items-center space-x-3 rtl:space-x-reverse"
               >
                 <img
-                  src="/images/logo-beyaz.png"
-                  className="h-36 sm:h-44"
+                  src="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1733125579/logoClear_white_1_lywbzg.png"
+                  // src="/images/logo-beyaz.png"
+                  className="w-[240px] lg:w-[260px] xl:w-[300px] py-5"
+                  // className="h-36 sm:h-44"
                   alt="Logo"
                 />
               </Link>
               <p className="text-white poppins-font text-lg font-semibold text-center lg:text-left w-1/2 lg:w-full">
-                İngilizce öğrenme amacınız ne olursa olsun bizimle hedeflerinize
-                giden yolda emin adımlarla yürüyebilirsiniz.
+              Profesyonel eğitmenler, esnek saatler ve çeşitli eğitim seçenekleriyle dil öğrenme yolculuğunuzda yanınızdayız.
               </p>
             </div>
 
@@ -259,7 +260,7 @@ const handleEmailSubscriptionSubmit = (e) => {
 
         <div className=" mt-16 pt-10   text-white">
           <div className="w-full bg-white h-[.5px] my-5"></div>
-          <p className="text-center text-sm sm:text-md">© Copyright English with Hatice - 2024</p>
+          <p className="text-center text-sm sm:text-md">© Copyright LinguaPlus Akademi - 2024</p>
         </div>
         </div>
       </div>

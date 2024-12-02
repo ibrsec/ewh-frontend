@@ -164,6 +164,9 @@ const NewEkipMember = () => {
 
       <div className="mb-5">
         <label htmlFor="description">Description:</label>
+        <span className="px-2 text-xs ">
+            yeni satir icin ** kullaniniz.
+          </span>
         <textarea
           type="text"
           id="description"
@@ -178,6 +181,7 @@ const NewEkipMember = () => {
         >
           Team member description max: 300
         </textarea>
+        
         {inputs.description.length > 300 && (
           <span className="px-2 text-xs text-red-500">
             Description 300 karakteri geçemez!

@@ -63,13 +63,15 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 bg-transparent z-50 ">
       <nav className="bg-white manrope-font backdrop-blur-lg  shadow-md ">
-        <div className=" flex flex-wrap md:flex-nowrap items-center justify-between  px-2 max-w-6xl mx-auto"> 
+        <div className=" flex flex-wrap md:flex-nowrap items-center justify-between  px-2 max-w-6xl mx-auto py-5"> 
           <Link
             href="/"
             id="logo"
-            className="flex items-center space-x-3 rtl:space-x-reverse flex-shrink-0"
+            className="flex items-center space-x-3 rtl:space-x-reverse flex-shrink-0 "
           >
-            <img src="/images/logo-siyah.png" className="h-32 sm:h-40  ]" alt="Logo" />
+            <img src="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1733120250/logoClear_hmnpoj.png" className="w-[240px] lg:w-[260px] xl:w-[300px]  " alt="Logo" />
+            {/* <img src="/images/logo-siyah.png" className="h-32 sm:h-40  ]" alt="Logo" /> */}
+             
           </Link>
           <div className="flex items-center md:order-2 space-x-3  rtl:space-x-reverse">
 

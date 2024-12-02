@@ -56,7 +56,7 @@ const JoinedPeople = () => {
           </div>
           <div className="">
             <p className="text-md sm:text-lg tracking-wide">
-              Kaliteli dil eğitimi ayrıcalık olmaktan çıkıyor.
+              Kaliteli dil eğitimiyle sınırları kaldırıyoruz.
             </p>
           </div>
           <div className="">

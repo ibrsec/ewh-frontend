@@ -27,7 +27,13 @@ const TeamCard = ({ person, index}) => {
         <div className=" flex-1 px-5 flex flex-col gap-5">
           <p className=" font-bold text-xl poppins-font ">{person.fullName}</p>
           <span className="bg-gray-500 h-0.5 w-full "></span>
-          <p className="text-gray-600    text-md poppins-font">{person.description}</p>
+          <p className="text-gray-600    text-md poppins-font">
+          {person.description.split("**").map((line,index) => (
+              <>
+              <span   key={index}>{line}</span> <br />
+              </>
+            ))}
+            </p>
           
         </div>
       </div>
