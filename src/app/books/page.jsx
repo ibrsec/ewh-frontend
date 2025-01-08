@@ -1,5 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import BookCard from "./components/BookCard";
+import NoContent from "@/components/noContent/NoContent";
 
 const books = [
   { 
@@ -52,12 +53,14 @@ const BooksPage = () => {
       <Banner path="/images/books.png" title="KİTAPLARIMIZ" />
 
       <div className="max-w-6xl mx-auto px-2 mb-24">
-        {/* trainings list */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7  ">
+        
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7  ">
           {books?.map((book, idx) => (
             <BookCard key={idx} book={book} index={idx} />
           ))}
-        </div>
+        </div> */}
+        <p className=" text-center text-lg my-10">Kitaplarımıza yakında bu sayfadan ulaşabilirsiniz, bizi takip etmeye devam edin!</p>
+        <NoContent />
       </div>
     </div>
   );

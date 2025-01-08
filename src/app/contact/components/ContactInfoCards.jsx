@@ -31,7 +31,7 @@ const ContactInfoCards = () => {
             <FaPhone  className="text-2xl text-white -rotate-45"/>
         </div>
 
-        <span className="font-bold manrope-font text-lg">Phone Number</span>
+        <span className="font-bold manrope-font text-lg">Telefon</span>
         <div className=" manrope-font text-md text-gray-800 group-hover:text-orange group-hover:scale-110 transition-all duration-700">{formatPhoneNumber(process.env.NEXT_PUBLIC_INFO_PHONE)}</div>
       </Link>
       <Link href={"mailto:"+process.env.NEXT_PUBLIC_INFO_EMAIL} target="_blank" className="bg-white cols-span-1 border rounded-md shadow-xl shadow-dark-red border-dark-red min-h-[200px] flex items-center justify-center gap-3 flex-col group hover:-translate-y-1 transition-all duration-700 ">
@@ -39,7 +39,7 @@ const ContactInfoCards = () => {
             <IoMdMail  className="text-2xl text-white -rotate-45"/>
         </div>
 
-        <span className="font-bold manrope-font text-lg">Mail Adress</span>
+        <span className="font-bold manrope-font text-lg">E-Mail</span>
         <div className=" manrope-font text-sm text-gray-800 group-hover:text-orange group-hover:scale-110 transition-all duration-700">{process.env.NEXT_PUBLIC_INFO_EMAIL}</div>
       </Link>
       <Link href={process.env.NEXT_PUBLIC_INFO_INSTAGRAM} target="_blank" className="bg-white cols-span-1 border rounded-md shadow-xl shadow-dark-red border-dark-red min-h-[200px] flex items-center justify-center gap-3 flex-col group hover:-translate-y-1 transition-all duration-700">

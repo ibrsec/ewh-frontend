@@ -30,24 +30,18 @@ const TrainingsHome = ({ buttonShow }) => {
           <div className="flex flex-col gap-6 text-md md:text-lg text-[#5E5E5E] poppins-font">
             <div className="">
               <p className="">
-                <b>Kaf Dil</b> olarak, <b>dil öğrenme</b> sürecini daha
-                erişilebilir ve keyifli hale getirmek için hizmet veriyoruz.
-                Amacımız, <b>öğrencilere ve profesyonellere</b> ihtiyaçlarına
-                yönelik en etkili ve pratik online İngilizce eğitimlerini
-                sunmak.
+                <b>LinguaPlus</b> Dil Kursu olarak, öğrencilerimizin dil hedeflerine ulaşmasını sağlamak için <b>modern, etkili ve bireyselleştirilmiş</b> bir eğitim anlayışı sunuyoruz. Alanında <b>uzman</b> eğitmenlerimiz ve yenilikçi yöntemlerimizle, dil öğrenim sürecinizi hem keyifli hem de verimli bir hale getiriyoruz.
               </p>
             </div>
             <ul className="list-none text-sm md:text-md">
               <li className="before:content-['🔥'] before:mr-2 before:text-red-500 mb-3">
-                Size özel, kapsamlı ders videolarıyla dilinizi geliştirmek daha
-                pratik ve hızlı
+              ⁠Her öğrencinin ihtiyaçlarına uygun özel programlar
               </li>
               <li className="before:content-['🔥'] before:mr-2 before:text-red-500 mb-3">
-                Uluslararası seyahatler için pratik beceriler
+              ⁠Uzman eğitmenlerimizle yüksek standartlarda bir öğrenim deneyimi
               </li>
               <li className="before:content-['🔥'] before:mr-2 before:text-red-500 mb-3">
-                Öğrenciler, günlük yaşamda bilgilerini pratik uygulamalarla
-                güçlendiriyorlar
+              ⁠Online ve istediğiniz ders ve eğitim seçenekleri
               </li>
             </ul>
             {buttonShow && (

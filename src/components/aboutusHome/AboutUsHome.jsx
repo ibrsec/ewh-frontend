@@ -16,7 +16,7 @@ const AboutUsHome = () => {
   return (
     <div className="flex gap-2 lg:items-start items-center flex-col md:flex-row py-24 px-2 relative ">
       {/* image */}
-      <div className="flex-1 animate-wiggle">
+      <div className="flex-1 animate-wiggle md:animate-updown-wiggle-animate">
         <motion.section
           ref={sectionRef}
           initial={{ opacity: 0, y: -100 }} // Başlangıçta görünmez

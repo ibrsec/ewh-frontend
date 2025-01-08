@@ -7,15 +7,20 @@ const ContactContent = () => {
       <h3 className="geist-font text-2xl lg:text-3xl mb-7">
         Bizimle İletişime Geçin!!
       </h3>
-      <p className="poppins-font text-sm md:text-md text-gray-800   mb-7    "  >
-        İngilizce becerilerinizi geliştirmek için doğru eğitimi mi
-        arıyorsunuz? İster dil bilgisi, kelime dağarcığı ister konuşma pratiği
-        olsun, size yardımcı olmak için buradayız! Bizimle iletişime
-        geçin ve öğrenme yolculuğunuzda size nasıl destek olabileceğimizi
-        konuşalım.
+      <p className="poppins-font text-sm md:text-md text-gray-800   mb-7    ">
+        Kendine, kariyerine ve eğitimine İngilizce öğrenerek yatırım yapmak
+        istiyorsanız, LinguaPlus alanında uzman eğitmenleriyle, tamamen size
+        uygun esnek ders saatleri ve konforlu bir öğrenme ortamıyla benzersiz
+        bir dil öğrenme deneyimi sunuyor. <br /><br />
+        Sorularınız için bizimle iletişime geçin ve size özel bir yol haritasını
+        birlikte çizelim!
       </p>
-      <img src="https://siliconsoftnepal.com.np/wp-content/uploads/2024/04/group-1.png" alt="ekip" className="w-full rounded-lg" />
-    </div> 
+      <img
+        src="/images/contact.png"
+        alt="ekip"
+        className="w-full rounded-lg"
+      />
+    </div>
   );
 };
 

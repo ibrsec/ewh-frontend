@@ -11,7 +11,7 @@ const ContactForm = () => {
 
   // Bileşenin ekranda görünür olup olmadığını kontrol eden hook
   const isVisible = useIntersectionObserver(sectionRef, {
-    threshold: 0.1, // %10'u görünür olunca tetikler
+    threshold: 0.05, // %10'u görünür olunca tetikler
   });
 
   const { contactInfoPost } = useContactInfoPostServices();

@@ -190,7 +190,7 @@ const NewTraining = () => {
           }
           required={true}
           name="description"
-          placeholder="Team member description* - max 300 char length"
+          placeholder="Training description* - max 300 char length"
           value={inputs.description}
           onChange={handleChange}
           maxLength="300"

@@ -41,10 +41,24 @@ module.exports = {
           '0%': { transform: 'scale(0)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        "updown-wiggle-animate":{
+          "0%": { transform: "translateY(0px)rotate(-4deg)" },
+          "10%": { transform: "translateY(50px)rotate(4deg)" },
+          "20%": { transform: "translateY(100px)rotate(-4deg)" },
+          "30%": { transform: "translateY(150px)rotate(4deg)" },
+          "40%": { transform: "translateY(200px)rotate(-4deg)" },
+          "50%": { transform: "translateY(250px)rotate(4deg)" },
+          "60%": { transform: "translateY(200px)rotate(-4deg)" },
+          "70%": { transform: "translateY(150px)rotate(4deg)" },
+          "80%": { transform: "translateY(100px)rotate(-4deg)" },
+          "90%": { transform: "translateY(50px)rotate(4deg)" },
+          "100%": { transform: "translateY(0px)rotate(-4deg)" },
+        }
       },
       animation: {
         wiggle: "wiggle 6s ease-in-out infinite",
         grow: 'grow 1s ease-in-out', 
+        'updown-wiggle-animate': 'updown-wiggle-animate 15s linear infinite',
       },
       screens: {
         xs: "450px", // new screenbreak point.

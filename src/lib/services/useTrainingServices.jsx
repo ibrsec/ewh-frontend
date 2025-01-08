@@ -60,7 +60,7 @@ const useTrainingServices = () => {
       dispatch(fetchTrainingFail());
       // toastErrorNotify(error?.response?.data?.message);
       taostStopLoading(idLoading,"error",""+ ""+error?.response?.data?.message);
-      console.log("create new training member api error:", error);
+      console.log("create new training  api error:", error);
     }
   };
   const updateTrainingMember = async (id, payload) => {
@@ -85,7 +85,7 @@ const useTrainingServices = () => {
       dispatch(fetchTrainingFail());
       // toastErrorNotify(error?.response?.data?.message);
       taostStopLoading(idLoading,"error",""+ ""+error?.response?.data?.message);
-      console.log("update training member api error:", error);
+      console.log("update training  api error:", error);
     }
   };
   const deleteTrainingMember = async (id) => {
@@ -99,7 +99,7 @@ const useTrainingServices = () => {
 
       //warnings
       // toastSuccessNotify(data?.message || "Training member is deleted!");
-      taostStopLoading(idLoading,"success",response?.data?.message || "Training member is deleted!")
+      taostStopLoading(idLoading,"success",response?.data?.message || "Training  is deleted!")
 
       getTrainingApi();
     } catch (error) {
@@ -107,8 +107,8 @@ const useTrainingServices = () => {
       // toastErrorNotify(
       //   error?.response?.data?.message || "Deleting Training member is failed!"
       // );
-      taostStopLoading(idLoading,"error",""+ ""+error?.response?.data?.message  || "Deleting Training member is failed!");
-      console.log("delete training member api error:", error);
+      taostStopLoading(idLoading,"error",""+ ""+error?.response?.data?.message  || "Deleting Training  is failed!");
+      console.log("delete training  api error:", error);
     }
   };
   return {
