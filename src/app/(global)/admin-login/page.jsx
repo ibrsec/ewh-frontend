@@ -59,7 +59,8 @@ console.log('inputs', inputs)
 
   return (
     <div className=" mb-16">
-      <Banner path="/images/blog.jpg" title="Admin Login" />
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736363827/blog_k2zbfs.jpg" title="Admin Login" />
+      {/* <Banner path="/images/blog.jpg" title="Admin Login" /> */}
       <div className="flex justify-center  min-h-[300px]   ">
         <div className=" rounded-lg shadow-xl border border-dark-red shadow-dark-red py-10 px-5  w-[370px]  ">
           <form className=" w-full " onSubmit={handleSubmit}>

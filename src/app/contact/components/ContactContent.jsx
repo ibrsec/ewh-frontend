@@ -16,7 +16,8 @@ const ContactContent = () => {
         birlikte çizelim!
       </p>
       <img
-        src="/images/contact.png"
+        src="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736364164/contact_z7empo.png"
+        // src="/images/contact.png"
         alt="ekip"
         className="w-full rounded-lg"
       />

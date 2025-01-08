@@ -57,7 +57,8 @@ const TeamPage = () => {
 
   return (
     <div>
-      <Banner path="/images/team.png" title="EKİBİMİZ" />
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736364299/team_cnymyi.webp" title="EKİBİMİZ" />
+      {/* <Banner path="/images/team.png" title="EKİBİMİZ" /> */}
 
       <div className="max-w-6xl mx-auto px-2 mb-24">
         {/* trainings list */}

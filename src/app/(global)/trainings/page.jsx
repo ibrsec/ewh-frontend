@@ -89,7 +89,8 @@ const TrainingsPage = () => {
   }, []);
   return (
     <div className="mb-24">
-      <Banner path="/images/trainings.jpg" title="EĞİTİMLERİMİZ" />
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736364344/trainings_wydo9c.jpg" title="EĞİTİMLERİMİZ" />
+      {/* <Banner path="/images/trainings.jpg" title="EĞİTİMLERİMİZ" /> */}
 
       <div className="max-w-6xl mx-auto px-2">
         <TrainingsHome buttonShow={false} />

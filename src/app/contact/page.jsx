@@ -8,7 +8,8 @@ import Link from "next/link";
 const ContactPage = () => {
   return (
     <div className="mb-52">
-      <Banner path="/images/contact.jpg" title="İLETİŞİM" />
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736364095/contact_jvcxnc.jpg" title="İLETİŞİM" />
+      {/* <Banner path="/images/contact.jpg" title="İLETİŞİM" /> */}
 
       <div className="max-w-6xl mx-auto px-2 mb-32 flex gap-20 flex-col md:flex-row">
         <div className="flex-1  rounded-lg shadow-xl border border-dark-red shadow-dark-red py-8 px-2">

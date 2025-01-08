@@ -433,7 +433,8 @@ const BlogPage = () => {
 
   return (
     <div>
-      <Banner path="/images/blog.jpg" title="BLOG" />
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736363827/blog_k2zbfs.jpg" title="BLOG" />
+      {/* <Banner path="/images/blog.jpg" title="BLOG" /> */}
       <div className="max-w-6xl mx-auto px-2 mb-16 flex flex-col gap-5">
         {/* main blog */}
         <h5 className=" mb-10 text-lg lg:text-xl font-bold roboto-font  border-b-4 border-dark-red pb-5 ">

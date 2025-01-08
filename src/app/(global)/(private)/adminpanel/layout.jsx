@@ -10,7 +10,8 @@ export const metadata = {
 const Adminpanel = ({ children }) => {
   return (
     <div>
-      <Banner path="/images/blog.jpg" title="Admin Panel" />
+      {/* <Banner path="/images/blog.jpg" title="Admin Panel" /> */}
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736363827/blog_k2zbfs.jpg" title="Admin Panel" />
       <AdminTabs />
       {children}
     </div>

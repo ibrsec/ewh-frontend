@@ -65,7 +65,8 @@ const TrainingsHome = ({ buttonShow }) => {
           className=""
         >
           <img
-            src="/images/trainingsHomeSvg.png"
+            src="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736364389/trainingsHomeSvg_hbvavx.png"
+            // src="/images/trainingsHomeSvg.png"
             alt="about"
             className="w-4/5 md:w-full xl:w-4/5 mx-auto "
           />

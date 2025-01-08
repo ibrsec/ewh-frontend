@@ -50,7 +50,8 @@ const books = [
 const BooksPage = () => {
   return (
     <div>
-      <Banner path="/images/books.png" title="KİTAPLARIMIZ" />
+      <Banner path="https://res.cloudinary.com/dkhuhh8xl/image/upload/v1736364035/books_fyx0in.png" title="KİTAPLARIMIZ" />
+      {/* <Banner path="/images/books.png" title="KİTAPLARIMIZ" /> */}
 
       <div className="max-w-6xl mx-auto px-2 mb-24">
         
