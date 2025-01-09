@@ -1,8 +1,8 @@
 
 export const metadata = {
-    title: "English With Hatice | Blog",
-    description: "Learn English with Hatice",
-  };
+  title: "LinguaPlus Akademi | Blog Detayı",
+  description: "Learn English with LinguaPlus",
+};
   
   const BlogDetailPageLayout = ({children}) => {
     return (

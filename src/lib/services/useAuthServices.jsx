@@ -1,16 +1,25 @@
 import { useDispatch } from "react-redux";
 import useAxios from "./useAxios";
 
-import { fetchAuthFail, fetchAuthLoginSuccess, fetchAuthLogout, fetchAuthStart } from "../features/authSlice";
-import { taostStopLoading, toastErrorNotify, toastLoading, toastSuccessNotify } from "@/helpers/toastify";
+import {
+  fetchAuthFail,
+  fetchAuthLoginSuccess,
+  fetchAuthLogout,
+  fetchAuthStart,
+} from "../features/authSlice";
+import {
+  taostStopLoading,
+  toastErrorNotify,
+  toastLoading,
+  toastSuccessNotify,
+  toastWarnNotify,
+} from "@/helpers/toastify";
 import { useRouter } from "next/navigation";
- 
 
 const useAuthServices = () => {
   const { axiosPublic } = useAxios();
   const dispatch = useDispatch();
   const router = useRouter();
-
 
   const loginApi = async (payload) => {
     const endPoint = "/auth/login";
@@ -32,10 +41,7 @@ const useAuthServices = () => {
     } catch (error) {
       dispatch(fetchAuthFail());
       // toastErrorNotify(error?.response?.data?.message);
-      taostStopLoading(
-        idLoading,
-        "error", error?.response?.data?.message
-      );
+      taostStopLoading(idLoading, "error", error?.response?.data?.message);
       console.log("login api error:", error);
     }
   };
@@ -73,9 +79,8 @@ const useAuthServices = () => {
       dispatch(fetchAuthLogout());
 
       // dispatch();
-      // dispatch(); 
+      // dispatch();
 
-      
       //!navigate
       router.push("/admin-login");
 
@@ -85,11 +90,10 @@ const useAuthServices = () => {
     } catch (error) {
       dispatch(fetchAuthFail());
       // toastErrorNotify(error?.response?.data?.message);
-      taostStopLoading(
-        idLoading,
-        "error", error?.response?.data?.message
-      );
+      taostStopLoading(idLoading, "error", error?.response?.data?.message);
       console.log("logout api error:", error);
+      toastWarnNotify("Logged out without backend!")
+      dispatch(fetchAuthLogout());
     }
   };
 

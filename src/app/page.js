@@ -26,12 +26,16 @@ export default function Home() {
 
 
 //!frontend
-//? apiler uygulanacak
-//? metadatalar
-//? email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
-//? blog icin duzenleme rich edittor? be ye nasil kaydedece nasil render edecez vs.
-//? navbara admin panel ve logout koysak?
-//? egitimlerimiz public loading no content eklenecek
+//* metadatalar ayarlanacak
+//! adminpanel login yoksada yukleniyor icerde bi sorgu atinca login sayfasina yukleniyor. bunu ayarlamak lazim!!!!!
+//* logout backend calismasada olmasi lazim!!
+
+//* apiler uygulanacak
+//* metadatalar
+//* email gonderme icin admin panelde yer,//? tek tek secme mi yoksa tek buton hepsine mi, yoksa ikiside mi.
+//* blog icin duzenleme rich edittor? be ye nasil kaydedece nasil render edecez vs.
+//* navbara admin panel ve logout koysak?
+//* egitimlerimiz public loading no content eklenecek
 //* egitimlerimiz admin panel
 //* order eklenecek -be fe - ekipe eklendi
   //* ekip
@@ -40,17 +44,17 @@ export default function Home() {
 //* footer cizgi
 //* loadingler, no contentler
 //* admin tablarini route yapacaz
-//? iletisim bilgileri environmentten cekilecek
-//? static resimler icin cdn yapilacak ordan cekilecek
-//? yorum resimleri ni napacaz yorum html mi yapacaz yoksa direk resim seklinde mi koyacaz.?
+//* iletisim bilgileri environmentten cekilecek
+//* static resimler icin cdn yapilacak ordan cekilecek
+//* yorum resimleri ni napacaz yorum html mi yapacaz yoksa direk resim seklinde mi koyacaz.?
 
 
 // !Backend
 //* email bulten isi - OK
 //* egitimlerimiz
 //* ekibimiz
-//? iletisim form 
-//? bloglar. stil render isi,
+//* iletisim form 
+//* bloglar. stil render isi,
 //* resimler yuklme indirme link alma pclouda bak -> supabase cloud cdn kullandik
-//? email toplu gonderimi - hepsine mi olacak gelen emaillere mi olacak sececem   s
-//? admin user creds from env
+//* email toplu gonderimi - hepsine mi olacak gelen emaillere mi olacak sececem   s
+//* admin user creds from env

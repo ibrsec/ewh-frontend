@@ -3,7 +3,11 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
- 
+// export const metadata = {
+//   title: "LinguaPlus Akademi | Login",
+//   description: "Learn English with LinguaPlus",
+// };
+
 const LoginAdminLayout = ({children}) => {
 
   const accessToken = useSelector(state=> state.auth.accessToken)

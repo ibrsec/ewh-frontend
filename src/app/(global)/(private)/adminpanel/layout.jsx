@@ -3,8 +3,8 @@ import AdminTabs from "./components/AdminTabs";
 import Banner from "@/components/banner/Banner";
 
 export const metadata = {
-  title: "English With Hatice | Admin Panel",
-  description: "Learn English with Hatice",
+  title: "LinguaPlus Akademi | Admin Panel",
+  description: "Learn English with LinguaPlus",
 };
 
 const Adminpanel = ({ children }) => {
